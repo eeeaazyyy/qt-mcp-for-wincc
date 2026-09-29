@@ -12,6 +12,20 @@ an HTTP/JSON-RPC server following an MCP-like scheme
 of the "transport kept separate from business logic" pattern — the only
 real client of this engine is the built-in Qt GUI.
 
+## Screenshots
+
+**Chat** — asking a question, getting an answer generated from the retrieved documentation:
+
+![Chat tab with a question and a generated answer](docs/screenshots/chat.png)
+
+**Search history** — every question is logged with a timestamp and response time:
+
+![Search history table with time, query and response time columns](docs/screenshots/history.png)
+
+**History detail** — double-clicking a row shows the full question, answer and sources:
+
+![Dialog showing the full question, answer and sources for one history entry](docs/screenshots/history-dialog.png)
+
 ## Architecture
 
 ```
@@ -33,6 +47,33 @@ Model = `QAbstractItemModel` subclasses, Controller = `*Controller`);
 Command is `JsonRpcDispatcher`/`McpToolRegistry`; Adapter is
 `LmStudioClient`/`HttpJsonRpcTransport`; Repository is
 `SqliteDocumentRepository`/`SqliteChatHistoryRepository`/`SqliteVectorStore`.
+
+## Tech stack
+
+**C++20 features** — used deliberately, not just "targeting the standard":
+
+| Feature | Where |
+|---|---|
+| `std::jthread` + `std::stop_token` | [HttpJsonRpcTransport.h](infrastructure/mcp/HttpJsonRpcTransport.h) — cooperative shutdown of the background HTTP server thread |
+| Structured bindings | [IngestionService.cpp](core/services/IngestionService.cpp), [SqliteDocumentRepository.cpp](infrastructure/persistence/SqliteDocumentRepository.cpp) — `const auto [id, changed] = ...` |
+| Trailing return type on lambdas | [ChatController.cpp](app/chat/ChatController.cpp), [MainWindow.cpp](app/mainwindow/MainWindow.cpp) — `QtConcurrent::run([...]() -> RagAnswer { ... })` |
+| `std::optional` | [IDocumentRepository.h](core/interfaces/IDocumentRepository.h), [IHtmlDocumentParser.h](core/interfaces/IHtmlDocumentParser.h) |
+| RAII wrappers | [SqliteConnection.h/.cpp](infrastructure/persistence/SqliteConnection.h), [SqliteStatement.h/.cpp](infrastructure/persistence/SqliteStatement.h) — no manual `sqlite3_close`/`sqlite3_finalize` at call sites |
+| Move semantics | [LmStudioClient.cpp](infrastructure/llm/LmStudioClient.cpp), [HttpJsonRpcTransport.cpp](infrastructure/mcp/HttpJsonRpcTransport.cpp) |
+| `constexpr` | [ChatMessageDelegate.h](app/chat/ChatMessageDelegate.h), [JsonRpc.h](core/models/JsonRpc.h) (`JsonRpcErrorCode` constants) |
+| Namespace aliases | [JsonRpcDispatcher.cpp](infrastructure/mcp/JsonRpcDispatcher.cpp) — aliasing a `namespace` that a `using`-declaration can't reach |
+| `std::unordered_map<std::string, std::function<...>>` (Command pattern) | [McpToolRegistry.h](core/services/McpToolRegistry.h), [JsonRpcDispatcher.h](infrastructure/mcp/JsonRpcDispatcher.h) |
+
+**Qt6 modules**:
+
+| Module | Where / what |
+|---|---|
+| **QtCore** | meta-object system (`Q_OBJECT`, signals/slots) throughout `app/`; `QJsonValue`/`QJsonObject`/`QJsonDocument` as the JSON-RPC wire format in [JsonRpc.h](core/models/JsonRpc.h) and [infrastructure/mcp/](infrastructure/mcp); `QTranslator`-based i18n in [TranslationManager.h/.cpp](app/common/TranslationManager.h) |
+| **QtWidgets** | `QMainWindow`/`QTabWidget`/`QMenu` in [MainWindow.cpp](app/mainwindow/MainWindow.cpp); `QAbstractListModel` in [ChatMessageListModel.h/.cpp](app/chat/ChatMessageListModel.h); `QAbstractTableModel` in [SearchHistoryTableModel.h/.cpp](app/history/SearchHistoryTableModel.h); custom `QStyledItemDelegate` paint/sizeHint in [ChatMessageDelegate.cpp](app/chat/ChatMessageDelegate.cpp) (chat bubbles via `QTextDocument`) and [HistoryTableItemDelegate.cpp](app/history/HistoryTableItemDelegate.cpp); `QDialog` in [ChatHistoryDialog.h/.cpp](app/history/ChatHistoryDialog.h) |
+| **QtConcurrent** | `QtConcurrent::run` + `QFutureWatcher` in [ChatController.cpp](app/chat/ChatController.cpp) and [MainWindow.cpp](app/mainwindow/MainWindow.cpp) — background work without a hand-rolled `QThread` |
+| **QtTest** | `QAbstractItemModelTester` in [SearchHistoryTableModelTest.cpp](tests/app/SearchHistoryTableModelTest.cpp) — validates the custom table model against Qt's own model/view contract |
+
+**Third-party (via CMake `FetchContent`, see [Dependencies](#dependencies) below)**: [lexbor](infrastructure/parsing/LexborHtmlParser.cpp) (HTML5 parsing + CSS selectors), [cpp-httplib](infrastructure/llm/LmStudioClient.cpp) (HTTP client *and* server — [also here](infrastructure/mcp/HttpJsonRpcTransport.cpp)), [sqlite3 + sqlite-vec](infrastructure/persistence) (vector search), [GoogleTest](tests).
 
 ## Dependencies
 
