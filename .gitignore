@@ -2,3 +2,5 @@ build/
 CMakeUserPresets.json
 *.qm
 data/*.sqlite3
+
+en_US/

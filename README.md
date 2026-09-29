@@ -53,6 +53,10 @@ FetchContent isn't practical (hours of build time). Options:
 Two toolchains are supported out of the box: MSVC or the MinGW bundled with
 the Qt installer.
 
+0. Download `en_US.zip` from this repo's [Releases](../../releases) page and
+   extract it so you end up with an `en_US/` folder at the project root
+   (next to `CMakeLists.txt`). The WinCC OA documentation (~140 MB) isn't
+   tracked in git — it ships as a release asset instead.
 1. Copy `CMakeUserPresets.json.example` → `CMakeUserPresets.json` and point
    `CMAKE_PREFIX_PATH` (and, for MinGW, `CMAKE_C_COMPILER`/`CMAKE_CXX_COMPILER`)
    at your Qt6 installation.
