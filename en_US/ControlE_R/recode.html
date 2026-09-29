@@ -1,0 +1,1215 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="25.0">
+    <head><link rel="shortcut icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><link rel="icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="keywords" content="WinCCOA, OnlineHelp, Online Help, Documentation, OA, SIMATIC, WinCC OA, WCCOA"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="-1"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="description" content="The function converts a string and returns the string in the desired encoding."/><meta name="DC.relation" content="../_resources/toc/business_logic.html"/><meta name="DC.relation" content="recodeBlob.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="topicID1"/>        
+      <title>recode()</title><!--  Generated with Oxygen version 27.0, build number 2024121223.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="topicID1-d54385e60106"/><meta name="wh-source-relpath" content="ControlE_R/recode.dita"/><meta name="wh-out-relpath" content="ControlE_R/recode.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2024121223"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2024121223"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260226124654"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2024121223"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260226124654"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2024121223"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2024121223"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/style.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/mobile.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/tile-icons.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/single-line-dlentry.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/footer.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/chatbot.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/syntax.css?buildId=2024121223"/><script src="//assets.adobedtm.com/5dfc7d97c6fb/9452e85082e5/launch-b4ffda58d5f0.min.js" async="async"></script></head>
+
+    <body id="topicID1" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="23.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/modern/winccoa.png" alt="WinCC OA Documentation"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title"><span class="ph">WinCC OA Documentation</span></span></a></div>
+                    <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+                    <div id="assistant_button" title="AI powered WinCC OA Assistant"></div>
+                    <div id="menu_toggler" title="Toggle Main Menu"></div>
+                    <div id="theme_toggler" title="Toggle Dark/Light Theme"></div>
+                    <div id="lang_toggler"><a href="#" onclick="switchLanguage()" class="lang_switch_link">LANG</a></div>
+<script><!--
+
+  /* Set image of lang switch button */
+  var url = window.location.href;
+    
+  if(['/en/', '/en_US/'].some(el => url.includes(el)))
+  {
+    document.body.classList.add("lang-en");
+    document.getElementById("assistant_button").textContent = "WinCC OA AI Assistant";
+  }
+  else
+  {
+    document.body.classList.add("lang-de");
+    document.getElementById("assistant_button").textContent = "WinCC OA KI-Assistent";
+  }
+
+  /* Click event for lang switch button */
+  function switchLanguage() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+    if(['/en/', '/en_US/'].some(el => currentUrl.includes(el)))
+    {      
+      newUrl = currentUrl.replace('/en/', '/de/');
+      newUrl = currentUrl.replace('/en_US/', '/de_AT/');
+    }
+    else if(['/de/', '/de_AT/'].some(el => currentUrl.includes(el)))
+    {
+      newUrl = currentUrl.replace('/de/', '/en/');
+      newUrl = currentUrl.replace('/de_AT/', '/en_US/');
+    } 
+    window.location.href = newUrl;
+  }
+
+--></script>
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="version_information-d54385e2159-mi" data-tocid="version_information-d54385e2159" data-state="not-ready" class=" topicref " data-id="version_information"><span class="title"><a href="../release_notes/version_information.html">Version Information</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e5517-mi" data-tocid="concepts-d54385e5517" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/concepts.html">Concepts</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e6907-mi" data-tocid="concepts-d54385e6907" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/deployment.html">Deployment</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_security-d54385e10162-mi" data-tocid="main_security-d54385e10162" data-state="not-ready" class=" topicref " data-id="main_security"><span class="title"><a href="../security/topics/security.html">Security</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="engineering-d54385e11399-mi" data-tocid="engineering-d54385e11399" data-state="not-ready" class=" topicref " data-id="engineering"><span class="title"><a href="../_resources/toc/engineering.html">Engineering</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e20103-mi" data-tocid="data_management-d54385e20103" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/data_management.html">Data Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e24184-mi" data-tocid="data_management-d54385e24184" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_visualization-d54385e64646-mi" data-tocid="data_visualization-d54385e64646" data-state="not-ready" class=" topicref " data-id="data_visualization"><span class="title"><a href="../_resources/toc/data_visualization.html">Data Visualization</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="southbound_interfaces-d54385e67006-mi" data-tocid="southbound_interfaces-d54385e67006" data-state="not-ready" class=" topicref " data-id="southbound_interfaces"><span class="title"><a href="../_resources/toc/southbound_interfaces.html">Southbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="north_bound-d54385e70326-mi" data-tocid="north_bound-d54385e70326" data-state="not-ready" class=" topicref " data-id="north_bound"><span class="title"><a href="../_resources/toc/northbound_interfaces.html">Northbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="webconnectivity-d54385e71612-mi" data-tocid="webconnectivity-d54385e71612" data-state="not-ready" class=" topicref " data-id="webconnectivity"><span class="title"><a href="../_resources/toc/webconnectivity.html">Web Connectivity / Network Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="user_management-d54385e75413-mi" data-tocid="user_management-d54385e75413" data-state="not-ready" class=" topicref " data-id="user_management"><span class="title"><a href="../_resources/toc/user_management.html">User Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="availability-d54385e76708-mi" data-tocid="availability-d54385e76708" data-state="not-ready" class=" topicref " data-id="availability"><span class="title"><a href="../_resources/toc/availability.html">Availability</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reporting-d54385e77549-mi" data-tocid="reporting-d54385e77549" data-state="not-ready" class=" topicref " data-id="reporting"><span class="title"><a href="../_resources/toc/reporting.html">Reporting</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="addons-d54385e78241-mi" data-tocid="addons-d54385e78241" data-state="not-ready" class=" topicref " data-id="addons"><span class="title"><a href="../_resources/toc/addons.html">Addons</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reference_tables-d54385e81051-mi" data-tocid="reference_tables-d54385e81051" data-state="not-ready" class=" topicref " data-id="reference_tables"><span class="title"><a href="../_resources/toc/reference_tables.html">Reference Tables</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_videos-d54385e83295-mi" data-tocid="main_videos-d54385e83295" data-state="not-ready" class=" topicref " data-id="main_videos"><span class="title"><a href="../videos/video_tutorials.html">Videos &amp; Tutorials</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="documentation-d54385e83842-mi" data-tocid="documentation-d54385e83842" data-state="not-ready" class=" topicref " data-id="documentation"><span class="title"><a href="../general/topics/documentation.html">Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support-d54385e83905-mi" data-tocid="support-d54385e83905" data-state="not-ready" class=" topicref " data-id="support"><span class="title"><a href="../Support/topics/support.html">Support &amp; Services</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="disclaimer-d54385e83935-mi" data-tocid="disclaimer-d54385e83935" data-state="not-ready" class=" topicref " data-id="disclaimer"><span class="title"><a href="../_resources/toc/disclaimer.html">Disclaimer</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="data_management"><div class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a><div class="wh-tooltip"><p class="shortdesc">Endless possibilities in data processing for your projects.</p></div></div></div></li><li><div class="topicref"><div class="title"><a href="../ControlA_D/abortFileTransfer_2.html">CONTROL Functions</a></div></div></li><li><div class="topicref"><div class="title"><a href="../ControlE_R/rad2deg.html">Functions R</a></div></div></li><li class="active"><div class="topicref" data-id="topicID1"><div class="title"><a href="../ControlE_R/recode.html">recode()</a><div class="wh-tooltip"><p class="shortdesc">The function converts a string and returns the string in the desired encoding.</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        <button type="button" data-target="#wh_publication_toc" id="wh_toc_button" data-toggle="collapse" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="collapse col-lg-3 col-md-3 col-sm-12 d-md-block d-print-none" aria-label="Table of Contents Container">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="version_information-d54385e2159" class="topicref" data-id="version_information" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action version_information-d54385e2159-link" class="wh-expand-btn"></span><div class="title"><a href="../release_notes/version_information.html" id="version_information-d54385e2159-link">Version Information</a><div class="wh-tooltip"><p class="shortdesc">Release Notes, Update information, Certifications and Frequently Asked
+                Questions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e5517" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e5517-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/concepts.html" id="concepts-d54385e5517-link">Concepts</a><div class="wh-tooltip"><p class="shortdesc">Your first step into modern and powerful process visualization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e6907" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e6907-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/deployment.html" id="concepts-d54385e6907-link">Deployment</a><div class="wh-tooltip"><p class="shortdesc">Topics you need to know before using <span class="ph">WinCC OA</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_security-d54385e10162" class="topicref" data-id="main_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_security-d54385e10162-link" class="wh-expand-btn"></span><div class="title"><a href="../security/topics/security.html" id="main_security-d54385e10162-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Go beyond the norm in cybersecurity.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="engineering-d54385e11399" class="topicref" data-id="engineering" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action engineering-d54385e11399-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/engineering.html" id="engineering-d54385e11399-link">Engineering</a><div class="wh-tooltip"><p class="shortdesc">Powerful tools for easy or complex engineering tasks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_management-d54385e20103" class="topicref" data-id="data_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_management-d54385e20103-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_management.html" id="data_management-d54385e20103-link">Data Management</a><div class="wh-tooltip"><p class="shortdesc">Classify, structure and archive your data.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="data_management-d54385e24184" class="topicref" data-id="data_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action data_management-d54385e24184-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/business_logic.html" id="data_management-d54385e24184-link">Business Logic / Control</a><div class="wh-tooltip"><p class="shortdesc">Endless possibilities in data processing for your projects.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e24206" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e24206-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen.html" id="topicID1-d54385e24206-link">Introduction to CTRL</a><div class="wh-tooltip"><p class="shortdesc">An introduction to the product's own programming language Control(CTRL).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="control_classes-d54385e24505" class="topicref" data-id="control_classes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action control_classes-d54385e24505-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/control_classes.html" id="control_classes-d54385e24505-link">Control Classes</a><div class="wh-tooltip"><p class="shortdesc">The overview of classes available in Control.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e25834" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e25834-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Funktionsarten.html" id="topicID1-d54385e25834-link">Types of Control Functions</a><div class="wh-tooltip"><p class="shortdesc">An overview of the types of functions distinguished within Control.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e29452" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e29452-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grafik/Graphics_Objects.html" id="tocId-d54385e29452-link">Control graphics</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d54385e50091" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d54385e50091-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/abortFileTransfer_2.html" id="tocId-d54385e50091-link">CONTROL Functions</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e50092" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e50092-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/abortFileTransfer_2.html" id="tocId-d54385e50092-link">Functions A</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e50460" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e50460-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/base64Decode.html" id="tocId-d54385e50460-link">Functions B</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e50620" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e50620-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/callFunction.html" id="tocId-d54385e50620-link">Functions C</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e52340" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e52340-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/dataHost.html" id="tocId-d54385e52340-link">Functions D</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e54125" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e54125-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/ecdhDeriveSharedSecret.html" id="tocId-d54385e54125-link">Functions E</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e54426" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e54426-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/fclose_2.html" id="tocId-d54385e54426-link">Functions F</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e54873" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e54873-link" class="wh-expand-btn"></span><div class="title"><a href="../UserAdmin/getCurrentDomainName_2.html" id="tocId-d54385e54873-link">Functions G</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e56707" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e56707-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/hasEvent.html" id="tocId-d54385e56707-link">Functions H</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e57153" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e57153-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/iec61850_createRcbDp.html" id="tocId-d54385e57153-link">Functions I</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e57723" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e57723-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/jsonDecode.html" id="tocId-d54385e57723-link">Functions J</a></div></div></li><li role="treeitem"><div data-tocid="tocId-d54385e57774" class="topicref" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../" id="tocId-d54385e57774-link">Functions K</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e57776" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e57776-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/langEditor.html" id="tocId-d54385e57776-link">Functions L</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e57952" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e57952-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/makeATime_2.html" id="tocId-d54385e57952-link">Functions M</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e59122" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e59122-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/nameCheck.html" id="tocId-d54385e59122-link">Functions N</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e59239" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e59239-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/onBoard_2.html" id="tocId-d54385e59239-link">Functions O</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e59354" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e59354-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/paCfgDeleteValue.html" id="tocId-d54385e59354-link">Functions P</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e60060" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e60060-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/quarter_2.html" id="tocId-d54385e60060-link">Functions Q</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tocId-d54385e60072" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d54385e60072-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/rad2deg.html" id="tocId-d54385e60072-link">Functions R</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="topicID1-d54385e60073" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/rad2deg.html" id="topicID1-d54385e60073-link">rad2deg()</a><div class="wh-tooltip"><p class="shortdesc">Converts an angle from a radian measure into degrees.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60084" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/rand.html" id="topicID1-d54385e60084-link">rand()</a><div class="wh-tooltip"><p class="shortdesc">Calculates a sequence of integer pseudo random numbers.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60095" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/readSMS.html" id="topicID1-d54385e60095-link">readSMS()</a><div class="wh-tooltip"><p class="shortdesc"> The readSMS() function reads a SMS message with the phone number of the sender and the             time when the message has been sent. Possible errors will be read as well. If you want             to use the control function, the runtime script sms.ctl has to run in the console.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="topicID1-d54385e60106" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/recode.html" id="topicID1-d54385e60106-link">recode()</a><div class="wh-tooltip"><p class="shortdesc">The function converts a string and returns the string in the desired encoding.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60117" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduActive.html" id="topicID1-d54385e60117-link">reduActive()</a><div class="wh-tooltip"><p class="shortdesc">In a redundant system, returns the active computer.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60128" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduSetActive.html" id="topicID1-d54385e60128-link">reduSetActive()</a><div class="wh-tooltip"><p class="shortdesc">Activates the emergency switch on the left or on the right.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60139" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduSetInactive.html" id="topicID1-d54385e60139-link">reduSetInactive()</a><div class="wh-tooltip"><p class="shortdesc">Deactivates the emergency switch on the left or on the right in a redundant system.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60150" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduSetPreferred.html" id="topicID1-d54385e60150-link">reduSetPreferred()</a><div class="wh-tooltip"><p class="shortdesc">Sets the Preferred to left or right in a redundant system.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60161" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduSetSplitOff.html" id="topicID1-d54385e60161-link">reduSetSplitOff()</a><div class="wh-tooltip"><p class="shortdesc">Sets the split mode to off in a redundant project.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60172" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduSetSplitOn.html" id="topicID1-d54385e60172-link">  <strong class="ph b">reduSetSplitOn()</strong>  </a><div class="wh-tooltip"><p class="shortdesc">Sets the split mode in a redundant system.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60186" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduSwitchDist.html" id="topicID1-d54385e60186-link">reduSwitchDist()</a><div class="wh-tooltip"><p class="shortdesc">Switches over in the split mode.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60198" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reduSwitchDriver.html" id="topicID1-d54385e60198-link">reduSwitchDriver()</a><div class="wh-tooltip"><p class="shortdesc">Switches the drivers in the split mode.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60209" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/regexpIndex.html" id="topicID1-d54385e60209-link">regexpIndex()</a><div class="wh-tooltip"><p class="shortdesc">The function "regexpIndex()" provides pattern matching via regular expressions. The             function searches for a match of the specified character starting from the given             position.</p></div></div></div></li><li role="treeitem"><div data-tocid="regexpLastIndex-d54385e60220" class="topicref" data-id="regexpLastIndex" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/regexpLastIndex.html" id="regexpLastIndex-d54385e60220-link">regexpLastIndex()</a><div class="wh-tooltip"><p class="shortdesc">The function "regexpLastIndex()" provides pattern matching via regular expressions.         The function searches for a match of the specified character(s) starting at the end of the         string.</p></div></div></div></li><li role="treeitem"><div data-tocid="regexpReplace-d54385e60231" class="topicref" data-id="regexpReplace" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/regexpReplace.html" id="regexpReplace-d54385e60231-link">regexpReplace()</a><div class="wh-tooltip"><p class="shortdesc">The function "regexReplace()" provides a regex-based text replacement.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60242" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/regexpSplit.html" id="topicID1-d54385e60242-link">regexpSplit()</a><div class="wh-tooltip"><p class="shortdesc">The function "regexpSplit()" provides pattern matching via regular         expressions.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60253" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/registerDbgFlag.html" id="topicID1-d54385e60253-link">registerDbgFlag()</a><div class="wh-tooltip"><p class="shortdesc">Registers a debug flag and returns a debug flag number.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60264" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/releaseComObject.html" id="topicID1-d54385e60264-link">release<strong class="ph b">ComObject()</strong></a><div class="wh-tooltip"><p class="shortdesc"> Releases the COM object.</p></div></div></div></li><li role="treeitem"><div data-tocid="reloadSecurityEventConfig-d54385e60277" class="topicref" data-id="reloadSecurityEventConfig" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/reloadSecurityEventConfig.html" id="reloadSecurityEventConfig-d54385e60277-link">reloadSecurityEventConfig()</a><div class="wh-tooltip"><p class="shortdesc">Function reloads the Security Event JSON configuration file for the local managers         and PMON.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60288" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/remove_2.html" id="topicID1-d54385e60288-link">remove()</a><div class="wh-tooltip"><p class="shortdesc">The function remove() deletes a file.</p></div></div></div></li><li role="treeitem"><div data-tocid="removeAllBreakpoints-d54385e60299" class="topicref" data-id="removeAllBreakpoints" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeAllBreakpoints_2.html" id="removeAllBreakpoints-d54385e60299-link">removeAllBreakpoints()</a><div class="wh-tooltip"><p class="shortdesc">Removes all breakpoints from the current document.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60310" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeDoneCB.html" id="topicID1-d54385e60310-link">  <strong class="ph b">removeDoneCB()</strong>  </a><div class="wh-tooltip"><p class="shortdesc">The function prevents the calculation of unwanted data in datapoint functions and             statistical functions.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60325" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeGlobal.html" id="topicID1-d54385e60325-link">removeGlobal()</a><div class="wh-tooltip"><p class="shortdesc">Deletes the manager-wide global CTRL variable name.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60336" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeGroup.html" id="topicID1-d54385e60336-link">removeGroup()</a><div class="wh-tooltip"><p class="shortdesc">The function removes a group connection from the panel.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60347" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeGroupPVSS.html" id="topicID1-d54385e60347-link">removeGroupPVSS()</a><div class="wh-tooltip"><p class="shortdesc"> Removes a <span class="ph">WinCC OA</span> group.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60361" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeShape.html" id="topicID1-d54385e60361-link">removeShape()</a><div class="wh-tooltip"><p class="shortdesc">The function removes a shape from the panel.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60372" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeSymbol.html" id="topicID1-d54385e60372-link">removeSymbol()</a><div class="wh-tooltip"><p class="shortdesc">The function is used to delete panel references.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60383" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeUserFromGroupPVSS.html" id="topicID1-d54385e60383-link">removeUserFromGroupPVSS()</a><div class="wh-tooltip"><p class="shortdesc"> Removes a <span class="ph">WinCC OA</span> group from a user.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60397" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/removeUserPVSS.html" id="topicID1-d54385e60397-link">removeUserPVSS()</a><div class="wh-tooltip"><p class="shortdesc"> The function permanently disables a user.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60408" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/rename_2.html" id="topicID1-d54385e60408-link">rename()</a><div class="wh-tooltip"><p class="shortdesc">The function renames a file.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60419" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/renameGroupPVSS.html" id="topicID1-d54385e60419-link">renameGroupPVSS()</a><div class="wh-tooltip"><p class="shortdesc"> Renames a <span class="ph">WinCC OA</span> user group.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60433" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/renameUserPVSS.html" id="topicID1-d54385e60433-link">renameUserPVSS()</a><div class="wh-tooltip"><p class="shortdesc"> Renames a <span class="ph">WinCC OA</span> user.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60447" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/requestFileList_2.html" id="topicID1-d54385e60447-link">requestFileList()</a><div class="wh-tooltip"><p class="shortdesc">The function requestFileList() requests a file list from the manager with the specified             manager Id.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60459" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/requestFileTransfer_2.html" id="topicID1-d54385e60459-link">requestFileTransfer()</a><div class="wh-tooltip"><p class="shortdesc">The function requestFileTransfer() requests a list of files to be transferred from the             active to passive partner in a redundant project.</p></div></div></div></li><li role="treeitem"><div data-tocid="restoreBookmarks-d54385e60470" class="topicref" data-id="restoreBookmarks" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/restoreBookmarks_2.html" id="restoreBookmarks-d54385e60470-link">restoreBookmarks()</a><div class="wh-tooltip"><p class="shortdesc">All bookmarks in the ewo are stored for the given context with  <a href="../ControlS_Z/saveBookmarks.html" class="xref">ControlS_Z/saveBookmarks.html</a> and can be restored again by passing the same context string to         restoreBookmarks().</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60483" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/restorePanel_2.html" id="topicID1-d54385e60483-link">restorePanel()</a><div class="wh-tooltip"><p class="shortdesc">Opens an already loaded child panel that had been minimized.</p></div></div></div></li><li role="treeitem"><div data-tocid="restoreSettings-d54385e60494" class="topicref" data-id="restoreSettings" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/restoreSettings_2.html" id="restoreSettings-d54385e60494-link">restoreSettings()</a><div class="wh-tooltip"><p class="shortdesc">Loads and applies all settings defined via the script editor.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60505" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/rewind_2.html" id="topicID1-d54385e60505-link">rewind()</a><div class="wh-tooltip"><p class="shortdesc">Places the pointer at the beginning of the file <em class="ph i">FileDesc.</em></p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60518" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/rmdir_2.html" id="topicID1-d54385e60518-link">rmdir()</a><div class="wh-tooltip"><p class="shortdesc">The function deletes a specified directory.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60529" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/rootPanel.html" id="topicID1-d54385e60529-link">rootPanel()</a><div class="wh-tooltip"><p class="shortdesc">Returns the name of a particular root panel.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60540" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/RootPanelOn_2.html" id="topicID1-d54385e60540-link">RootPanelOn()</a><div class="wh-tooltip"><p class="shortdesc">Opens a new panel in the current module.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60551" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/RootPanelOnModule_2.html" id="topicID1-d54385e60551-link">RootPanelOnModule()</a><div class="wh-tooltip"><p class="shortdesc">Opens a panel in a particular module.</p></div></div></div></li><li role="treeitem"><div data-tocid="RSAGenerateKeyPair-d54385e60562" class="topicref" data-id="RSAGenerateKeyPair" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/RSAGenerateKeyPair.html" id="RSAGenerateKeyPair-d54385e60562-link">RSAGenerateKeyPair()</a><div class="wh-tooltip"><p class="shortdesc">The function RSAGenerateKeyPair() generates a public and a private key for the         functions RSASealEnvelope() and RSAOpenEnvelope().</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60573" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/RSAOpenEnvelope.html" id="topicID1-d54385e60573-link">RSAOpenEnvelope()</a><div class="wh-tooltip"><p class="shortdesc">The function RSAOpenEnvelope() decrypts data.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60585" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/RSASealEnvelope.html" id="topicID1-d54385e60585-link">RSASealEnvelope()</a><div class="wh-tooltip"><p class="shortdesc">The function RSASealEnvelope() encrypts data.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60596" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/runRealSQL.html" id="topicID1-d54385e60596-link">runRealSQL()</a><div class="wh-tooltip"><p class="shortdesc">The function runRealSQL executes an SQL command that does not return a value such as             INSERT or DELETE.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e60607" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/runRealSQLQuery.html" id="topicID1-d54385e60607-link">runRealSQLQuery()</a><div class="wh-tooltip"><p class="shortdesc">The function runRealSQLQuery executes an SQL query of the RDB database.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e60618" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e60618-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/saveBookmarks.html" id="tocId-d54385e60618-link">Functions S</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e62201" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e62201-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/textEditor.html" id="tocId-d54385e62201-link">Functions T</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e62477" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e62477-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/udpClose.html" id="tocId-d54385e62477-link">Functions U</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e62946" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e62946-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/v24Close.html" id="tocId-d54385e62946-link">Functions V</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e63006" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e63006-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/waitThread.html" id="tocId-d54385e63006-link">Functions W</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e63165" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e63165-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/xmlAppendChild.html" id="tocId-d54385e63165-link">Functions X</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e63531" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e63531-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/yamlDecode.html" id="tocId-d54385e63531-link">Functions Y</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e63580" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e63580-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/ZoomModule_2.html" id="tocId-d54385e63580-link">Functions Z</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e63614" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e63614-link" class="wh-expand-btn"></span><div class="title"><a href="../CTRL_DLL/CTRL_DLL-01.html" id="topicID1-d54385e63614-link">CtrlExtension</a><div class="wh-tooltip"><p class="shortdesc">The CtrlExtension allows the addition of custom C++ code.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ctrl_debugger_basics-d54385e63641" class="topicref" data-id="ctrl_debugger_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ctrl_debugger_basics-d54385e63641-link" class="wh-expand-btn"></span><div class="title"><a href="../control_debugger/topics/ctrl_debugger_basics.html" id="ctrl_debugger_basics-d54385e63641-link">CTRL Debugger</a><div class="wh-tooltip"><p class="shortdesc">You can use the CTRL debugger to debug the Control programming language. The debugger can be used via its own panel, which also enables the monitoring and setting of variable values         during the execution of a script.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Query-d54385e63748" class="topicref" data-id="Query" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Query-d54385e63748-link" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query_2.html" id="Query-d54385e63748-link">SQL in CONTROL</a><div class="wh-tooltip"><p class="shortdesc">The database functions enable you to quickly carry out value queries on datapoints         and elements.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nodejs_basics-d54385e63839" class="topicref" data-id="nodejs_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nodejs_basics-d54385e63839-link" class="wh-expand-btn"></span><div class="title"><a href="../NodeJS/topics/nodejs_basics.html" id="nodejs_basics-d54385e63839-link"><span class="ph"><span class="ph">WinCC OA</span> JavaScript Manager for Node.js</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph"><span class="ph">WinCC OA</span> JavaScript Manager for Node.js</span> is a manager that allows for the integration of the <a href="../NodeJS/topics/nodejs_glossary.html#component_typescript" title="TypeScript is a free and open-source high-level programming language developed by Microsoft that adds static typing with optional type annotations to JavaScript. It is designed for the development of large applications and transpiles to JavaScript. Source: TypeScript (Wikipedia)"><dfn class="term">TypeScript</dfn></a>/<a href="../NodeJS/topics/nodejs_glossary.html#component_javascript" title="JavaScript, often abbreviated as JS, is a programming language and core technology of the Web. It was originally developed for dynamic HTML in web browsers to evaluate user interactions, change, reload or generate content and thus extend the possibilities of HTML. Source: JavaScript (Wikipedia)"><dfn class="term">JavaScript</dfn></a> runtime environment <a href="../NodeJS/topics/nodejs_glossary.html#component_nodejs" title="Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more. Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser. Source: Node.js (Wikipedia)"><dfn class="term">Node.js®</dfn></a> into <span class="ph">WinCC OA</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="API-01-d54385e64517" class="topicref" data-id="API-01" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action API-01-d54385e64517-link" class="wh-expand-btn"></span><div class="title"><a href="../API/topics/API-01.html" id="API-01-d54385e64517-link">API Manager</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">WinCC OA</span> API (<strong class="ph b">A</strong>pplication <strong class="ph b">P</strong>rogramming         <strong class="ph b">I</strong>nterface) offers a number of functions adding special <em class="ph i">Managers</em> to this         process control system. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_visualization-d54385e64646" class="topicref" data-id="data_visualization" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_visualization-d54385e64646-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_visualization.html" id="data_visualization-d54385e64646-link">Data Visualization</a><div class="wh-tooltip"><p class="shortdesc">User interfaces, Trends and Reports for every purpose and device.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="southbound_interfaces-d54385e67006" class="topicref" data-id="southbound_interfaces" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action southbound_interfaces-d54385e67006-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/southbound_interfaces.html" id="southbound_interfaces-d54385e67006-link">Southbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">The process connection to the actual machines/sensors.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="north_bound-d54385e70326" class="topicref" data-id="north_bound" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action north_bound-d54385e70326-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/northbound_interfaces.html" id="north_bound-d54385e70326-link">Northbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Your portal to the cloud or supervising systems.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="webconnectivity-d54385e71612" class="topicref" data-id="webconnectivity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action webconnectivity-d54385e71612-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/webconnectivity.html" id="webconnectivity-d54385e71612-link">Web Connectivity / Network Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Data exchange, APIs and web technologies</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="user_management-d54385e75413" class="topicref" data-id="user_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action user_management-d54385e75413-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/user_management.html" id="user_management-d54385e75413-link">User Management</a><div class="wh-tooltip"><p class="shortdesc">All about authorization, authentication and login-customization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="availability-d54385e76708" class="topicref" data-id="availability" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action availability-d54385e76708-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/availability.html" id="availability-d54385e76708-link">Availability</a><div class="wh-tooltip"><p class="shortdesc">How to get your system uptime to the maximum.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reporting-d54385e77549" class="topicref" data-id="reporting" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reporting-d54385e77549-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reporting.html" id="reporting-d54385e77549-link">Reporting</a><div class="wh-tooltip"><p class="shortdesc">Create state of the art project reports without limits.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="addons-d54385e78241" class="topicref" data-id="addons" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action addons-d54385e78241-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/addons.html" id="addons-d54385e78241-link">Addons</a><div class="wh-tooltip"><p class="shortdesc">Useful tools and enhancements for special demands.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reference_tables-d54385e81051" class="topicref" data-id="reference_tables" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reference_tables-d54385e81051-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reference_tables.html" id="reference_tables-d54385e81051-link">Reference Tables</a><div class="wh-tooltip"><p class="shortdesc">Detailed and extensive content for special project adaptation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_videos-d54385e83295" class="topicref" data-id="main_videos" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_videos-d54385e83295-link" class="wh-expand-btn"></span><div class="title"><a href="../videos/video_tutorials.html" id="main_videos-d54385e83295-link">Videos &amp; Tutorials</a><div class="wh-tooltip"><p class="shortdesc">Explore the capabilities of <span class="ph">WinCC OA</span> with our carefully selected         collection of video tutorials and guides.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="documentation-d54385e83842" class="topicref" data-id="documentation" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action documentation-d54385e83842-link" class="wh-expand-btn"></span><div class="title"><a href="../general/topics/documentation.html" id="documentation-d54385e83842-link">Documentation</a><div class="wh-tooltip"><p class="shortdesc">Basic information about terms and functions within the documentation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support-d54385e83905" class="topicref" data-id="support" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support-d54385e83905-link" class="wh-expand-btn"></span><div class="title"><a href="../Support/topics/support.html" id="support-d54385e83905-link">Support &amp; Services</a><div class="wh-tooltip"><p class="shortdesc">An experienced team of support agents, consultants and trainers are ready to         facilitate active partnerships with our customers, so they can profit from our comprehensive         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="disclaimer-d54385e83935" class="topicref" data-id="disclaimer" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action disclaimer-d54385e83935-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/disclaimer.html" id="disclaimer-d54385e83935-link">Disclaimer</a><div class="wh-tooltip"><p class="shortdesc">A brief clarification of liability exclusions or legal notices.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic topic" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">recode()</h1>
+        
+    <div class="- topic/body body"><p class="- topic/shortdesc shortdesc">The function converts a string and returns the string in the desired encoding.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Synopsis</h2>
+            
+            <p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">string recode(string s, string sourceEncoding, [string
+                    targetEncoding]);</code></p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Parameters</h2>
+            
+            <div class="table-container"><table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__1"> Parameter</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__2"> Meaning</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">s</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">A string that is converted.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">sourceEncoding</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">The source encoding.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">targetEncoding</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">The target encoding. The target encoding. The default target
+                                encoding is the project encoding.</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Return value</h2>
+            
+            <p class="- topic/p p">The converted string.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Description</h2>
+            
+             The function converts a string and returns the string in the desired encoding.
+            <p class="- topic/p p">As of the version <span class="- topic/ph ph">3.21</span> ISO projects cannot be created anymore.
+                Create UTF-8 projects instead.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Possible Encodings</strong></p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">ISO-8859-1</li>
+                <li class="- topic/li li">latin1</li>
+                <li class="- topic/li li">CP819</li>
+                <li class="- topic/li li">IBM819</li>
+                <li class="- topic/li li">iso-ir-100</li>
+                <li class="- topic/li li">csISOLatin1</li>
+                <li class="- topic/li li">UTF-8</li>
+                <li class="- topic/li li">windows-1252</li>
+                <li class="- topic/li li">ibm-5348_P100-1997</li>
+                <li class="- topic/li li">ibm-5348</li>
+                <li class="- topic/li li">cp1252</li>
+                <li class="- topic/li li">UTF-8</li>
+                <li class="- topic/li li">ibm-1208</li>
+                <li class="- topic/li li">ibm-1209</li>
+                <li class="- topic/li li">ibm-5304</li>
+                <li class="- topic/li li">ibm-5305</li>
+                <li class="- topic/li li">ibm-13496</li>
+                <li class="- topic/li li">ibm-13497</li>
+                <li class="- topic/li li">ibm-17592</li>
+                <li class="- topic/li li">ibm-17593</li>
+                <li class="- topic/li li">windows-65001</li>
+                <li class="- topic/li li">cp1208</li>
+                <li class="- topic/li li">x-UTF_8J</li>
+                <li class="- topic/li li">unicode-1-1-utf-8</li>
+                <li class="- topic/li li">unicode-2-0-utf-8</li>
+                <li class="- topic/li li">UTF-16</li>
+                <li class="- topic/li li">ISO-10646-UCS-2</li>
+                <li class="- topic/li li">ibm-1204</li>
+                <li class="- topic/li li">ibm-1205</li>
+                <li class="- topic/li li">unicode</li>
+                <li class="- topic/li li">csUnicode</li>
+                <li class="- topic/li li">ucs-2</li>
+                <li class="- topic/li li">UTF-16BE</li>
+                <li class="- topic/li li">x-utf-16be</li>
+                <li class="- topic/li li">UnicodeBigUnmarked</li>
+                <li class="- topic/li li">ibm-1200</li>
+                <li class="- topic/li li">ibm-1201</li>
+                <li class="- topic/li li">ibm-13488</li>
+                <li class="- topic/li li">ibm-13489</li>
+                <li class="- topic/li li">ibm-17584</li>
+                <li class="- topic/li li">ibm-17585</li>
+                <li class="- topic/li li">ibm-21680</li>
+                <li class="- topic/li li">ibm-21681</li>
+                <li class="- topic/li li">ibm-25776</li>
+                <li class="- topic/li li">ibm-25777</li>
+                <li class="- topic/li li">ibm-29872</li>
+                <li class="- topic/li li">ibm-29873</li>
+                <li class="- topic/li li">ibm-61955</li>
+                <li class="- topic/li li">ibm-61956</li>
+                <li class="- topic/li li">windows-1201</li>
+                <li class="- topic/li li">cp1200</li>
+                <li class="- topic/li li">cp1201</li>
+                <li class="- topic/li li">UTF16_BigEndian</li>
+                <li class="- topic/li li">UTF-16LE</li>
+                <li class="- topic/li li">x-utf-16le</li>
+                <li class="- topic/li li">UnicodeLittleUnmarked</li>
+                <li class="- topic/li li">ibm-1202</li>
+                <li class="- topic/li li">ibm-1203</li>
+                <li class="- topic/li li">ibm-13490</li>
+                <li class="- topic/li li">ibm-13491</li>
+                <li class="- topic/li li">ibm-17586</li>
+                <li class="- topic/li li">ibm-17587</li>
+                <li class="- topic/li li">ibm-21682</li>
+                <li class="- topic/li li">ibm-21683</li>
+                <li class="- topic/li li">ibm-25778</li>
+                <li class="- topic/li li">ibm-25779</li>
+                <li class="- topic/li li">ibm-29874</li>
+                <li class="- topic/li li">ibm-29875</li>
+                <li class="- topic/li li">UTF16_LittleEndian</li>
+                <li class="- topic/li li">windows-1200</li>
+                <li class="- topic/li li">UTF-32</li>
+                <li class="- topic/li li">ISO-10646-UCS-4</li>
+                <li class="- topic/li li">ibm-1236</li>
+                <li class="- topic/li li">ibm-1237</li>
+                <li class="- topic/li li">csUCS4</li>
+                <li class="- topic/li li">ucs-4</li>
+                <li class="- topic/li li">UTF-32BE</li>
+                <li class="- topic/li li">UTF32_BigEndian</li>
+                <li class="- topic/li li">ibm-1232</li>
+                <li class="- topic/li li">ibm-1233</li>
+                <li class="- topic/li li">ibm-9424</li>
+                <li class="- topic/li li">UTF-32LE</li>
+                <li class="- topic/li li">UTF32_LittleEndian</li>
+                <li class="- topic/li li">ibm-1234</li>
+                <li class="- topic/li li">ibm-1235</li>
+                <li class="- topic/li li">UTF-7</li>
+                <li class="- topic/li li">windows-65000</li>
+                <li class="- topic/li li">unicode-1-1-utf-7</li>
+                <li class="- topic/li li">unicode-2-0-utf-7</li>
+                <li class="- topic/li li">SCSU</li>
+                <li class="- topic/li li">ibm-1212</li>
+                <li class="- topic/li li">ibm-1213</li>
+                <li class="- topic/li li">BOCU-1</li>
+                <li class="- topic/li li">csBOCU-1</li>
+                <li class="- topic/li li">ibm-1214</li>
+                <li class="- topic/li li">ibm-1215</li>
+                <li class="- topic/li li">CESU-8</li>
+                <li class="- topic/li li">ibm-9400</li>
+                <li class="- topic/li li">ISO-8859-1</li>
+                <li class="- topic/li li">ibm-819</li>
+                <li class="- topic/li li">IBM819</li>
+                <li class="- topic/li li">cp819</li>
+                <li class="- topic/li li">latin1</li>
+                <li class="- topic/li li">8859_1</li>
+                <li class="- topic/li li">csISOLatin1</li>
+                <li class="- topic/li li">iso-ir-100</li>
+                <li class="- topic/li li">ISO_8859-1:1987</li>
+                <li class="- topic/li li">l1</li>
+                <li class="- topic/li li">819</li>
+                <li class="- topic/li li">US-ASCII</li>
+                <li class="- topic/li li">ASCII</li>
+                <li class="- topic/li li">ANSI_X3.4-1968</li>
+                <li class="- topic/li li">ANSI_X3.4-1986</li>
+                <li class="- topic/li li">ISO_646.irv:1991</li>
+                <li class="- topic/li li">iso_646.irv:1983</li>
+                <li class="- topic/li li">ISO646-US</li>
+                <li class="- topic/li li">us</li>
+                <li class="- topic/li li">csASCII</li>
+                <li class="- topic/li li">iso-ir-6</li>
+                <li class="- topic/li li">cp367</li>
+                <li class="- topic/li li">ascii7</li>
+                <li class="- topic/li li">646</li>
+                <li class="- topic/li li">windows-20127</li>
+                <li class="- topic/li li">ibm-367</li>
+                <li class="- topic/li li">IBM367</li>
+                <li class="- topic/li li">gb18030</li>
+                <li class="- topic/li li">ibm-1392</li>
+                <li class="- topic/li li">windows-54936</li>
+                <li class="- topic/li li">GB18030</li>
+                <li class="- topic/li li">ibm-912_P100-1995</li>
+                <li class="- topic/li li">ibm-912</li>
+                <li class="- topic/li li">ISO-8859-2</li>
+                <li class="- topic/li li">ISO_8859-2:1987</li>
+                <li class="- topic/li li">latin2</li>
+                <li class="- topic/li li">csISOLatin2</li>
+                <li class="- topic/li li">iso-ir-101</li>
+                <li class="- topic/li li">l2</li>
+                <li class="- topic/li li">8859_2</li>
+                <li class="- topic/li li">cp912</li>
+                <li class="- topic/li li">912</li>
+                <li class="- topic/li li">windows-28592</li>
+                <li class="- topic/li li">ibm-913_P100-2000</li>
+                <li class="- topic/li li">ibm-913</li>
+                <li class="- topic/li li">ISO-8859-3</li>
+                <li class="- topic/li li">ISO_8859-3:1988</li>
+                <li class="- topic/li li">latin3</li>
+                <li class="- topic/li li">csISOLatin3</li>
+                <li class="- topic/li li">iso-ir-109</li>
+                <li class="- topic/li li">l3</li>
+                <li class="- topic/li li">8859_3</li>
+                <li class="- topic/li li">cp913</li>
+                <li class="- topic/li li">913</li>
+                <li class="- topic/li li">windows-28593</li>
+                <li class="- topic/li li">ibm-914_P100-1995</li>
+                <li class="- topic/li li">ibm-914</li>
+                <li class="- topic/li li">ISO-8859-4</li>
+                <li class="- topic/li li">latin4</li>
+                <li class="- topic/li li">csISOLatin4</li>
+                <li class="- topic/li li">iso-ir-110</li>
+                <li class="- topic/li li">ISO_8859-4:1988</li>
+                <li class="- topic/li li">l4</li>
+                <li class="- topic/li li">8859_4</li>
+                <li class="- topic/li li">cp914</li>
+                <li class="- topic/li li">914</li>
+                <li class="- topic/li li">windows-28594</li>
+                <li class="- topic/li li">ibm-915_P100-1995</li>
+                <li class="- topic/li li">ibm-915</li>
+                <li class="- topic/li li">ISO-8859-5</li>
+                <li class="- topic/li li">cyrillic</li>
+                <li class="- topic/li li">csISOLatinCyrillic</li>
+                <li class="- topic/li li">iso-ir-144</li>
+                <li class="- topic/li li">ISO_8859-5:1988</li>
+                <li class="- topic/li li">8859_5</li>
+                <li class="- topic/li li">cp915</li>
+                <li class="- topic/li li">915</li>
+                <li class="- topic/li li">windows-28595</li>
+                <li class="- topic/li li">ibm-1089_P100-1995</li>
+                <li class="- topic/li li">ibm-1089</li>
+                <li class="- topic/li li">ISO-8859-6</li>
+                <li class="- topic/li li">arabic</li>
+                <li class="- topic/li li">csISOLatinArabic</li>
+                <li class="- topic/li li">iso-ir-127</li>
+                <li class="- topic/li li">ISO_8859-6:1987</li>
+                <li class="- topic/li li">ECMA-114</li>
+                <li class="- topic/li li">ASMO-708</li>
+                <li class="- topic/li li">8859_6</li>
+                <li class="- topic/li li">cp1089</li>
+                <li class="- topic/li li">1089</li>
+                <li class="- topic/li li">windows-28596</li>
+                <li class="- topic/li li">ISO-8859-6-I</li>
+                <li class="- topic/li li">ISO-8859-6-E</li>
+                <li class="- topic/li li">x-ISO-8859-6S</li>
+                <li class="- topic/li li">ibm-9005_X110-2007</li>
+                <li class="- topic/li li">ibm-9005</li>
+                <li class="- topic/li li">ISO-8859-7</li>
+                <li class="- topic/li li">8859_7</li>
+                <li class="- topic/li li">greek</li>
+                <li class="- topic/li li">greek8</li>
+                <li class="- topic/li li">ELOT_928</li>
+                <li class="- topic/li li">ECMA-118</li>
+                <li class="- topic/li li">csISOLatinGreek</li>
+                <li class="- topic/li li">iso-ir-126</li>
+                <li class="- topic/li li">ISO_8859-7:1987</li>
+                <li class="- topic/li li">windows-28597</li>
+                <li class="- topic/li li">sun_eu_greek</li>
+                <li class="- topic/li li">ibm-5012_P100-1999</li>
+                <li class="- topic/li li">ibm-5012</li>
+                <li class="- topic/li li">ISO-8859-8</li>
+                <li class="- topic/li li">hebrew</li>
+                <li class="- topic/li li">csISOLatinHebrew</li>
+                <li class="- topic/li li">iso-ir-138</li>
+                <li class="- topic/li li">ISO_8859-8:1988</li>
+                <li class="- topic/li li">ISO-8859-8-I</li>
+                <li class="- topic/li li">ISO-8859-8-E</li>
+                <li class="- topic/li li">8859_8</li>
+                <li class="- topic/li li">windows-28598</li>
+                <li class="- topic/li li">hebrew8</li>
+                <li class="- topic/li li">ibm-920_P100-1995</li>
+                <li class="- topic/li li">ibm-920</li>
+                <li class="- topic/li li">ISO-8859-9</li>
+                <li class="- topic/li li">latin5</li>
+                <li class="- topic/li li">csISOLatin5</li>
+                <li class="- topic/li li">iso-ir-148</li>
+                <li class="- topic/li li">ISO_8859-9:1989</li>
+                <li class="- topic/li li">l5</li>
+                <li class="- topic/li li">8859_9</li>
+                <li class="- topic/li li">cp920</li>
+                <li class="- topic/li li">920</li>
+                <li class="- topic/li li">windows-28599</li>
+                <li class="- topic/li li">ECMA-128</li>
+                <li class="- topic/li li">turkish8</li>
+                <li class="- topic/li li">turkish</li>
+                <li class="- topic/li li">iso-8859_10-1998</li>
+                <li class="- topic/li li">ISO-8859-10</li>
+                <li class="- topic/li li">iso-ir-157</li>
+                <li class="- topic/li li">l6</li>
+                <li class="- topic/li li">ISO_8859-10:1992</li>
+                <li class="- topic/li li">csISOLatin6</li>
+                <li class="- topic/li li">latin6</li>
+                <li class="- topic/li li">ibm-921_P100-1995</li>
+                <li class="- topic/li li">ibm-921</li>
+                <li class="- topic/li li">ISO-8859-13</li>
+                <li class="- topic/li li">8859_13</li>
+                <li class="- topic/li li">windows-28603</li>
+                <li class="- topic/li li">cp921</li>
+                <li class="- topic/li li">921</li>
+                <li class="- topic/li li">x-IBM921</li>
+                <li class="- topic/li li">iso-8859_14-1998</li>
+                <li class="- topic/li li">ISO-8859-14</li>
+                <li class="- topic/li li">iso-ir-199</li>
+                <li class="- topic/li li">ISO_8859-14:1998</li>
+                <li class="- topic/li li">latin8</li>
+                <li class="- topic/li li">iso-celtic</li>
+                <li class="- topic/li li">l8</li>
+                <li class="- topic/li li">ibm-923_P100-1998</li>
+                <li class="- topic/li li">ibm-923</li>
+                <li class="- topic/li li">ISO-8859-15</li>
+                <li class="- topic/li li">Latin-9</li>
+                <li class="- topic/li li">l9</li>
+                <li class="- topic/li li">8859_15</li>
+                <li class="- topic/li li">latin0</li>
+                <li class="- topic/li li">csisolatin0</li>
+                <li class="- topic/li li">csisolatin9</li>
+                <li class="- topic/li li">iso8859_15_fdis</li>
+                <li class="- topic/li li">cp923</li>
+                <li class="- topic/li li">923</li>
+                <li class="- topic/li li">windows-28605</li>
+                <li class="- topic/li li">ibm-943_P15A-2003</li>
+                <li class="- topic/li li">ibm-943</li>
+                <li class="- topic/li li">Shift_JIS</li>
+                <li class="- topic/li li">MS_Kanji</li>
+                <li class="- topic/li li">csShiftJIS</li>
+                <li class="- topic/li li">windows-31j</li>
+                <li class="- topic/li li">csWindows31J</li>
+                <li class="- topic/li li">x-sjis</li>
+                <li class="- topic/li li">x-ms-cp932</li>
+                <li class="- topic/li li">cp932</li>
+                <li class="- topic/li li">windows-932</li>
+                <li class="- topic/li li">cp943c</li>
+                <li class="- topic/li li">IBM-943C</li>
+                <li class="- topic/li li">ms932</li>
+                <li class="- topic/li li">pck</li>
+                <li class="- topic/li li">sjis</li>
+                <li class="- topic/li li">ibm-943_VSUB_VPUA</li>
+                <li class="- topic/li li">x-MS932_0213</li>
+                <li class="- topic/li li">x-JISAutoDetect</li>
+                <li class="- topic/li li">euc-jp-2007</li>
+                <li class="- topic/li li">EUC-JP</li>
+                <li class="- topic/li li">Extended_UNIX_Code_Packed_Format_for_Japanese</li>
+                <li class="- topic/li li">csEUCPkdFmtJapanese</li>
+                <li class="- topic/li li">X-EUC-JP</li>
+                <li class="- topic/li li">eucjis</li>
+                <li class="- topic/li li">ujis</li>
+                <li class="- topic/li li">windows-950-2000</li>
+                <li class="- topic/li li">Big5</li>
+                <li class="- topic/li li">csBig5</li>
+                <li class="- topic/li li">windows-950</li>
+                <li class="- topic/li li">x-windows-950</li>
+                <li class="- topic/li li">x-big5</li>
+                <li class="- topic/li li">ms950</li>
+                <li class="- topic/li li">ibm-1375_P100-2007</li>
+                <li class="- topic/li li">ibm-1375</li>
+                <li class="- topic/li li">Big5-HKSCS</li>
+                <li class="- topic/li li">big5hk</li>
+                <li class="- topic/li li">HKSCS-BIG5</li>
+                <li class="- topic/li li">windows-936-2000</li>
+                <li class="- topic/li li">GBK</li>
+                <li class="- topic/li li">CP936</li>
+                <li class="- topic/li li">MS936</li>
+                <li class="- topic/li li">windows-936</li>
+                <li class="- topic/li li">ibm-1383_P110-1999</li>
+                <li class="- topic/li li">ibm-1383</li>
+                <li class="- topic/li li">GB2312</li>
+                <li class="- topic/li li">csGB2312</li>
+                <li class="- topic/li li">cp1383</li>
+                <li class="- topic/li li">1383</li>
+                <li class="- topic/li li">EUC-CN</li>
+                <li class="- topic/li li">ibm-eucCN</li>
+                <li class="- topic/li li">hp15CN</li>
+                <li class="- topic/li li">ibm-1383_VPUA</li>
+                <li class="- topic/li li">ibm-5478_P100-1995</li>
+                <li class="- topic/li li">ibm-5478</li>
+                <li class="- topic/li li">GB_2312-80</li>
+                <li class="- topic/li li">chinese</li>
+                <li class="- topic/li li">iso-ir-58</li>
+                <li class="- topic/li li">csISO58GB231280</li>
+                <li class="- topic/li li">gb2312-1980</li>
+                <li class="- topic/li li">GB2312.1980-0</li>
+                <li class="- topic/li li">ibm-970_P110_P110-2006_U2</li>
+                <li class="- topic/li li">ibm-970</li>
+                <li class="- topic/li li">EUC-KR</li>
+                <li class="- topic/li li">KS_C_5601-1987</li>
+                <li class="- topic/li li">windows-51949</li>
+                <li class="- topic/li li">csEUCKR</li>
+                <li class="- topic/li li">ibm-eucKR</li>
+                <li class="- topic/li li">KSC_5601</li>
+                <li class="- topic/li li">5601</li>
+                <li class="- topic/li li">cp970</li>
+                <li class="- topic/li li">970</li>
+                <li class="- topic/li li">ibm-970_VPUA</li>
+                <li class="- topic/li li">x-IBM970</li>
+                <li class="- topic/li li">ibm-1363_P11B-1998</li>
+                <li class="- topic/li li">ibm-1363</li>
+                <li class="- topic/li li">KS_C_5601-1987</li>
+                <li class="- topic/li li">KS_C_5601-1989</li>
+                <li class="- topic/li li">KSC_5601</li>
+                <li class="- topic/li li">csKSC56011987</li>
+                <li class="- topic/li li">korean</li>
+                <li class="- topic/li li">iso-ir-149</li>
+                <li class="- topic/li li">cp1363</li>
+                <li class="- topic/li li">5601</li>
+                <li class="- topic/li li">ksc</li>
+                <li class="- topic/li li">windows-949</li>
+                <li class="- topic/li li">ibm-1363_VSUB_VPUA</li>
+                <li class="- topic/li li">x-IBM1363C</li>
+                <li class="- topic/li li">windows-949-2000</li>
+                <li class="- topic/li li">windows-949</li>
+                <li class="- topic/li li">KS_C_5601-1987</li>
+                <li class="- topic/li li">KS_C_5601-1989</li>
+                <li class="- topic/li li">KSC_5601</li>
+                <li class="- topic/li li">csKSC56011987</li>
+                <li class="- topic/li li">korean</li>
+                <li class="- topic/li li">iso-ir-149</li>
+                <li class="- topic/li li">ms949</li>
+                <li class="- topic/li li">x-KSC5601</li>
+                <li class="- topic/li li">windows-874-2000</li>
+                <li class="- topic/li li">TIS-620</li>
+                <li class="- topic/li li">windows-874</li>
+                <li class="- topic/li li">MS874</li>
+                <li class="- topic/li li">x-windows-874</li>
+                <li class="- topic/li li">ibm-437_P100-1995</li>
+                <li class="- topic/li li">ibm-437</li>
+                <li class="- topic/li li">IBM437</li>
+                <li class="- topic/li li">cp437</li>
+                <li class="- topic/li li">437</li>
+                <li class="- topic/li li">csPC8CodePage437</li>
+                <li class="- topic/li li">windows-437</li>
+                <li class="- topic/li li">ibm-775_P100-1996</li>
+                <li class="- topic/li li">ibm-775</li>
+                <li class="- topic/li li">IBM775</li>
+                <li class="- topic/li li">cp775</li>
+                <li class="- topic/li li">csPC775Baltic</li>
+                <li class="- topic/li li">windows-775</li>
+                <li class="- topic/li li">775</li>
+                <li class="- topic/li li">ibm-850_P100-1995</li>
+                <li class="- topic/li li">ibm-850</li>
+                <li class="- topic/li li">IBM850</li>
+                <li class="- topic/li li">cp850</li>
+                <li class="- topic/li li">850</li>
+                <li class="- topic/li li">csPC850Multilingual</li>
+                <li class="- topic/li li">windows-850</li>
+                <li class="- topic/li li">ibm-851_P100-1995</li>
+                <li class="- topic/li li">ibm-851</li>
+                <li class="- topic/li li">IBM851</li>
+                <li class="- topic/li li">cp851</li>
+                <li class="- topic/li li">851</li>
+                <li class="- topic/li li">csPC851</li>
+                <li class="- topic/li li">ibm-852_P100-1995</li>
+                <li class="- topic/li li">ibm-852</li>
+                <li class="- topic/li li">IBM852</li>
+                <li class="- topic/li li">cp852</li>
+                <li class="- topic/li li">852</li>
+                <li class="- topic/li li">csPCp852</li>
+                <li class="- topic/li li">windows-852</li>
+                <li class="- topic/li li">ibm-855_P100-1995</li>
+                <li class="- topic/li li">ibm-855</li>
+                <li class="- topic/li li">IBM855</li>
+                <li class="- topic/li li">cp855</li>
+                <li class="- topic/li li">855</li>
+                <li class="- topic/li li">csIBM855</li>
+                <li class="- topic/li li">csPCp855</li>
+                <li class="- topic/li li">windows-855</li>
+                <li class="- topic/li li">ibm-857_P100-1995</li>
+                <li class="- topic/li li">ibm-857</li>
+                <li class="- topic/li li">IBM857</li>
+                <li class="- topic/li li">cp857</li>
+                <li class="- topic/li li">857</li>
+                <li class="- topic/li li">csIBM857</li>
+                <li class="- topic/li li">windows-857</li>
+                <li class="- topic/li li">ibm-858_P100-1997</li>
+                <li class="- topic/li li">ibm-858</li>
+                <li class="- topic/li li">IBM00858</li>
+                <li class="- topic/li li">CCSID00858</li>
+                <li class="- topic/li li">CP00858</li>
+                <li class="- topic/li li">PC-Multilingual-850+euro</li>
+                <li class="- topic/li li">cp858</li>
+                <li class="- topic/li li">windows-858</li>
+                <li class="- topic/li li">ibm-860_P100-1995</li>
+                <li class="- topic/li li">ibm-860</li>
+                <li class="- topic/li li">IBM860</li>
+                <li class="- topic/li li">cp860</li>
+                <li class="- topic/li li">860</li>
+                <li class="- topic/li li">csIBM860</li>
+                <li class="- topic/li li">ibm-861_P100-1995</li>
+                <li class="- topic/li li">ibm-861</li>
+                <li class="- topic/li li">IBM861</li>
+                <li class="- topic/li li">cp861</li>
+                <li class="- topic/li li">861</li>
+                <li class="- topic/li li">cp-is</li>
+                <li class="- topic/li li">csIBM861</li>
+                <li class="- topic/li li">windows-861</li>
+                <li class="- topic/li li">ibm-862_P100-1995</li>
+                <li class="- topic/li li">ibm-862</li>
+                <li class="- topic/li li">IBM862</li>
+                <li class="- topic/li li">cp862</li>
+                <li class="- topic/li li">862</li>
+                <li class="- topic/li li">csPC862LatinHebrew</li>
+                <li class="- topic/li li">DOS-862</li>
+                <li class="- topic/li li">windows-862</li>
+                <li class="- topic/li li">ibm-863_P100-1995</li>
+                <li class="- topic/li li">ibm-863</li>
+                <li class="- topic/li li">IBM863</li>
+                <li class="- topic/li li">cp863</li>
+                <li class="- topic/li li">863</li>
+                <li class="- topic/li li">csIBM863</li>
+                <li class="- topic/li li">ibm-864_X110-1999</li>
+                <li class="- topic/li li">ibm-864</li>
+                <li class="- topic/li li">IBM864</li>
+                <li class="- topic/li li">cp864</li>
+                <li class="- topic/li li">csIBM864</li>
+                <li class="- topic/li li">ibm-865_P100-1995</li>
+                <li class="- topic/li li">ibm-865</li>
+                <li class="- topic/li li">IBM865</li>
+                <li class="- topic/li li">cp865</li>
+                <li class="- topic/li li">865</li>
+                <li class="- topic/li li">csIBM865</li>
+                <li class="- topic/li li">ibm-866_P100-1995</li>
+                <li class="- topic/li li">ibm-866</li>
+                <li class="- topic/li li">IBM866</li>
+                <li class="- topic/li li">cp866</li>
+                <li class="- topic/li li">866</li>
+                <li class="- topic/li li">csIBM866</li>
+                <li class="- topic/li li">windows-866</li>
+                <li class="- topic/li li">ibm-868_P100-1995</li>
+                <li class="- topic/li li">ibm-868</li>
+                <li class="- topic/li li">IBM868</li>
+                <li class="- topic/li li">CP868</li>
+                <li class="- topic/li li">868</li>
+                <li class="- topic/li li">csIBM868</li>
+                <li class="- topic/li li">cp-ar</li>
+                <li class="- topic/li li">ibm-869_P100-1995</li>
+                <li class="- topic/li li">ibm-869</li>
+                <li class="- topic/li li">IBM869</li>
+                <li class="- topic/li li">cp869</li>
+                <li class="- topic/li li">869</li>
+                <li class="- topic/li li">cp-gr</li>
+                <li class="- topic/li li">csIBM869</li>
+                <li class="- topic/li li">windows-869</li>
+                <li class="- topic/li li">ibm-878_P100-1996</li>
+                <li class="- topic/li li">ibm-878</li>
+                <li class="- topic/li li">KOI8-R</li>
+                <li class="- topic/li li">koi8</li>
+                <li class="- topic/li li">csKOI8R</li>
+                <li class="- topic/li li">windows-20866</li>
+                <li class="- topic/li li">cp878</li>
+                <li class="- topic/li li">ibm-1168_P100-2002</li>
+                <li class="- topic/li li">ibm-1168</li>
+                <li class="- topic/li li">KOI8-U</li>
+                <li class="- topic/li li">windows-21866</li>
+                <li class="- topic/li li">ibm-5346_P100-1998</li>
+                <li class="- topic/li li">ibm-5346</li>
+                <li class="- topic/li li">windows-1250</li>
+                <li class="- topic/li li">cp1250</li>
+                <li class="- topic/li li">ibm-5347_P100-1998</li>
+                <li class="- topic/li li">ibm-5347</li>
+                <li class="- topic/li li">windows-1251</li>
+                <li class="- topic/li li">cp1251</li>
+                <li class="- topic/li li">ANSI1251</li>
+                <li class="- topic/li li">ibm-5348_P100-1997</li>
+                <li class="- topic/li li">ibm-5348</li>
+                <li class="- topic/li li">windows-1252</li>
+                <li class="- topic/li li">cp1252</li>
+                <li class="- topic/li li">ibm-5349_P100-1998</li>
+                <li class="- topic/li li">ibm-5349</li>
+                <li class="- topic/li li">windows-1253</li>
+                <li class="- topic/li li">cp1253</li>
+                <li class="- topic/li li">ibm-5350_P100-1998</li>
+                <li class="- topic/li li">ibm-5350</li>
+                <li class="- topic/li li">windows-1254</li>
+                <li class="- topic/li li">cp1254</li>
+                <li class="- topic/li li">ibm-9447_P100-2002</li>
+                <li class="- topic/li li">ibm-9447</li>
+                <li class="- topic/li li">windows-1255</li>
+                <li class="- topic/li li">cp1255</li>
+                <li class="- topic/li li">ibm-9448_X100-2005</li>
+                <li class="- topic/li li">ibm-9448</li>
+                <li class="- topic/li li">windows-1256</li>
+                <li class="- topic/li li">cp1256</li>
+                <li class="- topic/li li">x-windows-1256S</li>
+                <li class="- topic/li li">ibm-9449_P100-2002</li>
+                <li class="- topic/li li">ibm-9449</li>
+                <li class="- topic/li li">windows-1257</li>
+                <li class="- topic/li li">cp1257</li>
+                <li class="- topic/li li">ibm-5354_P100-1998</li>
+                <li class="- topic/li li">ibm-5354</li>
+                <li class="- topic/li li">windows-1258</li>
+                <li class="- topic/li li">cp1258</li>
+                <li class="- topic/li li">macos-0_2-10.2</li>
+                <li class="- topic/li li">macintosh</li>
+                <li class="- topic/li li">mac</li>
+                <li class="- topic/li li">csMacintosh</li>
+                <li class="- topic/li li">windows-10000</li>
+                <li class="- topic/li li">macroman</li>
+                <li class="- topic/li li">x-macroman</li>
+                <li class="- topic/li li">macos-6_2-10.4</li>
+                <li class="- topic/li li">x-mac-greek</li>
+                <li class="- topic/li li">windows-10006</li>
+                <li class="- topic/li li">macgr</li>
+                <li class="- topic/li li">x-MacGreek</li>
+                <li class="- topic/li li">macos-7_3-10.2</li>
+                <li class="- topic/li li">x-mac-cyrillic</li>
+                <li class="- topic/li li">windows-10007</li>
+                <li class="- topic/li li">mac-cyrillic</li>
+                <li class="- topic/li li">maccy</li>
+                <li class="- topic/li li">x-MacCyrillic</li>
+                <li class="- topic/li li">x-MacUkraine</li>
+                <li class="- topic/li li">macos-29-10.2</li>
+                <li class="- topic/li li">x-mac-centraleurroman</li>
+                <li class="- topic/li li">windows-10029</li>
+                <li class="- topic/li li">x-mac-ce</li>
+                <li class="- topic/li li">macce</li>
+                <li class="- topic/li li">maccentraleurope</li>
+                <li class="- topic/li li">x-MacCentralEurope</li>
+                <li class="- topic/li li">macos-35-10.2</li>
+                <li class="- topic/li li">x-mac-turkish</li>
+                <li class="- topic/li li">windows-10081</li>
+                <li class="- topic/li li">mactr</li>
+                <li class="- topic/li li">x-MacTurkish</li>
+                <li class="- topic/li li">ibm-1051_P100-1995</li>
+                <li class="- topic/li li">ibm-1051</li>
+                <li class="- topic/li li">hp-roman8</li>
+                <li class="- topic/li li">roman8</li>
+                <li class="- topic/li li">r8</li>
+                <li class="- topic/li li">csHPRoman8</li>
+                <li class="- topic/li li">x-roman8</li>
+                <li class="- topic/li li">ibm-1276_P100-1995</li>
+                <li class="- topic/li li">ibm-1276</li>
+                <li class="- topic/li li">Adobe-Standard-Encoding</li>
+                <li class="- topic/li li">csAdobeStandardEncoding</li>
+                <li class="- topic/li li">ISO_2022</li>
+                <li class="- topic/li li">locale=ja</li>
+                <li class="- topic/li li">version=0</li>
+                <li class="- topic/li li">ISO-2022-JP</li>
+                <li class="- topic/li li">csISO2022JP</li>
+                <li class="- topic/li li">x-windows-iso2022jp</li>
+                <li class="- topic/li li">x-windows-50220</li>
+                <li class="- topic/li li">ISO_2022</li>
+                <li class="- topic/li li">locale=ja</li>
+                <li class="- topic/li li">version=1</li>
+                <li class="- topic/li li">ISO-2022-JP-1</li>
+                <li class="- topic/li li">JIS_Encoding</li>
+                <li class="- topic/li li">csJISEncoding</li>
+                <li class="- topic/li li">ibm-5054</li>
+                <li class="- topic/li li">JIS</li>
+                <li class="- topic/li li">x-windows-50221</li>
+                <li class="- topic/li li">ISO_2022</li>
+                <li class="- topic/li li">locale=ja</li>
+                <li class="- topic/li li">version=2</li>
+                <li class="- topic/li li">ISO-2022-JP-2</li>
+                <li class="- topic/li li">csISO2022JP2</li>
+                <li class="- topic/li li">ISO_2022</li>
+                <li class="- topic/li li">locale=ko</li>
+                <li class="- topic/li li">version=0</li>
+                <li class="- topic/li li">ISO-2022-KR</li>
+                <li class="- topic/li li">csISO2022KR</li>
+                <li class="- topic/li li">ISO_2022</li>
+                <li class="- topic/li li">locale=zh</li>
+                <li class="- topic/li li">version=0</li>
+                <li class="- topic/li li">ISO-2022-CN</li>
+                <li class="- topic/li li">csISO2022CN</li>
+                <li class="- topic/li li">x-ISO-2022-CN-GB</li>
+                <li class="- topic/li li">ISO_2022</li>
+                <li class="- topic/li li">locale=zh</li>
+                <li class="- topic/li li">version=1</li>
+                <li class="- topic/li li">ISO-2022-CN-EXT</li>
+                <li class="- topic/li li">HZ</li>
+                <li class="- topic/li li">HZ-GB-2312</li>
+                <li class="- topic/li li">ibm-37_P100-1995</li>
+                <li class="- topic/li li">ibm-37</li>
+                <li class="- topic/li li">IBM037</li>
+                <li class="- topic/li li">ibm-037</li>
+                <li class="- topic/li li">ebcdic-cp-us</li>
+                <li class="- topic/li li">ebcdic-cp-ca</li>
+                <li class="- topic/li li">ebcdic-cp-wt</li>
+                <li class="- topic/li li">ebcdic-cp-nl</li>
+                <li class="- topic/li li">csIBM037</li>
+                <li class="- topic/li li">cp037</li>
+                <li class="- topic/li li">037</li>
+                <li class="- topic/li li">cpibm37</li>
+                <li class="- topic/li li">cp37</li>
+                <li class="- topic/li li">ibm-273_P100-1995</li>
+                <li class="- topic/li li">ibm-273</li>
+                <li class="- topic/li li">IBM273</li>
+                <li class="- topic/li li">CP273</li>
+                <li class="- topic/li li">csIBM273</li>
+                <li class="- topic/li li">ebcdic-de</li>
+                <li class="- topic/li li">273</li>
+                <li class="- topic/li li">ibm-277_P100-1995</li>
+                <li class="- topic/li li">ibm-277</li>
+                <li class="- topic/li li">IBM277</li>
+                <li class="- topic/li li">cp277</li>
+                <li class="- topic/li li">EBCDIC-CP-DK</li>
+                <li class="- topic/li li">EBCDIC-CP-NO</li>
+                <li class="- topic/li li">csIBM277</li>
+                <li class="- topic/li li">ebcdic-dk</li>
+                <li class="- topic/li li">277</li>
+                <li class="- topic/li li">ibm-278_P100-1995</li>
+                <li class="- topic/li li">ibm-278</li>
+                <li class="- topic/li li">IBM278</li>
+                <li class="- topic/li li">cp278</li>
+                <li class="- topic/li li">ebcdic-cp-fi</li>
+                <li class="- topic/li li">ebcdic-cp-se</li>
+                <li class="- topic/li li">csIBM278</li>
+                <li class="- topic/li li">ebcdic-sv</li>
+                <li class="- topic/li li">278</li>
+                <li class="- topic/li li">ibm-280_P100-1995</li>
+                <li class="- topic/li li">ibm-280</li>
+                <li class="- topic/li li">IBM280</li>
+                <li class="- topic/li li">CP280</li>
+                <li class="- topic/li li">ebcdic-cp-it</li>
+                <li class="- topic/li li">csIBM280</li>
+                <li class="- topic/li li">280</li>
+                <li class="- topic/li li">ibm-284_P100-1995</li>
+                <li class="- topic/li li">ibm-284</li>
+                <li class="- topic/li li">IBM284</li>
+                <li class="- topic/li li">CP284</li>
+                <li class="- topic/li li">ebcdic-cp-es</li>
+                <li class="- topic/li li">csIBM284</li>
+                <li class="- topic/li li">cpibm284</li>
+                <li class="- topic/li li">284</li>
+                <li class="- topic/li li">ibm-285_P100-1995</li>
+                <li class="- topic/li li">ibm-285</li>
+                <li class="- topic/li li">IBM285</li>
+                <li class="- topic/li li">CP285</li>
+                <li class="- topic/li li">ebcdic-cp-gb</li>
+                <li class="- topic/li li">csIBM285</li>
+                <li class="- topic/li li">cpibm285</li>
+                <li class="- topic/li li">ebcdic-gb</li>
+                <li class="- topic/li li">285</li>
+                <li class="- topic/li li">ibm-290_P100-1995</li>
+                <li class="- topic/li li">ibm-290</li>
+                <li class="- topic/li li">IBM290</li>
+                <li class="- topic/li li">cp290</li>
+                <li class="- topic/li li">EBCDIC-JP-kana</li>
+                <li class="- topic/li li">csIBM290</li>
+                <li class="- topic/li li">ibm-297_P100-1995</li>
+                <li class="- topic/li li">ibm-297</li>
+                <li class="- topic/li li">IBM297</li>
+                <li class="- topic/li li">cp297</li>
+                <li class="- topic/li li">ebcdic-cp-fr</li>
+                <li class="- topic/li li">csIBM297</li>
+                <li class="- topic/li li">cpibm297</li>
+                <li class="- topic/li li">297</li>
+                <li class="- topic/li li">ibm-420_X120-1999</li>
+                <li class="- topic/li li">ibm-420</li>
+                <li class="- topic/li li">IBM420</li>
+                <li class="- topic/li li">cp420</li>
+                <li class="- topic/li li">ebcdic-cp-ar1</li>
+                <li class="- topic/li li">csIBM420</li>
+                <li class="- topic/li li">420</li>
+                <li class="- topic/li li">ibm-424_P100-1995</li>
+                <li class="- topic/li li">ibm-424</li>
+                <li class="- topic/li li">IBM424</li>
+                <li class="- topic/li li">cp424</li>
+                <li class="- topic/li li">ebcdic-cp-he</li>
+                <li class="- topic/li li">csIBM424</li>
+                <li class="- topic/li li">424</li>
+                <li class="- topic/li li">ibm-500_P100-1995</li>
+                <li class="- topic/li li">ibm-500</li>
+                <li class="- topic/li li">IBM500</li>
+                <li class="- topic/li li">CP500</li>
+                <li class="- topic/li li">ebcdic-cp-be</li>
+                <li class="- topic/li li">csIBM500</li>
+                <li class="- topic/li li">ebcdic-cp-ch</li>
+                <li class="- topic/li li">500</li>
+                <li class="- topic/li li">ibm-838_P100-1995</li>
+                <li class="- topic/li li">ibm-838</li>
+                <li class="- topic/li li">IBM838</li>
+                <li class="- topic/li li">IBM-Thai</li>
+                <li class="- topic/li li">csIBMThai</li>
+                <li class="- topic/li li">cp838</li>
+                <li class="- topic/li li">838</li>
+                <li class="- topic/li li">ibm-9030</li>
+                <li class="- topic/li li">ibm-870_P100-1995</li>
+                <li class="- topic/li li">ibm-870</li>
+                <li class="- topic/li li">IBM870</li>
+                <li class="- topic/li li">CP870</li>
+                <li class="- topic/li li">ebcdic-cp-roece</li>
+                <li class="- topic/li li">ebcdic-cp-yu</li>
+                <li class="- topic/li li">csIBM870</li>
+                <li class="- topic/li li">ibm-871_P100-1995</li>
+                <li class="- topic/li li">ibm-871</li>
+                <li class="- topic/li li">IBM871</li>
+                <li class="- topic/li li">ebcdic-cp-is</li>
+                <li class="- topic/li li">csIBM871</li>
+                <li class="- topic/li li">CP871</li>
+                <li class="- topic/li li">ebcdic-is</li>
+                <li class="- topic/li li">871</li>
+                <li class="- topic/li li">ibm-918_P100-1995</li>
+                <li class="- topic/li li">ibm-918</li>
+                <li class="- topic/li li">IBM918</li>
+                <li class="- topic/li li">CP918</li>
+                <li class="- topic/li li">ebcdic-cp-ar2</li>
+                <li class="- topic/li li">csIBM918</li>
+                <li class="- topic/li li">ibm-1026_P100-1995</li>
+                <li class="- topic/li li">ibm-1026</li>
+                <li class="- topic/li li">IBM1026</li>
+                <li class="- topic/li li">CP1026</li>
+                <li class="- topic/li li">csIBM1026</li>
+                <li class="- topic/li li">1026</li>
+                <li class="- topic/li li">ibm-1047_P100-1995</li>
+                <li class="- topic/li li">ibm-1047</li>
+                <li class="- topic/li li">IBM1047</li>
+                <li class="- topic/li li">cp1047</li>
+                <li class="- topic/li li">1047</li>
+                <li class="- topic/li li">ibm-1140_P100-1997</li>
+                <li class="- topic/li li">ibm-1140</li>
+                <li class="- topic/li li">IBM01140</li>
+                <li class="- topic/li li">CCSID01140</li>
+                <li class="- topic/li li">CP01140</li>
+                <li class="- topic/li li">cp1140</li>
+                <li class="- topic/li li">ebcdic-us-37+euro</li>
+                <li class="- topic/li li">ibm-1141_P100-1997</li>
+                <li class="- topic/li li">ibm-1141</li>
+                <li class="- topic/li li">IBM01141</li>
+                <li class="- topic/li li">CCSID01141</li>
+                <li class="- topic/li li">CP01141</li>
+                <li class="- topic/li li">cp1141</li>
+                <li class="- topic/li li">ebcdic-de-273+euro</li>
+                <li class="- topic/li li">ibm-1142_P100-1997</li>
+                <li class="- topic/li li">ibm-1142</li>
+                <li class="- topic/li li">IBM01142</li>
+                <li class="- topic/li li">CCSID01142</li>
+                <li class="- topic/li li">CP01142</li>
+                <li class="- topic/li li">cp1142</li>
+                <li class="- topic/li li">ebcdic-dk-277+euro</li>
+                <li class="- topic/li li">ebcdic-no-277+euro</li>
+                <li class="- topic/li li">ibm-1143_P100-1997</li>
+                <li class="- topic/li li">ibm-1143</li>
+                <li class="- topic/li li">IBM01143</li>
+                <li class="- topic/li li">CCSID01143</li>
+                <li class="- topic/li li">CP01143</li>
+                <li class="- topic/li li">cp1143</li>
+                <li class="- topic/li li">ebcdic-fi-278+euro</li>
+                <li class="- topic/li li">ebcdic-se-278+euro</li>
+                <li class="- topic/li li">ibm-1144_P100-1997</li>
+                <li class="- topic/li li">ibm-1144</li>
+                <li class="- topic/li li">IBM01144</li>
+                <li class="- topic/li li">CCSID01144</li>
+                <li class="- topic/li li">CP01144</li>
+                <li class="- topic/li li">cp1144</li>
+                <li class="- topic/li li">ebcdic-it-280+euro</li>
+                <li class="- topic/li li">ibm-1145_P100-1997</li>
+                <li class="- topic/li li">ibm-1145</li>
+                <li class="- topic/li li">IBM01145</li>
+                <li class="- topic/li li">CCSID01145</li>
+                <li class="- topic/li li">CP01145</li>
+                <li class="- topic/li li">cp1145</li>
+                <li class="- topic/li li">ebcdic-es-284+euro</li>
+                <li class="- topic/li li">ibm-1146_P100-1997</li>
+                <li class="- topic/li li">ibm-1146</li>
+                <li class="- topic/li li">IBM01146</li>
+                <li class="- topic/li li">CCSID01146</li>
+                <li class="- topic/li li">CP01146</li>
+                <li class="- topic/li li">cp1146</li>
+                <li class="- topic/li li">ebcdic-gb-285+euro</li>
+                <li class="- topic/li li">ibm-1147_P100-1997</li>
+                <li class="- topic/li li">ibm-1147</li>
+                <li class="- topic/li li">IBM01147</li>
+                <li class="- topic/li li">CCSID01147</li>
+                <li class="- topic/li li">CP01147</li>
+                <li class="- topic/li li">cp1147</li>
+                <li class="- topic/li li">ebcdic-fr-297+euro</li>
+                <li class="- topic/li li">ibm-1148_P100-1997</li>
+                <li class="- topic/li li">ibm-1148</li>
+                <li class="- topic/li li">IBM01148</li>
+                <li class="- topic/li li">CCSID01148</li>
+                <li class="- topic/li li">CP01148</li>
+                <li class="- topic/li li">cp1148</li>
+                <li class="- topic/li li">ebcdic-international-500+euro</li>
+                <li class="- topic/li li">ibm-1149_P100-1997</li>
+                <li class="- topic/li li">ibm-1149</li>
+                <li class="- topic/li li">IBM01149</li>
+                <li class="- topic/li li">CCSID01149</li>
+                <li class="- topic/li li">CP01149</li>
+                <li class="- topic/li li">cp1149</li>
+                <li class="- topic/li li">ebcdic-is-871+euro</li>
+                <li class="- topic/li li">TSCII</li>
+            </ul>
+        </section>
+        <div class="- topic/example example">
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>main()
+{
+  string templateFile;
+
+/* An ISO file - fileToString().
+    Writes the content of the ISO file to a string */
+  bool ret = fileToString("D:\\Documents\\recodeISO.txt", templateFile, "ISO88591");
+  DebugN("fileToString() return ", ret);
+  dyn_string templateConfigs = strsplit(templateFile, '\n');
+  DebugN("An ISO file to String",templateConfigs);
+
+
+//ISO file - recode() function.
+    Converts an ISO file to a UTF8 file
+  bool ret2 = fileToString("D:\\Documents\\recodeISO.txt", templateFile);
+  DebugN("fileToString() return ", ret2);
+  templateFile = recode(templateFile, "ISO88591", "UTF8");
+  dyn_string templateConfigs = strsplit(templateFile, '\n');
+  DebugN("An ISO String to UTF",templateConfigs);
+}</code></pre>
+        </div>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Assignment</h2>
+            
+            <p class="- topic/p p">File function</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Availability</h2>
+            
+            <p class="- topic/p p">UI</p>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="recodeBlob.html" title="The function recodeBlob() recodes a character set, like recode(), but works with a blob.">recodeBlob()</a><div class="- topic/desc desc">The function recodeBlob() recodes a character set, like <a class="- topic/xref xref" href="recode.html">recode()</a>, but             works with a blob.</div></li></ul></div></nav></div>
+                        <whc:webhelp_feedback xmlns="" xmlns:whc="http://www.oxygenxml.com/webhelp/components" class="d-print-none"></whc:webhelp_feedback>
+                        <div id="oxygen-feedback-frame-container">
+    <script id="feedback-init" defer="defer" src="https://feedback.oxygenxml.com/app/init/init.js?deploymentToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJkZXBsb3ltZW50SWQiOjEwNDZ9.Z1wqIErte4dBbWAxxQnr_fHeATFbjXktFL-YJhZGIqTkGp1a6WK3pEQHY_0k2BgIRi6amadmqqEJyzGOW8YzSg"><!-- --></script>
+</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+        <div data-whc_version="25.0" class="navbar navbar-default wh_footer">
+  <div class="footer_div_left">
+    <a href="../oxygen-webhelp/template/../../iec_62443/topics/iec_62443_certification.html" target="_blank"><img class="cert-image_iec62443"/></a>
+    <a href="../oxygen-webhelp/template/../../iec_61508/iec_61508_certification.html" target="_blank"><img class="cert-image_iec61508"/></a>
+  </div>
+  <div class="footer_div_center">
+    <p>SIMATIC WinCC Open Architecture Version 3.21.1 - © ETM professional control GmbH <span id="span_year"></span> - <a href="mailto:documentation@etm.at" target="_blank"><img class="sm_icon mail"/></a> | <a href="https://www.linkedin.com/company/etm-professional-control/" target="_blank"><img class="sm_icon linkedin"/></a> | <a href="https://www.facebook.com/WinCC.OA" target="_blank"><img class="sm_icon facebook"/></a> | <a href="https://www.youtube.com/@WinCCOA" target="_blank"><img class="sm_icon youtube"/></a> - <a href="https://www.winccoa.com/rights/privacy-policy.html" target="_blank">Privacy Policy</a> - <a href="https://www.siemens.com/global/en/general/cookie-notice.html" target="_blank">Cookie Policy</a> - <a href="https://www.winccoa.com/rights/terms-of-use.html" target="_blank">Terms of use</a> -  <a href="https://www.siemens.com/global/en/company/about/compliance/reporting-channels.html" target="_blank">Whistleblowing</a> - <a href="https://www.winccoa.com/company/imprint.html" target="_blank">Imprint</a></p>
+    <script>document.querySelector('#span_year').innerHTML = new Date().getFullYear();</script>
+  </div>
+  <div class="footer_div_right"></div>
+</div>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" alt=""/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <div id="chatbot">
+ <iframe id="openassistantgpt-chatbot-button-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/button?chatbox=false" style="display:none; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+ <!-- This chatbot is build using https://openassistantgpt.io/ -->
+ <iframe allowfullscreen="" id="openassistantgpt-chatbot-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/window?chatbox=false&amp;withExitX=true" style="margin-right: 1rem; margin-bottom: 6rem; display: none; position: fixed; right: 0; bottom: 0; pointer-events: none; overflow: hidden; height: 65vh; border: 2px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); width: 30rem;"></iframe>
+  <script><!--
+
+   var currentUrl = window.location.href; //get current url
+   var btn = document.getElementById("openassistantgpt-chatbot-button-iframe"); //get the chatbot button
+   var btn_oa = document.getElementById("assistant_button"); //get the chatbot button
+   if(['/3.20/', '/latest/'].some(el => currentUrl.includes(el))){
+    btn.style.display = "inline-block"; //enable chatbot button
+    btn_oa.style.display = "inline-block"; //enable chatbot button
+    window.addEventListener("message", function(t) {
+      var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+       s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+  
+      function toggleChatVisibility() {
+       if (e && s) {
+        e.contentWindow.postMessage("openChat", "*");
+        s.contentWindow.postMessage("openChat", "*");
+        e.style.pointerEvents = "auto";
+        e.style.display = "block";
+        if (window.innerWidth < 640) {
+         e.style.position = "fixed";
+         e.style.width = "100%";
+         e.style.height = "100%";
+         e.style.top = "0";
+         e.style.left = "0";
+         e.style.zIndex = "9999";
+        } else {
+         e.style.position = "fixed";
+         e.style.width = "30rem";
+         e.style.height = "65vh";
+         e.style.bottom = "0";
+         e.style.right = "0";
+         e.style.top = "";
+         e.style.left = "";
+        }
+       } else {
+        console.error("iframe not found");
+       }
+      }
+      function closeChat() {
+       if (e && s) {
+        e.style.display = "none";
+        e.style.pointerEvents = "none";
+        e.contentWindow.postMessage("closeChat", "*");
+        s.contentWindow.postMessage("closeChat", "*");
+       }
+      }
+      if (t.data === "openChat") {
+       toggleChatVisibility();
+      } else if (t.data === "closeChat") {
+       closeChat();
+      }
+     });
+     // Add event listener for assistant_button click
+     document.getElementById("assistant_button").addEventListener("click", function() {
+      var event = new Event("message");
+      if(document.getElementById("openassistantgpt-chatbot-iframe").style.display == "block")
+      {
+       event.data = "closeChat";
+      }
+      else
+      {
+       event.data = "openChat";
+      }
+      window.dispatchEvent(event);
+     });
+    }
+   
+--></script>
+   <script><!--
+
+    document.getElementById("menu_toggler").addEventListener("click", function() {
+     document.querySelector('#wh_menu_mobile_button').click();
+   });
+  
+--></script>
+  <script><!--
+
+   function getBrowserColorScheme() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+     return "dark";
+    } 
+    return "light";  
+   }
+   function getLocalColorScheme(){
+    return localStorage.getItem("theme");
+   }
+   function setSchemeClass(colorScheme){
+    document.body.classList.add(colorScheme);
+    if(colorScheme === "light"){
+     document.body.classList.remove("dark");
+    }
+    else{
+     document.body.classList.remove("light");
+    }
+   }
+   function isSchemeClassSet(colorScheme)
+   {
+    return document.body.classList.contains(colorScheme);
+   }
+   function setLocalColorScheme(colorScheme){
+    localStorage.setItem("theme", colorScheme);
+    setSchemeClass(colorScheme);
+   }
+   function isLocalColorSchemeSet() {
+    if(getLocalColorScheme() === null){
+     return false;
+    }
+    return true;
+   }
+   function toggleLocalColorScheme(currentSchema){
+    if(currentSchema === "light"){
+     setLocalColorScheme("dark");
+    }
+    else
+    {
+     setLocalColorScheme("light");
+    }
+   }
+   if(isLocalColorSchemeSet())
+   {
+    setSchemeClass(getLocalColorScheme());
+   }
+   else{
+    setLocalColorScheme(getBrowserColorScheme());
+   }
+   
+   document.getElementById("theme_toggler").addEventListener("click", function() {
+    if(isLocalColorSchemeSet()){
+     toggleLocalColorScheme(getLocalColorScheme());
+    }
+    else
+    {
+     toggleLocalColorScheme(getBrowserColorScheme());
+    }
+   });
+  
+--></script>
+</div>
+<div>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-2142215-10"></script>
+    <script><!--
+ window.dataLayer = window.dataLayer || []; function
+        gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','UA-2142215-10'); 
+--></script>
+</div>
+    </body>
+</html>

@@ -1,0 +1,1334 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="25.0">
+    <head><link rel="shortcut icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><link rel="icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="keywords" content="WinCCOA, OnlineHelp, Online Help, Documentation, OA, SIMATIC, WinCC OA, WCCOA"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="-1"/><meta name="description" content="A B C D E F G H I L M N O P Q R S T U V W X Y Z Function Availability Use dataHost() CTRL Miscellaneous function dataPort() CTRL Redundancy functions day() CTRL Time function daylightsaving() CTRL ..."/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="topicID1"/><title>Functions D...</title><!--  Generated with Oxygen version 27.0, build number 2024121223.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content=""/><meta name="wh-source-relpath" content="ControlA_D/functions_d.dita"/><meta name="wh-out-relpath" content="ControlA_D/functions_d.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2024121223"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2024121223"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260226124654"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2024121223"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260226124654"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2024121223"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2024121223"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/style.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/mobile.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/tile-icons.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/single-line-dlentry.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/footer.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/chatbot.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/syntax.css?buildId=2024121223"/><script src="//assets.adobedtm.com/5dfc7d97c6fb/9452e85082e5/launch-b4ffda58d5f0.min.js" async="async"></script></head>
+
+    <body id="topicID1" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="23.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/modern/winccoa.png" alt="WinCC OA Documentation"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title"><span class="ph">WinCC OA Documentation</span></span></a></div>
+                    <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+                    <div id="assistant_button" title="AI powered WinCC OA Assistant"></div>
+                    <div id="menu_toggler" title="Toggle Main Menu"></div>
+                    <div id="theme_toggler" title="Toggle Dark/Light Theme"></div>
+                    <div id="lang_toggler"><a href="#" onclick="switchLanguage()" class="lang_switch_link">LANG</a></div>
+<script><!--
+
+  /* Set image of lang switch button */
+  var url = window.location.href;
+    
+  if(['/en/', '/en_US/'].some(el => url.includes(el)))
+  {
+    document.body.classList.add("lang-en");
+    document.getElementById("assistant_button").textContent = "WinCC OA AI Assistant";
+  }
+  else
+  {
+    document.body.classList.add("lang-de");
+    document.getElementById("assistant_button").textContent = "WinCC OA KI-Assistent";
+  }
+
+  /* Click event for lang switch button */
+  function switchLanguage() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+    if(['/en/', '/en_US/'].some(el => currentUrl.includes(el)))
+    {      
+      newUrl = currentUrl.replace('/en/', '/de/');
+      newUrl = currentUrl.replace('/en_US/', '/de_AT/');
+    }
+    else if(['/de/', '/de_AT/'].some(el => currentUrl.includes(el)))
+    {
+      newUrl = currentUrl.replace('/de/', '/en/');
+      newUrl = currentUrl.replace('/de_AT/', '/en_US/');
+    } 
+    window.location.href = newUrl;
+  }
+
+--></script>
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="version_information-d54385e2159-mi" data-tocid="version_information-d54385e2159" data-state="not-ready" class=" topicref " data-id="version_information"><span class="title"><a href="../release_notes/version_information.html">Version Information</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e5517-mi" data-tocid="concepts-d54385e5517" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/concepts.html">Concepts</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e6907-mi" data-tocid="concepts-d54385e6907" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/deployment.html">Deployment</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_security-d54385e10162-mi" data-tocid="main_security-d54385e10162" data-state="not-ready" class=" topicref " data-id="main_security"><span class="title"><a href="../security/topics/security.html">Security</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="engineering-d54385e11399-mi" data-tocid="engineering-d54385e11399" data-state="not-ready" class=" topicref " data-id="engineering"><span class="title"><a href="../_resources/toc/engineering.html">Engineering</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e20103-mi" data-tocid="data_management-d54385e20103" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/data_management.html">Data Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e24184-mi" data-tocid="data_management-d54385e24184" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_visualization-d54385e64646-mi" data-tocid="data_visualization-d54385e64646" data-state="not-ready" class=" topicref " data-id="data_visualization"><span class="title"><a href="../_resources/toc/data_visualization.html">Data Visualization</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="southbound_interfaces-d54385e67006-mi" data-tocid="southbound_interfaces-d54385e67006" data-state="not-ready" class=" topicref " data-id="southbound_interfaces"><span class="title"><a href="../_resources/toc/southbound_interfaces.html">Southbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="north_bound-d54385e70326-mi" data-tocid="north_bound-d54385e70326" data-state="not-ready" class=" topicref " data-id="north_bound"><span class="title"><a href="../_resources/toc/northbound_interfaces.html">Northbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="webconnectivity-d54385e71612-mi" data-tocid="webconnectivity-d54385e71612" data-state="not-ready" class=" topicref " data-id="webconnectivity"><span class="title"><a href="../_resources/toc/webconnectivity.html">Web Connectivity / Network Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="user_management-d54385e75413-mi" data-tocid="user_management-d54385e75413" data-state="not-ready" class=" topicref " data-id="user_management"><span class="title"><a href="../_resources/toc/user_management.html">User Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="availability-d54385e76708-mi" data-tocid="availability-d54385e76708" data-state="not-ready" class=" topicref " data-id="availability"><span class="title"><a href="../_resources/toc/availability.html">Availability</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reporting-d54385e77549-mi" data-tocid="reporting-d54385e77549" data-state="not-ready" class=" topicref " data-id="reporting"><span class="title"><a href="../_resources/toc/reporting.html">Reporting</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="addons-d54385e78241-mi" data-tocid="addons-d54385e78241" data-state="not-ready" class=" topicref " data-id="addons"><span class="title"><a href="../_resources/toc/addons.html">Addons</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reference_tables-d54385e81051-mi" data-tocid="reference_tables-d54385e81051" data-state="not-ready" class=" topicref " data-id="reference_tables"><span class="title"><a href="../_resources/toc/reference_tables.html">Reference Tables</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_videos-d54385e83295-mi" data-tocid="main_videos-d54385e83295" data-state="not-ready" class=" topicref " data-id="main_videos"><span class="title"><a href="../videos/video_tutorials.html">Videos &amp; Tutorials</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="documentation-d54385e83842-mi" data-tocid="documentation-d54385e83842" data-state="not-ready" class=" topicref " data-id="documentation"><span class="title"><a href="../general/topics/documentation.html">Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support-d54385e83905-mi" data-tocid="support-d54385e83905" data-state="not-ready" class=" topicref " data-id="support"><span class="title"><a href="../Support/topics/support.html">Support &amp; Services</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="disclaimer-d54385e83935-mi" data-tocid="disclaimer-d54385e83935" data-state="not-ready" class=" topicref " data-id="disclaimer"><span class="title"><a href="../_resources/toc/disclaimer.html">Disclaimer</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "></div>
+
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                    
+                    <div class="col-12" id="wh_topic_body">
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic topic" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Functions D...</h1>
+    <div class="- topic/body body">
+        <p class="- topic/p p">
+            <a class="- topic/xref xref" href="functions_a.html">A</a>
+            <a class="- topic/xref xref" href="functions_b.html">B</a>
+            <a class="- topic/xref xref" href="functions_c.html">C</a>
+            <a class="- topic/xref xref" href="functions_d.html">D</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_e.html">E</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_f.html">F</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_g.html">G</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_h.html">H</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_i.html">I</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_l.html">L</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_m.html">M</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_n.html">N</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_o.html">O</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_p.html">P</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_q.html">Q</a>
+            <a class="- topic/xref xref" href="../ControlE_R/functions_r.html">R</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_s.html">S</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_t.html">T</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_u.html">U</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_v.html">V</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_w.html">W</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_x.html">X</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_y.html">Y</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_z.html">Z</a>
+        </p>
+        <div class="table-container"><table class="- topic/table table" data-cols="3"><caption></caption><colgroup><col/><col/><col/></colgroup><thead class="- topic/thead thead">
+                    <tr class="- topic/row">
+                        <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__1">Function</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__2">Availability</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__3"> Use</th>
+                    </tr>
+                </thead><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dataHost.html" title="Returns the host name the Data Manager is running on.">dataHost()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dataPort.html" title="Returns the port number of the data manager.">dataPort()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Redundancy functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="day.html" title="Returns the day of the month.">day()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Time function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="daylightsaving.html" title="Checks whether the time is winter time or summer time.">daylightsaving()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Time function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="daySecond.html" title="Returns the seconds of the day.">daySecond()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Time function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbAddNew.html" title="Database function that generates a new, empty data record.">dbAddNew()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbBeginTransaction.html" title="Database function for starting a transaction.">dbBeginTransaction()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbBulkCommand.html" title="Summarizes the ADO functions dbStartCommand() (prepares a data manipulation command), dbExecuteCommand() (executes a data manipulation command) and dbFinishCommand() (closes a data manipulation command).">dbBulkCommand()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbCloseConnection.html" title="Function for closing a connection to a data source.">dbCloseConnection()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbCloseRecordset.html" title="Database function for closing a tabular data subset of a data source.">dbCloseRecordset()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbCommitTransaction.html" title="Database function for closing a transaction, changes are implemented.">dbCommitTransaction()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbDelete.html" title="Database function which deletes the current data record.">dbDelete()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">ADO, database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbEOF.html" title="Database function for determining whether the data record pointer has reached the end of the record set.">dbEOF()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbExecuteCommand.html" title="Database function for executing a database manipulation command.">dbExecuteCommand()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbFinishCommand.html" title="Database function for releasing a command object.">dbFinishCommand()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbGetError.html" title="Database function that returns the currently waiting error codes and messages.">dbGetError()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbGetField.html" title="Database function which reads a column (field) of the current data record.">dbGetField()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbGetRecord.html" title="Reads the records from a row.">dbGetRecord()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbGetResult.html" title="Returns all results of an SQL query.">dbGetResult()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbMove.html" title="Database function which moves the data record pointer to any record in the record set relative to the current position.">dbMove()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbMoveFirst.html" title="Database function which moves the data record pointer to the first record in the record set.">dbMoveFirst()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbMoveLast.html" title="Database function which moves the data record pointer to the last record in the record set.">dbMoveLast()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbMoveNext.html" title="Database function which moves the data record pointer to the next record in the record set.">dbMoveNext()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbMovePrevious.html" title="Database function which moves the data record pointer to the previous record in the record set.">dbMovePrevious()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbOpenRecordset.html" title="Database function for opening a tabular data subset of a data source.">dbOpenRecordset()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbOpenConnection.html" title="Database function for opening a connection to a data source.">dbOpenConnection()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbPutField.html" title="Database function that changes a column (field) of the current data record.">dbPutField()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">ADO and Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbRequery.html" title="Rereads the data of the record set from the data source.">dbRequery()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">ADO and Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbRollbackTransaction.html" title="To end a transaction, no changes are made.">dbRollbackTransaction()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">ADO and Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbSetParameter.html" title="Database function for setting name/value pairs for use as a parameter in the subsequent commands.">dbSetParameter()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">ADO and Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbStartCommand.html" title="To prepare a data manipulation command.">dbStartCommand()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">ADO and Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dbUpdate.html" title="Writes all the changes made back to the current data record with dbPutField().">dbUpdate()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">ADO, Database functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="Debug.html" title="Evaluates any Control expressions and writes the result to stderr.">Debug()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="decrypt.html" title="Decrypts the specified ciphertext using the specified passphrase.">decrypt()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3"><a class="- topic/xref xref" href="../Control_Grundlagen/crypthographic_functions.html">Crypthographic Functions</a></td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="DebugFN.html" title="Evaluates any number of control expressions, if a specific debug flag is set and writes the result to stderr, followed by a new line.">DebugFN()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="DebugFTN.html" title="Evaluates any number of control expressions, if a specific debug flag is set and writes the result with a time stamp to stderr followed by a new line.">DebugFTN()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="DebugN.html" title="Evaluates any Control expressions and writes the result to stderr, followed by a new line.">DebugN()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="DebugTN.html" title="Like the function DebugN(), but with a time stamp.">DebugTN()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="deg2rad.html" title="Converts an angle from measurement in degrees to a radian measurement">deg2rad()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Mathematical function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="delay.html" title="Delays the next program step.">delay()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions, waiting Control functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="deleteImageFromCachehtm.html" title="Allows to remove a file from the pixmap cache.">deleteImageFromCache()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">File functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="delExt.html" title="The function deletes the file extension of the specified file.">delExt()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">File functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="desDecrypt.html" title="The function decodes the content of a blob variable using the DES algorithm.">desDecrypt()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="desEncrypt.html" title="The function encodes the content of a string or blob variable using the DES algorithm.">desEncrypt()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dirName.html" title="The function returns the directory path for the specified directory.">dirName()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">File functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dollarSubstitute.html" title="The function replaces dollar parameters in an expression with the parameters.">dollarSubstitute()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Miscellaneous functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpActivateAlert.html" title="Activates an alert handling at the given datapoint element either with or without NULL time.">dpActivateAlert()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Alert handling</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpAliases.html" title="Returns all aliases with fitting pattern of filter and (optional) suitable filter dpeFilter of the datapoint elements.">dpAliases()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpAliasToName.html" title="Returns the datapoint element for the given alias.">dpAliasToName()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpAttributeType.html" title="Returns the data type.">dpAttributeType()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCancelSplitRequest.html" title="If a query takes very long, use the function dpCancelSplitRequest in order to cancel the query function.">dpCancelSplitRequest()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpChange.html" title="The function opens a datapoint in the PARA module in change mode.">dpChange()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpConnect.html" title="Calls a callback function whenever the passed datapoint values/attributes change.">dpConnect()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpConnectUserData.html" title="Calls a callback function on data change of the defined datapoint values/attributes and passes them to it. In contrast to dpConnect(), this function allows you to also pass any data to the callback function.">dpConnectUserData()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCopy.html" title="Copies a datapoint including the configuration.">dpCopy()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCopyBufferClear.html" title="Clears the buffer copies prior to a new dpCopy().">dpCopyBufferClear()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCopyConfig.html" title="The function dpCopyConfig() copies a config from a source datapoint element into a target datapoint element.">dpCopyConfig()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCopyConfigMerge.html" title="dpCopyConfigMerge() copies specific configs from a source datapoint element into a target datapoint element.">dpCopyConfigMerge()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCopyConfigMergeBufferClear.html" title="Clears the buffer copies prior to a new dpCopyConfigMerge().">dpCopyConfigMergeBufferClear()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCopyOriginal.html" title="Copies the original value of the source datapoint to the target datapoint.">dpCopyOriginal()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpCreate.html" title="Creates a datapoint.">dpCreate()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpDeactivateAlert.html" title="Deactivates an alert handling at the given datapoint element either with or without NULL time.">dpDeactivateAlert()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Alert handling</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpDelete.html" title="Deletes a datapoint.">dpDelete()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpDisconnect.html" title="The function unregisters function work().">dpDisconnect()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpDisconnectUserData.html" title="Unregisters a callback function which was called using dpConnectUserData().">dpDisconnectUserData()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpElementType.html" title="Returns the data type.">dpElementType()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpExists.html" title="The function dpExists() checks the existence of a valid datapoint identifier.">dpExists()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGet.html" title="Reads values of datapoint attributes in variables.">dpGet()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAlias.html" title="New consistent name for the function dpNameToAlias. The function dpGetAlias() returns the alias for the specified datapoint element.">dpGetAlias()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAllAliases.html" title="Returns all datapoints and their aliases. For the return of aliases you can also define filters in this function (see description of the parameters below). The function replaces getAllDpAliases() in versions &gt; 2.11.1.">dpGetAllAliases()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAllAttributes.html" title="Returns all attributes of the config &#34;_config&#34; (for example, of &#34;_original&#34;)">dpGetAllAttributes()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAllComments.html" title="The function may not used any longer; replaced by dpGetAllDescriptions(). Returns in dpe all datapoint elements and in comments all comments with a suitable (optional) filter for comments. Further more optional: datapoint elements with fitting filter for datapoint elements">dpGetAllComments()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAllDescriptions.html" title="Returns via dps all datapoints and via descriptions all descriptions that correspond to the descriptionFilter. You can also specify a dpeFilter. This means that only the datapoints containing the specified datapoint element are returned provided that the description of the datapoint element corresponds to the descriptionFilter.">dpGetAllDescriptions()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAllConfigs.html" title="Returns all possible configs, which are allowed to configure to a datapoint element &#34;dpe&#34; resp. to a data type &#34;dpeType(bit, bitarray, structure, ...).">dpGetAllConfigs()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAllDetails.html" title="Returns all details of a config (for example, of &#34;_lock&#34;).">dpGetAllDetails()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetAsynch.html" title="Reads values of datapoint attributes at a particular source time and writes them to variables.">dpGetAsynch()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetComment.html" title="Returns the comment for the datapoint element(s).">dpGetComment()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetDescription.html" title="Returns the description for the datapoint element(s).">dpGetDescription()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetDpTypeRefs.html" title="The function returns all references in a DPT.">dpGetDpTypeRefs()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetFormat.html" title="This function returns the &#34;format&#34; of a datapoint.">dpGetFormat()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetId.html" title="Returns the datapoint ID and the element ID of the defined datapoint.">dpGetId()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetMaxAge.html" title="If a peripheral address exists, the function triggers a singleQuery for a driver if the value of the datapoint element dpName is older than the parameter age and returns the value from the driver.">dpGetMaxAge()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetName.html" title="Returns the datapoint name for the passed datapoint ID and element ID.">dpGetName()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetPeriod.html" title="The function queries DP attributes over a specified period of time.">dpGetPeriod()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetPeriodSplit.html" title="Queries DP attributes over a certain period of time. Use the function when you query a large amount of data. The function reduces the system load and offers a considerable advantage when dealing with a large amount of data.">dpGetPeriodSplit()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetRefsToDpType.html" title="The function returns all DPTs and DPs that contain the specified DPT as a reference.">dpGetRefsToDpType()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetStatusBit.html" title="Retrieves status bits.">dpGetStatusBit()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpGetUnit.html" title="This function returns the unit of a datapoint.">dpGetUnit()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpIsLegalName.html" title="Checks, whether the name of a datapoint contains incorrect characters.">dpIsLegalName()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpNameCheck.html" title="This function should not be used anymore and was replaced by the function nameCheck(). Checks, whether the name of a datapoint contains only the following characters: 0...9, A...Z, _, a...z.">dpNameCheck()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpNames.html" title="Returns all the datapoint names or datapoint element names that match a pattern. The datapoint structures are written to the array in alphabetical order.">dpNames()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpQuery.html" title="Retrieves attribute values with the help of SQL statements.">dpQuery()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpQueryConnectAll.html" title="The function dpQueryConnectAll subscribes to attributes of configs from multiple Data Point Elements, which meet a certain query condition. When a subscribed attribute changes, a callback function (“work” function) is executed. The event manager will always send all subscribed elements, even if only one changes. Therefore update messages will always contain all subscribed elements.">dpQueryConnectAll()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpQueryConnectSingle.html" title="The function dpQueryConnectSingle subscribes to attributes of configs from multiple Datapoint Elements, which meet a certain query condition. When a subscribed attribute changes, a callback function (“work” function) is executed. The Event Manager will send every single change separately, so update messages will normally contain only one element. If however several of the subscribed attributes are changed together within one message (i.e. in one dpSet() function call), then these will be all be forwarded in one message to the subscribing work function. Additionally, the execution of the work function can be delayed with the optional parameter blockingTime to accumulate more changes, increasing performance.">dpQueryConnectSingle()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpQueryDisconnect.html" title="Can be used to unregister work functions registered via dpQueryConnectAll() or dpQueryConnectSingle()">dpQueryDisconnect()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpQuerySplit.html" title="Retrieves attribute values with the help of SQL statements. Use the function when you query a large amount of data. The function reduces the system load and offers a considerable advantage when dealing with a large amount of data.">dpQuerySplit()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpRename.html" title="The function renames a datapoint.">dpRename()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSelector.html" title="Opens the datapoint selector and writes the selected datapoint address to s. See DP-Selector">dpSelector()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Simple configuration</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSet.html" title="The function assigns datapoint attributes values or creates datapoint configs.">dpSet()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetAlias.html" title="The function dpSetAlias() sets the alias for the specified datapoint element.">dpSetAlias()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetComment.html">dpSetComment()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetDescription.html" title="Sets a comment for the datapoint element dp.">dpSetDescription()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    
+                    
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetFormat.html" title="Sets the format of a DP element.">dpSetFormat()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetTimed.html" title="Assigns values and a source time to the original attributes that can be changed by the user or to the attribute &#34;_corr.._value&#34;.">dpSetTimed()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetTimedWait.html" title="Assigns values and a source time to the original attributes that can be changed by the user or to the attribute &#34;_corr.._value&#34;.">dpSetTimedWait()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetUnit.html" title="Sets the unit of a DP element.">dpSetUnit()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSetWait.html" title="Assigns datapoint attributes and waits for an answer from the event manager.">dpSetWait()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpSubStr.html" title="The function dpSubStr() returns the part (sub string) of a datapoint name given by pattern. The function returns the neutral form of configs and attributes.">dpSubStr()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTreeSetIcons.html" title="Sets any icons for a system, a datapoint type or a datapoint element in the datapoint tree view.">dpTreeSetIcons()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Graphics functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTypeChange.html" title="The function changes datapoint types.">dpTypeChange()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTypeCreate.html" title="The function creates a new datapoint type.">dpTypeCreate()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTypeDelete.html" title="The function deletes an existing datapoint type.">dpTypeDelete()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTypeGet.html" title="Returns the structure of a datapoint type.">dpTypeGet()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTypeName.html" title="Returns the datapoint type for the datapoint name.">dpTypeName()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTypeRefName.html" title="The function &#34;dpTypeRefName&#34; returns the type reference of the selected DPE.">dpTypeRefName()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpTypes.html" title="Returns all the datapoint types from the current project.">dpTypes()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpValToString.html" title="This function converts the value specified in val into a string, with the format string of the datapoint element dp being used. If anytype is a dyn, then this function returns a dyn_string as the result.">dpValToString()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, strings</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dpWaitForValue.html" title="The function waits for a certain time (timeout) for a value change that fulfills the condition and returns the values of the different or same datapoints via the parameter returnValues.">dpWaitForValue()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Datapoint function, Waiting control function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dragStart.html" title="Starts a drag operation.">dragStart()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Graphics functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dropAccept.html" title="Defines whether a graphics object accepts drop operations.">dropAccept()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Graphics functions</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1"><a class="- topic/xref xref" href="duration.html" title="Returns the duration of the current media.">"duration"</a></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">VideoPlayer function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynAppend.html" title="Appends y to the field x.">dynAppend()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynAppendConst.html" title="The functions is comparable to the function dynAppend() but will not change the source variable that is appended.">dynAppendConst()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTLR</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynAvg.html" title="Returns the average of the elements of the dynamic field x.">dynAvg()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynAvgWT.html" title="Returns the average of the elements of the dynamic field x.">dynAvgWT()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynClear.html" title="Deletes the entire array.">dynClear()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynContains.html" title="Returns the index of the first occurrence of y in the dynamic field x">dynContains()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynCount.html" title="Returns the number of elements with the same pattern in the array.">dynCount()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynDynSort.html" title="Sorts a dynamic variable field of dyns in ascending or descending order according to a specific column.">dynDynSort()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynDynTurn.html" title="The function dynDynTurn turns rows of a dyn_dyn_type variable into columns and visa versa.">dynDynTurn()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic arrays</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynInsertAt.html" title="Inserts an element/elements in a field at the specified position.">dynInsertAt()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynInsertAtConst.html" title="The function is comparable to dynInsertAt() but will not change the source variable that is inserted.">dynInsertAtConst()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynIntersect.html" title="Returns a DynVar with each values from value, which occurs in key.">dynIntersect()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynlen.html" title="Returns the number of elements of the dynamic field.">dynlen()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynMax.html" title="Outputs the largest field element.">dynMax()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynMin.html" title="Outputs the smallest field element.">dynMin()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynPatternMatch.html" title="Checks whether particular strings in a dynamic field have a specific pattern.">dynPatternMatch()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic arrays</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynRemove.html" title="Removes an element from a dyn variable.">dynRemove()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynSort.html" title="Sorts a dynamic variable field in ascending or descending order.">dynSort()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynSortAsc.html" title="Sorts a field in ascending order.">dynSortAsc()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynSum.html" title="Adds field elements.">dynSum()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="dynUnique.html" title="Reduces field elements to unique elements and outputs their number.">dynUnique()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Dynamic fields</td>
+                    </tr>
+                </tbody></table></div>
+    </div>
+</article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns="" xmlns:whc="http://www.oxygenxml.com/webhelp/components" class="d-print-none"></whc:webhelp_feedback>
+                        <div id="oxygen-feedback-frame-container">
+    <script id="feedback-init" defer="defer" src="https://feedback.oxygenxml.com/app/init/init.js?deploymentToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJkZXBsb3ltZW50SWQiOjEwNDZ9.Z1wqIErte4dBbWAxxQnr_fHeATFbjXktFL-YJhZGIqTkGp1a6WK3pEQHY_0k2BgIRi6amadmqqEJyzGOW8YzSg"><!-- --></script>
+</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+        <div data-whc_version="25.0" class="navbar navbar-default wh_footer">
+  <div class="footer_div_left">
+    <a href="../oxygen-webhelp/template/../../iec_62443/topics/iec_62443_certification.html" target="_blank"><img class="cert-image_iec62443"/></a>
+    <a href="../oxygen-webhelp/template/../../iec_61508/iec_61508_certification.html" target="_blank"><img class="cert-image_iec61508"/></a>
+  </div>
+  <div class="footer_div_center">
+    <p>SIMATIC WinCC Open Architecture Version 3.21.1 - © ETM professional control GmbH <span id="span_year"></span> - <a href="mailto:documentation@etm.at" target="_blank"><img class="sm_icon mail"/></a> | <a href="https://www.linkedin.com/company/etm-professional-control/" target="_blank"><img class="sm_icon linkedin"/></a> | <a href="https://www.facebook.com/WinCC.OA" target="_blank"><img class="sm_icon facebook"/></a> | <a href="https://www.youtube.com/@WinCCOA" target="_blank"><img class="sm_icon youtube"/></a> - <a href="https://www.winccoa.com/rights/privacy-policy.html" target="_blank">Privacy Policy</a> - <a href="https://www.siemens.com/global/en/general/cookie-notice.html" target="_blank">Cookie Policy</a> - <a href="https://www.winccoa.com/rights/terms-of-use.html" target="_blank">Terms of use</a> -  <a href="https://www.siemens.com/global/en/company/about/compliance/reporting-channels.html" target="_blank">Whistleblowing</a> - <a href="https://www.winccoa.com/company/imprint.html" target="_blank">Imprint</a></p>
+    <script>document.querySelector('#span_year').innerHTML = new Date().getFullYear();</script>
+  </div>
+  <div class="footer_div_right"></div>
+</div>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" alt=""/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <div id="chatbot">
+ <iframe id="openassistantgpt-chatbot-button-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/button?chatbox=false" style="display:none; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+ <!-- This chatbot is build using https://openassistantgpt.io/ -->
+ <iframe allowfullscreen="" id="openassistantgpt-chatbot-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/window?chatbox=false&amp;withExitX=true" style="margin-right: 1rem; margin-bottom: 6rem; display: none; position: fixed; right: 0; bottom: 0; pointer-events: none; overflow: hidden; height: 65vh; border: 2px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); width: 30rem;"></iframe>
+  <script><!--
+
+   var currentUrl = window.location.href; //get current url
+   var btn = document.getElementById("openassistantgpt-chatbot-button-iframe"); //get the chatbot button
+   var btn_oa = document.getElementById("assistant_button"); //get the chatbot button
+   if(['/3.20/', '/latest/'].some(el => currentUrl.includes(el))){
+    btn.style.display = "inline-block"; //enable chatbot button
+    btn_oa.style.display = "inline-block"; //enable chatbot button
+    window.addEventListener("message", function(t) {
+      var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+       s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+  
+      function toggleChatVisibility() {
+       if (e && s) {
+        e.contentWindow.postMessage("openChat", "*");
+        s.contentWindow.postMessage("openChat", "*");
+        e.style.pointerEvents = "auto";
+        e.style.display = "block";
+        if (window.innerWidth < 640) {
+         e.style.position = "fixed";
+         e.style.width = "100%";
+         e.style.height = "100%";
+         e.style.top = "0";
+         e.style.left = "0";
+         e.style.zIndex = "9999";
+        } else {
+         e.style.position = "fixed";
+         e.style.width = "30rem";
+         e.style.height = "65vh";
+         e.style.bottom = "0";
+         e.style.right = "0";
+         e.style.top = "";
+         e.style.left = "";
+        }
+       } else {
+        console.error("iframe not found");
+       }
+      }
+      function closeChat() {
+       if (e && s) {
+        e.style.display = "none";
+        e.style.pointerEvents = "none";
+        e.contentWindow.postMessage("closeChat", "*");
+        s.contentWindow.postMessage("closeChat", "*");
+       }
+      }
+      if (t.data === "openChat") {
+       toggleChatVisibility();
+      } else if (t.data === "closeChat") {
+       closeChat();
+      }
+     });
+     // Add event listener for assistant_button click
+     document.getElementById("assistant_button").addEventListener("click", function() {
+      var event = new Event("message");
+      if(document.getElementById("openassistantgpt-chatbot-iframe").style.display == "block")
+      {
+       event.data = "closeChat";
+      }
+      else
+      {
+       event.data = "openChat";
+      }
+      window.dispatchEvent(event);
+     });
+    }
+   
+--></script>
+   <script><!--
+
+    document.getElementById("menu_toggler").addEventListener("click", function() {
+     document.querySelector('#wh_menu_mobile_button').click();
+   });
+  
+--></script>
+  <script><!--
+
+   function getBrowserColorScheme() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+     return "dark";
+    } 
+    return "light";  
+   }
+   function getLocalColorScheme(){
+    return localStorage.getItem("theme");
+   }
+   function setSchemeClass(colorScheme){
+    document.body.classList.add(colorScheme);
+    if(colorScheme === "light"){
+     document.body.classList.remove("dark");
+    }
+    else{
+     document.body.classList.remove("light");
+    }
+   }
+   function isSchemeClassSet(colorScheme)
+   {
+    return document.body.classList.contains(colorScheme);
+   }
+   function setLocalColorScheme(colorScheme){
+    localStorage.setItem("theme", colorScheme);
+    setSchemeClass(colorScheme);
+   }
+   function isLocalColorSchemeSet() {
+    if(getLocalColorScheme() === null){
+     return false;
+    }
+    return true;
+   }
+   function toggleLocalColorScheme(currentSchema){
+    if(currentSchema === "light"){
+     setLocalColorScheme("dark");
+    }
+    else
+    {
+     setLocalColorScheme("light");
+    }
+   }
+   if(isLocalColorSchemeSet())
+   {
+    setSchemeClass(getLocalColorScheme());
+   }
+   else{
+    setLocalColorScheme(getBrowserColorScheme());
+   }
+   
+   document.getElementById("theme_toggler").addEventListener("click", function() {
+    if(isLocalColorSchemeSet()){
+     toggleLocalColorScheme(getLocalColorScheme());
+    }
+    else
+    {
+     toggleLocalColorScheme(getBrowserColorScheme());
+    }
+   });
+  
+--></script>
+</div>
+<div>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-2142215-10"></script>
+    <script><!--
+ window.dataLayer = window.dataLayer || []; function
+        gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','UA-2142215-10'); 
+--></script>
+</div>
+    </body>
+</html>

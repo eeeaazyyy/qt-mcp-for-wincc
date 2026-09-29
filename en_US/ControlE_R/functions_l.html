@@ -1,0 +1,436 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="25.0">
+    <head><link rel="shortcut icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><link rel="icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="keywords" content="WinCCOA, OnlineHelp, Online Help, Documentation, OA, SIMATIC, WinCC OA, WCCOA"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="-1"/><meta name="description" content="A B C D E F G H I L M N O P Q R S T U V W X Y Z Function Availability Use langEditor() UI Multi-language capability LayerOff() UI, CTRL panel.ctl LayerOffPanel() UI panel.ctl LayerOffPanelInModule() ..."/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="topicID1"/><title>Functions L...</title><!--  Generated with Oxygen version 27.0, build number 2024121223.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content=""/><meta name="wh-source-relpath" content="ControlE_R/functions_l.dita"/><meta name="wh-out-relpath" content="ControlE_R/functions_l.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2024121223"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2024121223"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260226124654"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2024121223"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260226124654"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2024121223"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2024121223"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/style.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/mobile.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/tile-icons.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/single-line-dlentry.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/footer.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/chatbot.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/syntax.css?buildId=2024121223"/><script src="//assets.adobedtm.com/5dfc7d97c6fb/9452e85082e5/launch-b4ffda58d5f0.min.js" async="async"></script></head>
+
+    <body id="topicID1" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="23.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/modern/winccoa.png" alt="WinCC OA Documentation"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title"><span class="ph">WinCC OA Documentation</span></span></a></div>
+                    <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+                    <div id="assistant_button" title="AI powered WinCC OA Assistant"></div>
+                    <div id="menu_toggler" title="Toggle Main Menu"></div>
+                    <div id="theme_toggler" title="Toggle Dark/Light Theme"></div>
+                    <div id="lang_toggler"><a href="#" onclick="switchLanguage()" class="lang_switch_link">LANG</a></div>
+<script><!--
+
+  /* Set image of lang switch button */
+  var url = window.location.href;
+    
+  if(['/en/', '/en_US/'].some(el => url.includes(el)))
+  {
+    document.body.classList.add("lang-en");
+    document.getElementById("assistant_button").textContent = "WinCC OA AI Assistant";
+  }
+  else
+  {
+    document.body.classList.add("lang-de");
+    document.getElementById("assistant_button").textContent = "WinCC OA KI-Assistent";
+  }
+
+  /* Click event for lang switch button */
+  function switchLanguage() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+    if(['/en/', '/en_US/'].some(el => currentUrl.includes(el)))
+    {      
+      newUrl = currentUrl.replace('/en/', '/de/');
+      newUrl = currentUrl.replace('/en_US/', '/de_AT/');
+    }
+    else if(['/de/', '/de_AT/'].some(el => currentUrl.includes(el)))
+    {
+      newUrl = currentUrl.replace('/de/', '/en/');
+      newUrl = currentUrl.replace('/de_AT/', '/en_US/');
+    } 
+    window.location.href = newUrl;
+  }
+
+--></script>
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="version_information-d54385e2159-mi" data-tocid="version_information-d54385e2159" data-state="not-ready" class=" topicref " data-id="version_information"><span class="title"><a href="../release_notes/version_information.html">Version Information</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e5517-mi" data-tocid="concepts-d54385e5517" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/concepts.html">Concepts</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e6907-mi" data-tocid="concepts-d54385e6907" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/deployment.html">Deployment</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_security-d54385e10162-mi" data-tocid="main_security-d54385e10162" data-state="not-ready" class=" topicref " data-id="main_security"><span class="title"><a href="../security/topics/security.html">Security</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="engineering-d54385e11399-mi" data-tocid="engineering-d54385e11399" data-state="not-ready" class=" topicref " data-id="engineering"><span class="title"><a href="../_resources/toc/engineering.html">Engineering</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e20103-mi" data-tocid="data_management-d54385e20103" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/data_management.html">Data Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e24184-mi" data-tocid="data_management-d54385e24184" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_visualization-d54385e64646-mi" data-tocid="data_visualization-d54385e64646" data-state="not-ready" class=" topicref " data-id="data_visualization"><span class="title"><a href="../_resources/toc/data_visualization.html">Data Visualization</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="southbound_interfaces-d54385e67006-mi" data-tocid="southbound_interfaces-d54385e67006" data-state="not-ready" class=" topicref " data-id="southbound_interfaces"><span class="title"><a href="../_resources/toc/southbound_interfaces.html">Southbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="north_bound-d54385e70326-mi" data-tocid="north_bound-d54385e70326" data-state="not-ready" class=" topicref " data-id="north_bound"><span class="title"><a href="../_resources/toc/northbound_interfaces.html">Northbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="webconnectivity-d54385e71612-mi" data-tocid="webconnectivity-d54385e71612" data-state="not-ready" class=" topicref " data-id="webconnectivity"><span class="title"><a href="../_resources/toc/webconnectivity.html">Web Connectivity / Network Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="user_management-d54385e75413-mi" data-tocid="user_management-d54385e75413" data-state="not-ready" class=" topicref " data-id="user_management"><span class="title"><a href="../_resources/toc/user_management.html">User Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="availability-d54385e76708-mi" data-tocid="availability-d54385e76708" data-state="not-ready" class=" topicref " data-id="availability"><span class="title"><a href="../_resources/toc/availability.html">Availability</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reporting-d54385e77549-mi" data-tocid="reporting-d54385e77549" data-state="not-ready" class=" topicref " data-id="reporting"><span class="title"><a href="../_resources/toc/reporting.html">Reporting</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="addons-d54385e78241-mi" data-tocid="addons-d54385e78241" data-state="not-ready" class=" topicref " data-id="addons"><span class="title"><a href="../_resources/toc/addons.html">Addons</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reference_tables-d54385e81051-mi" data-tocid="reference_tables-d54385e81051" data-state="not-ready" class=" topicref " data-id="reference_tables"><span class="title"><a href="../_resources/toc/reference_tables.html">Reference Tables</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_videos-d54385e83295-mi" data-tocid="main_videos-d54385e83295" data-state="not-ready" class=" topicref " data-id="main_videos"><span class="title"><a href="../videos/video_tutorials.html">Videos &amp; Tutorials</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="documentation-d54385e83842-mi" data-tocid="documentation-d54385e83842" data-state="not-ready" class=" topicref " data-id="documentation"><span class="title"><a href="../general/topics/documentation.html">Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support-d54385e83905-mi" data-tocid="support-d54385e83905" data-state="not-ready" class=" topicref " data-id="support"><span class="title"><a href="../Support/topics/support.html">Support &amp; Services</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="disclaimer-d54385e83935-mi" data-tocid="disclaimer-d54385e83935" data-state="not-ready" class=" topicref " data-id="disclaimer"><span class="title"><a href="../_resources/toc/disclaimer.html">Disclaimer</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "></div>
+
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                    
+                    <div class="col-12" id="wh_topic_body">
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic topic" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Functions L...</h1>
+    <div class="- topic/body body">
+        <p class="- topic/p p">
+            <a class="- topic/xref xref" href="../ControlA_D/functions_a.html">A</a>
+            <a class="- topic/xref xref" href="../ControlA_D/functions_b.html">B</a>
+            <a class="- topic/xref xref" href="../ControlA_D/functions_c.html">C</a>
+            <a class="- topic/xref xref" href="../ControlA_D/functions_d.html">D</a>
+            <a class="- topic/xref xref" href="functions_e.html">E</a>
+            <a class="- topic/xref xref" href="functions_f.html">F</a>
+            <a class="- topic/xref xref" href="functions_g.html">G</a>
+            <a class="- topic/xref xref" href="functions_h.html">H</a>
+            <a class="- topic/xref xref" href="functions_i.html">I</a>
+            <a class="- topic/xref xref" href="functions_l.html">L</a>
+            <a class="- topic/xref xref" href="functions_m.html">M</a>
+            <a class="- topic/xref xref" href="functions_n.html">N</a>
+            <a class="- topic/xref xref" href="functions_o.html">O</a>
+            <a class="- topic/xref xref" href="functions_p.html">P</a>
+            <a class="- topic/xref xref" href="functions_q.html">Q</a>
+            <a class="- topic/xref xref" href="functions_r.html">R</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_s.html">S</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_t.html">T</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_u.html">U</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_v.html">V</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_w.html">W</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_x.html">X</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_y.html">Y</a>
+            <a class="- topic/xref xref" href="../ControlS_Z/functions_z.html">Z</a>
+        </p>
+        <div class="table-container"><table class="- topic/table table" data-cols="3"><caption></caption><colgroup><col/><col/><col/></colgroup><thead class="- topic/thead thead">
+                    <tr class="- topic/row">
+                        <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__1">Function</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__2">Availability</th>
+                        <th class="- topic/entry entry colsep-0 rowsep-0" id="topicID1__entry__3">Use</th>
+                    </tr>
+                </thead><tbody class="- topic/tbody tbody">
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="langEditor.html" title="Opens a language editor (langEditor)">langEditor()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Multi-language capability</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LayerOff.html" title="Hides a layer.">LayerOff()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LayerOffPanel.html" title="Hides a layer in a particular panel.">LayerOffPanel()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LayerOffPanelInModule.html" title="Hides a layer in a particular panel and module.">LayerOffPanelInModule()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LayerOn.html" title="Displays a layer.">LayerOn()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LayerOnPanel.html" title="Displays a layer in a particular panel.">LayerOnPanel()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LayerOnPanelInModule.html" title="Display a layer in a particular panel and particular module.">LayerOnPanelInModule()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="ldexp.html" title="Calculates x*2^n.">ldexp()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Mathematical function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="lineSelector.html" title="Opens the line type selector and writes a line type selected there to a variable.">lineSelector()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Simple configuration</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="log.html" title="Calculates the natural logarithm">log()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Mathematical function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1"><a class="- topic/xref xref" href="load.html" title="Sets a path for the display.">"load"</a></td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">VideoPlayer function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="log10.html" title="Calculates the decimal logarithm">log10()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">Mathematical function</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LoginDialog.html" title="The function is used by LogoutDialog() to start the login dialog.">LoginDialog()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                    <tr class="- topic/row">
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__1">
+                            <a class="- topic/xref xref" href="LogoutDialog.html" title="The function is used to open the logout dialog and to go to a new login dialog.">LogoutDialog()</a>
+                        </td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__2">UI, CTRL</td>
+                        <td class="- topic/entry entry colsep-0 rowsep-0" headers="topicID1__entry__3">panel.ctl</td>
+                    </tr>
+                </tbody></table></div>
+    </div>
+</article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns="" xmlns:whc="http://www.oxygenxml.com/webhelp/components" class="d-print-none"></whc:webhelp_feedback>
+                        <div id="oxygen-feedback-frame-container">
+    <script id="feedback-init" defer="defer" src="https://feedback.oxygenxml.com/app/init/init.js?deploymentToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJkZXBsb3ltZW50SWQiOjEwNDZ9.Z1wqIErte4dBbWAxxQnr_fHeATFbjXktFL-YJhZGIqTkGp1a6WK3pEQHY_0k2BgIRi6amadmqqEJyzGOW8YzSg"><!-- --></script>
+</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+        <div data-whc_version="25.0" class="navbar navbar-default wh_footer">
+  <div class="footer_div_left">
+    <a href="../oxygen-webhelp/template/../../iec_62443/topics/iec_62443_certification.html" target="_blank"><img class="cert-image_iec62443"/></a>
+    <a href="../oxygen-webhelp/template/../../iec_61508/iec_61508_certification.html" target="_blank"><img class="cert-image_iec61508"/></a>
+  </div>
+  <div class="footer_div_center">
+    <p>SIMATIC WinCC Open Architecture Version 3.21.1 - © ETM professional control GmbH <span id="span_year"></span> - <a href="mailto:documentation@etm.at" target="_blank"><img class="sm_icon mail"/></a> | <a href="https://www.linkedin.com/company/etm-professional-control/" target="_blank"><img class="sm_icon linkedin"/></a> | <a href="https://www.facebook.com/WinCC.OA" target="_blank"><img class="sm_icon facebook"/></a> | <a href="https://www.youtube.com/@WinCCOA" target="_blank"><img class="sm_icon youtube"/></a> - <a href="https://www.winccoa.com/rights/privacy-policy.html" target="_blank">Privacy Policy</a> - <a href="https://www.siemens.com/global/en/general/cookie-notice.html" target="_blank">Cookie Policy</a> - <a href="https://www.winccoa.com/rights/terms-of-use.html" target="_blank">Terms of use</a> -  <a href="https://www.siemens.com/global/en/company/about/compliance/reporting-channels.html" target="_blank">Whistleblowing</a> - <a href="https://www.winccoa.com/company/imprint.html" target="_blank">Imprint</a></p>
+    <script>document.querySelector('#span_year').innerHTML = new Date().getFullYear();</script>
+  </div>
+  <div class="footer_div_right"></div>
+</div>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" alt=""/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <div id="chatbot">
+ <iframe id="openassistantgpt-chatbot-button-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/button?chatbox=false" style="display:none; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+ <!-- This chatbot is build using https://openassistantgpt.io/ -->
+ <iframe allowfullscreen="" id="openassistantgpt-chatbot-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/window?chatbox=false&amp;withExitX=true" style="margin-right: 1rem; margin-bottom: 6rem; display: none; position: fixed; right: 0; bottom: 0; pointer-events: none; overflow: hidden; height: 65vh; border: 2px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); width: 30rem;"></iframe>
+  <script><!--
+
+   var currentUrl = window.location.href; //get current url
+   var btn = document.getElementById("openassistantgpt-chatbot-button-iframe"); //get the chatbot button
+   var btn_oa = document.getElementById("assistant_button"); //get the chatbot button
+   if(['/3.20/', '/latest/'].some(el => currentUrl.includes(el))){
+    btn.style.display = "inline-block"; //enable chatbot button
+    btn_oa.style.display = "inline-block"; //enable chatbot button
+    window.addEventListener("message", function(t) {
+      var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+       s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+  
+      function toggleChatVisibility() {
+       if (e && s) {
+        e.contentWindow.postMessage("openChat", "*");
+        s.contentWindow.postMessage("openChat", "*");
+        e.style.pointerEvents = "auto";
+        e.style.display = "block";
+        if (window.innerWidth < 640) {
+         e.style.position = "fixed";
+         e.style.width = "100%";
+         e.style.height = "100%";
+         e.style.top = "0";
+         e.style.left = "0";
+         e.style.zIndex = "9999";
+        } else {
+         e.style.position = "fixed";
+         e.style.width = "30rem";
+         e.style.height = "65vh";
+         e.style.bottom = "0";
+         e.style.right = "0";
+         e.style.top = "";
+         e.style.left = "";
+        }
+       } else {
+        console.error("iframe not found");
+       }
+      }
+      function closeChat() {
+       if (e && s) {
+        e.style.display = "none";
+        e.style.pointerEvents = "none";
+        e.contentWindow.postMessage("closeChat", "*");
+        s.contentWindow.postMessage("closeChat", "*");
+       }
+      }
+      if (t.data === "openChat") {
+       toggleChatVisibility();
+      } else if (t.data === "closeChat") {
+       closeChat();
+      }
+     });
+     // Add event listener for assistant_button click
+     document.getElementById("assistant_button").addEventListener("click", function() {
+      var event = new Event("message");
+      if(document.getElementById("openassistantgpt-chatbot-iframe").style.display == "block")
+      {
+       event.data = "closeChat";
+      }
+      else
+      {
+       event.data = "openChat";
+      }
+      window.dispatchEvent(event);
+     });
+    }
+   
+--></script>
+   <script><!--
+
+    document.getElementById("menu_toggler").addEventListener("click", function() {
+     document.querySelector('#wh_menu_mobile_button').click();
+   });
+  
+--></script>
+  <script><!--
+
+   function getBrowserColorScheme() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+     return "dark";
+    } 
+    return "light";  
+   }
+   function getLocalColorScheme(){
+    return localStorage.getItem("theme");
+   }
+   function setSchemeClass(colorScheme){
+    document.body.classList.add(colorScheme);
+    if(colorScheme === "light"){
+     document.body.classList.remove("dark");
+    }
+    else{
+     document.body.classList.remove("light");
+    }
+   }
+   function isSchemeClassSet(colorScheme)
+   {
+    return document.body.classList.contains(colorScheme);
+   }
+   function setLocalColorScheme(colorScheme){
+    localStorage.setItem("theme", colorScheme);
+    setSchemeClass(colorScheme);
+   }
+   function isLocalColorSchemeSet() {
+    if(getLocalColorScheme() === null){
+     return false;
+    }
+    return true;
+   }
+   function toggleLocalColorScheme(currentSchema){
+    if(currentSchema === "light"){
+     setLocalColorScheme("dark");
+    }
+    else
+    {
+     setLocalColorScheme("light");
+    }
+   }
+   if(isLocalColorSchemeSet())
+   {
+    setSchemeClass(getLocalColorScheme());
+   }
+   else{
+    setLocalColorScheme(getBrowserColorScheme());
+   }
+   
+   document.getElementById("theme_toggler").addEventListener("click", function() {
+    if(isLocalColorSchemeSet()){
+     toggleLocalColorScheme(getLocalColorScheme());
+    }
+    else
+    {
+     toggleLocalColorScheme(getBrowserColorScheme());
+    }
+   });
+  
+--></script>
+</div>
+<div>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-2142215-10"></script>
+    <script><!--
+ window.dataLayer = window.dataLayer || []; function
+        gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','UA-2142215-10'); 
+--></script>
+</div>
+    </body>
+</html>

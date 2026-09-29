@@ -1,0 +1,911 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="25.0">
+    <head><link rel="shortcut icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><link rel="icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="keywords" content="WinCCOA, OnlineHelp, Online Help, Documentation, OA, SIMATIC, WinCC OA, WCCOA"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="-1"/><meta name="description" content="WHERE With the option &#34;WHERE&#34; additional filters can be specified in an SQL statement that are not to be adopted from the FROM specification (for example, with filter options that are not possible in ..."/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="DC.relation" content="../SQL/Query.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="Query-06"/><title>SQL keywords</title><!--  Generated with Oxygen version 27.0, build number 2024121223.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="Query-06-d54385e15490"/><meta name="wh-source-relpath" content="SQL/Query-06.dita"/><meta name="wh-out-relpath" content="SQL/Query-06.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2024121223"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2024121223"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260226124654"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2024121223"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260226124654"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2024121223"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2024121223"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/style.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/mobile.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/tile-icons.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/single-line-dlentry.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/footer.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/chatbot.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/syntax.css?buildId=2024121223"/><script src="//assets.adobedtm.com/5dfc7d97c6fb/9452e85082e5/launch-b4ffda58d5f0.min.js" async="async"></script></head>
+
+    <body id="Query-06" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="23.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/modern/winccoa.png" alt="WinCC OA Documentation"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title"><span class="ph">WinCC OA Documentation</span></span></a></div>
+                    <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+                    <div id="assistant_button" title="AI powered WinCC OA Assistant"></div>
+                    <div id="menu_toggler" title="Toggle Main Menu"></div>
+                    <div id="theme_toggler" title="Toggle Dark/Light Theme"></div>
+                    <div id="lang_toggler"><a href="#" onclick="switchLanguage()" class="lang_switch_link">LANG</a></div>
+<script><!--
+
+  /* Set image of lang switch button */
+  var url = window.location.href;
+    
+  if(['/en/', '/en_US/'].some(el => url.includes(el)))
+  {
+    document.body.classList.add("lang-en");
+    document.getElementById("assistant_button").textContent = "WinCC OA AI Assistant";
+  }
+  else
+  {
+    document.body.classList.add("lang-de");
+    document.getElementById("assistant_button").textContent = "WinCC OA KI-Assistent";
+  }
+
+  /* Click event for lang switch button */
+  function switchLanguage() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+    if(['/en/', '/en_US/'].some(el => currentUrl.includes(el)))
+    {      
+      newUrl = currentUrl.replace('/en/', '/de/');
+      newUrl = currentUrl.replace('/en_US/', '/de_AT/');
+    }
+    else if(['/de/', '/de_AT/'].some(el => currentUrl.includes(el)))
+    {
+      newUrl = currentUrl.replace('/de/', '/en/');
+      newUrl = currentUrl.replace('/de_AT/', '/en_US/');
+    } 
+    window.location.href = newUrl;
+  }
+
+--></script>
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="version_information-d54385e2159-mi" data-tocid="version_information-d54385e2159" data-state="not-ready" class=" topicref " data-id="version_information"><span class="title"><a href="../release_notes/version_information.html">Version Information</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e5517-mi" data-tocid="concepts-d54385e5517" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/concepts.html">Concepts</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e6907-mi" data-tocid="concepts-d54385e6907" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/deployment.html">Deployment</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_security-d54385e10162-mi" data-tocid="main_security-d54385e10162" data-state="not-ready" class=" topicref " data-id="main_security"><span class="title"><a href="../security/topics/security.html">Security</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="engineering-d54385e11399-mi" data-tocid="engineering-d54385e11399" data-state="not-ready" class=" topicref " data-id="engineering"><span class="title"><a href="../_resources/toc/engineering.html">Engineering</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e20103-mi" data-tocid="data_management-d54385e20103" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/data_management.html">Data Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e24184-mi" data-tocid="data_management-d54385e24184" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_visualization-d54385e64646-mi" data-tocid="data_visualization-d54385e64646" data-state="not-ready" class=" topicref " data-id="data_visualization"><span class="title"><a href="../_resources/toc/data_visualization.html">Data Visualization</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="southbound_interfaces-d54385e67006-mi" data-tocid="southbound_interfaces-d54385e67006" data-state="not-ready" class=" topicref " data-id="southbound_interfaces"><span class="title"><a href="../_resources/toc/southbound_interfaces.html">Southbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="north_bound-d54385e70326-mi" data-tocid="north_bound-d54385e70326" data-state="not-ready" class=" topicref " data-id="north_bound"><span class="title"><a href="../_resources/toc/northbound_interfaces.html">Northbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="webconnectivity-d54385e71612-mi" data-tocid="webconnectivity-d54385e71612" data-state="not-ready" class=" topicref " data-id="webconnectivity"><span class="title"><a href="../_resources/toc/webconnectivity.html">Web Connectivity / Network Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="user_management-d54385e75413-mi" data-tocid="user_management-d54385e75413" data-state="not-ready" class=" topicref " data-id="user_management"><span class="title"><a href="../_resources/toc/user_management.html">User Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="availability-d54385e76708-mi" data-tocid="availability-d54385e76708" data-state="not-ready" class=" topicref " data-id="availability"><span class="title"><a href="../_resources/toc/availability.html">Availability</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reporting-d54385e77549-mi" data-tocid="reporting-d54385e77549" data-state="not-ready" class=" topicref " data-id="reporting"><span class="title"><a href="../_resources/toc/reporting.html">Reporting</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="addons-d54385e78241-mi" data-tocid="addons-d54385e78241" data-state="not-ready" class=" topicref " data-id="addons"><span class="title"><a href="../_resources/toc/addons.html">Addons</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reference_tables-d54385e81051-mi" data-tocid="reference_tables-d54385e81051" data-state="not-ready" class=" topicref " data-id="reference_tables"><span class="title"><a href="../_resources/toc/reference_tables.html">Reference Tables</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_videos-d54385e83295-mi" data-tocid="main_videos-d54385e83295" data-state="not-ready" class=" topicref " data-id="main_videos"><span class="title"><a href="../videos/video_tutorials.html">Videos &amp; Tutorials</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="documentation-d54385e83842-mi" data-tocid="documentation-d54385e83842" data-state="not-ready" class=" topicref " data-id="documentation"><span class="title"><a href="../general/topics/documentation.html">Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support-d54385e83905-mi" data-tocid="support-d54385e83905" data-state="not-ready" class=" topicref " data-id="support"><span class="title"><a href="../Support/topics/support.html">Support &amp; Services</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="disclaimer-d54385e83935-mi" data-tocid="disclaimer-d54385e83935" data-state="not-ready" class=" topicref " data-id="disclaimer"><span class="title"><a href="../_resources/toc/disclaimer.html">Disclaimer</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="engineering"><div class="title"><a href="../_resources/toc/engineering.html">Engineering</a><div class="wh-tooltip"><p class="shortdesc">Powerful tools for easy or complex engineering tasks.</p></div></div></div></li><li><div class="topicref" data-id="main_systemmanagement"><div class="title"><a href="../Referenz_VISION/SYSTEMMANAGMENT.html">System Management</a><div class="wh-tooltip"><p class="shortdesc">The System Management is the central administrative unit for <span class="ph">WinCC OA</span> Systems.</p></div></div></div></li><li><div class="topicref" data-id="topicID1"><div class="title"><a href="../Datenbank/reports.html">Reports</a></div></div></li><li><div class="topicref" data-id="Query"><div class="title"><a href="../SQL/Query.html">SQL in CONTROL</a><div class="wh-tooltip"><p class="shortdesc">The database functions enable you to quickly carry out value queries on datapoints         and elements.</p></div></div></div></li><li class="active"><div class="topicref" data-id="Query-06"><div class="title"><a href="../SQL/Query-06.html">SQL keywords</a></div></div></li></ol></div>
+
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        <button type="button" data-target="#wh_publication_toc" id="wh_toc_button" data-toggle="collapse" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="collapse col-lg-3 col-md-3 col-sm-12 d-md-block d-print-none" aria-label="Table of Contents Container">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="version_information-d54385e2159" class="topicref" data-id="version_information" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action version_information-d54385e2159-link" class="wh-expand-btn"></span><div class="title"><a href="../release_notes/version_information.html" id="version_information-d54385e2159-link">Version Information</a><div class="wh-tooltip"><p class="shortdesc">Release Notes, Update information, Certifications and Frequently Asked
+                Questions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e5517" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e5517-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/concepts.html" id="concepts-d54385e5517-link">Concepts</a><div class="wh-tooltip"><p class="shortdesc">Your first step into modern and powerful process visualization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e6907" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e6907-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/deployment.html" id="concepts-d54385e6907-link">Deployment</a><div class="wh-tooltip"><p class="shortdesc">Topics you need to know before using <span class="ph">WinCC OA</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_security-d54385e10162" class="topicref" data-id="main_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_security-d54385e10162-link" class="wh-expand-btn"></span><div class="title"><a href="../security/topics/security.html" id="main_security-d54385e10162-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Go beyond the norm in cybersecurity.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="engineering-d54385e11399" class="topicref" data-id="engineering" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action engineering-d54385e11399-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/engineering.html" id="engineering-d54385e11399-link">Engineering</a><div class="wh-tooltip"><p class="shortdesc">Powerful tools for easy or complex engineering tasks.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="main_projadmin-d54385e11414" class="topicref" data-id="main_projadmin" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_projadmin-d54385e11414-link" class="wh-expand-btn"></span><div class="title"><a href="../Pmon_Consolepanel/PROJECT_ADMIN.html" id="main_projadmin-d54385e11414-link">Project Administration</a><div class="wh-tooltip"><p class="shortdesc">The chapter contains a description of the process monitor as well as the project         administration.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GEDI-d54385e11782" class="topicref" data-id="GEDI" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GEDI-d54385e11782-link" class="wh-expand-btn"></span><div class="title"><a href="../Native_GEDI/MODULE_GEDI.html" id="GEDI-d54385e11782-link">Graphics Editor (GEDI)</a><div class="wh-tooltip"><p class="shortdesc">Used for creating and editing panels, provides tools for creating and configuring         graphic objects.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="main_systemmanagement-d54385e14834" class="topicref" data-id="main_systemmanagement" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action main_systemmanagement-d54385e14834-link" class="wh-expand-btn"></span><div class="title"><a href="../Referenz_VISION/SYSTEMMANAGMENT.html" id="main_systemmanagement-d54385e14834-link">System Management</a><div class="wh-tooltip"><p class="shortdesc">The System Management is the central administrative unit for <span class="ph">WinCC OA</span> Systems.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Referenz_VISION-28-d54385e14850" class="topicref" data-id="Referenz_VISION-28" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Referenz_VISION/Referenz_VISION-28.html" id="Referenz_VISION-28-d54385e14850-link">System management</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="DIAGNOSTICS-d54385e14858" class="topicref" data-id="DIAGNOSTICS" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action DIAGNOSTICS-d54385e14858-link" class="wh-expand-btn"></span><div class="title"><a href="../Datenbank/DIAGNOSTICS.html" id="DIAGNOSTICS-d54385e14858-link">Diagnostics</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="topicID1-d54385e15221" class="topicref" data-id="topicID1" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action topicID1-d54385e15221-link" class="wh-expand-btn"></span><div class="title"><a href="../Datenbank/reports.html" id="topicID1-d54385e15221-link">Reports</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e15229" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e15229-link" class="wh-expand-btn"></span><div class="title"><a href="../Variabler_Trend/Variabler_Trend1.html" id="topicID1-d54385e15229-link">Variable Trend</a><div class="wh-tooltip"><p class="shortdesc">A set of panels and scripts used for the simplified display of trend curves and trend         groups (up to 16 trend curves). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Labor_Korrekturpanels-d54385e15320" class="topicref" data-id="Labor_Korrekturpanels" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Labor_Korrekturpanels-d54385e15320-link" class="wh-expand-btn"></span><div class="title"><a href="../Korrektur_Laborwert/Labor_Korrekturpanels.html" id="Labor_Korrekturpanels-d54385e15320-link">Correction Values and Laboratory Values </a><div class="wh-tooltip"><p class="shortdesc">These panels can be used to change existing values (=correct), query values from and         add new values too the HistoryDB and RDB.</p></div></div></div></li><li role="treeitem"><div data-tocid="WH_serviceProcol-d54385e15411" class="topicref" data-id="WH_serviceProcol" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Wartungspaket/Wartung-07.html" id="WH_serviceProcol-d54385e15411-link">Service protocol</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e15419" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Excelreport/excel_report_basics.html" id="topicID1-d54385e15419-link"><span class="ph">WinCC OA</span> Excel Report</a><div class="wh-tooltip"><p class="shortdesc">With the <a href="../Excelreport/topics/excel_report_basics.html" class="xref"><span class="ph">WinCC OA</span>             Excel Report</a> reports can be created. Templates are used for reports. If a report         should be created for a specific time, the system uses the templates and automatically fills         the template with data from the process database. Reports can also be created, printed and         saved time-controlled without user access. For more information, see chapter <a href="../Excelreport/topics/excel_report_basics.html" class="xref">Excelreport/topics/excel_report_basics.html</a>.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="Query-d54385e15439" class="topicref" data-id="Query" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action Query-d54385e15439-link" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query.html" id="Query-d54385e15439-link">SQL in CONTROL</a><div class="wh-tooltip"><p class="shortdesc">The database functions enable you to quickly carry out value queries on datapoints         and elements.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Query-01-d54385e15450" class="topicref" data-id="Query-01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-01.html" id="Query-01-d54385e15450-link">Control functions for SQL</a></div></div></li><li role="treeitem"><div data-tocid="Query-02-d54385e15458" class="topicref" data-id="Query-02" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-02.html" id="Query-02-d54385e15458-link">Data management</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e15466" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/sql_wildcards.html" id="topicID1-d54385e15466-link">Wildcards</a></div></div></li><li role="treeitem"><div data-tocid="Query-04-d54385e15474" class="topicref" data-id="Query-04" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-04.html" id="Query-04-d54385e15474-link">Wildcards in the element identifier</a></div></div></li><li role="treeitem"><div data-tocid="Query-05-d54385e15482" class="topicref" data-id="Query-05" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-05.html" id="Query-05-d54385e15482-link">Queries</a></div></div></li><li role="treeitem" class="active"><div data-tocid="Query-06-d54385e15490" class="topicref" data-id="Query-06" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-06.html" id="Query-06-d54385e15490-link">SQL keywords</a></div></div></li><li role="treeitem"><div data-tocid="Query-07-d54385e15498" class="topicref" data-id="Query-07" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-07.html" id="Query-07-d54385e15498-link">Examples</a></div></div></li><li role="treeitem"><div data-tocid="Query-09-d54385e15506" class="topicref" data-id="Query-09" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-09.html" id="Query-09-d54385e15506-link">Tips and tricks</a></div></div></li><li role="treeitem"><div data-tocid="Query-12-d54385e15514" class="topicref" data-id="Query-12" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-12.html" id="Query-12-d54385e15514-link">Glossary</a></div></div></li><li role="treeitem"><div data-tocid="Query-23-d54385e15522" class="topicref" data-id="Query-23" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query-23.html" id="Query-23-d54385e15522-link">Summary and related links</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e15530" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e15530-link" class="wh-expand-btn"></span><div class="title"><a href="../Referenz_VISION/DPE_Monitor.html" id="topicID1-d54385e15530-link">Datapoint Element Monitor</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e15570" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e15570-link" class="wh-expand-btn"></span><div class="title"><a href="../Datenbank/Datenbank-20.html" id="topicID1-d54385e15570-link">Database</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e17867" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e17867-link" class="wh-expand-btn"></span><div class="title"><a href="../Treiber_Modbus/modbus_d_configuration.html" id="tocId-d54385e17867-link">Driver</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e17943" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e17943-link" class="wh-expand-btn"></span><div class="title"><a href="../Treiber_IEC/iec_configuration.html" id="tocId-d54385e17943-link">Driver IEC</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e17976" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e17976-link" class="wh-expand-btn"></span><div class="title"><a href="../OPC_AE/opc_ae_c_configuration.html" id="tocId-d54385e17976-link">Driver OPC</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e18033" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e18033-link" class="wh-expand-btn"></span><div class="title"><a href="../S7_Driver/topics/s7_configuration.html" id="tocId-d54385e18033-link">Driver S7</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e18111" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SmartScada/smartscada_basics.html" id="topicID1-d54385e18111-link">SmartSCADA</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e18119" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e18119-link" class="wh-expand-btn"></span><div class="title"><a href="../Datenbank/permission.html" id="topicID1-d54385e18119-link">Permission</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e18840" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e18840-link" class="wh-expand-btn"></span><div class="title"><a href="../Datenbank/communication.html" id="topicID1-d54385e18840-link">Communication</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e18864" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e18864-link" class="wh-expand-btn"></span><div class="title"><a href="../Datenbank/settings.html" id="topicID1-d54385e18864-link">Settings</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="WizardConfiguration-d54385e19024" class="topicref" data-id="WizardConfiguration" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action WizardConfiguration-d54385e19024-link" class="wh-expand-btn"></span><div class="title"><a href="../WizardFramework/wizard_framework-00.html" id="WizardConfiguration-d54385e19024-link">Wizard Framework</a><div class="wh-tooltip"><p class="shortdesc">Used for easy creation of wizards in a uniform layout style. The key elements         "Navigation Bar" and "Bottom Bar" can be customized to fit the needs of the custom         wizard.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e19131" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e19131-link" class="wh-expand-btn"></span><div class="title"><a href="../XML_panel_format/XML_panel_format-01.html" id="topicID1-d54385e19131-link"> XML Panel Format</a><div class="wh-tooltip"><p class="shortdesc">The XML (Extensible Markup Language) panel format allows creating <span class="ph">WinCC OA</span> panels.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="simple_symbols_basics-d54385e19185" class="topicref" data-id="simple_symbols_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action simple_symbols_basics-d54385e19185-link" class="wh-expand-btn"></span><div class="title"><a href="../SimpleSymbols/SimpleSymbols-01_2.html" id="simple_symbols_basics-d54385e19185-link">Simple Symbols, basics</a><div class="wh-tooltip"><p class="shortdesc">The "Simple Symbols" functionality is used to simply assign corresponding symbols to         datapoint types and increase the working comfort when working with different         symbols.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="scrwiz_basics-d54385e19220" class="topicref" data-id="scrwiz_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action scrwiz_basics-d54385e19220-link" class="wh-expand-btn"></span><div class="title"><a href="../ScriptWizard/ScriptWizard-01_2.html" id="scrwiz_basics-d54385e19220-link">ScriptWizard</a><div class="wh-tooltip"><p class="shortdesc">Simple wizard for creating graphical user interfaces for users without prior         programming knowledge.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Paneltopologie_Summenmeldung-01-d54385e19472" class="topicref" data-id="Paneltopologie_Summenmeldung-01" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Paneltopologie_Summenmeldung-01-d54385e19472-link" class="wh-expand-btn"></span><div class="title"><a href="../Paneltopologie_Summenmeldung/Paneltopologie_Summenmeldung-01_2.html" id="Paneltopologie_Summenmeldung-01-d54385e19472-link">Panel topology/Group alert facility</a><div class="wh-tooltip"><p class="shortdesc">Tree structure for process panels with integrated group alert system</p></div></div></div></li><li role="treeitem"><div data-tocid="oop-d54385e19580" class="topicref" data-id="oop" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../OOP/oop_basics_2.html" id="oop-d54385e19580-link">Object-Oriented Panel References</a><div class="wh-tooltip"><p class="shortdesc">Reusable objects built with the GEDI tools. Insert them within an existing panel to         provide a graphical element.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e19591" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e19591-link" class="wh-expand-btn"></span><div class="title"><a href="../Mehrsprachigkeit/Mehrsprachigkeit.html" id="topicID1-d54385e19591-link">Multilingual Projects</a><div class="wh-tooltip"><p class="shortdesc">         <span class="ph">WinCC OA</span> is designed to provide both Native Language Support and Multi         Language Support.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="translator_basics-d54385e19771" class="topicref" data-id="translator_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action translator_basics-d54385e19771-link" class="wh-expand-btn"></span><div class="title"><a href="../Translator/topics/translator_basics_2.html" id="translator_basics-d54385e19771-link">Translator</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">WinCC OA</span> Translator functionality supports you in creating and         maintaining multilingual projects. It offers a convenient interface for translation of         reusable terms.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="layout_management-d54385e19823" class="topicref" data-id="layout_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action layout_management-d54385e19823-link" class="wh-expand-btn"></span><div class="title"><a href="../Layout_Mgmt/layout_management_2.html" id="layout_management-d54385e19823-link">Layout management</a><div class="wh-tooltip"><p class="shortdesc">Layouts change the size and position of objects according to parameters previously         defined in the GEDI.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="gdf_basics-d54385e19842" class="topicref" data-id="gdf_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action gdf_basics-d54385e19842-link" class="wh-expand-btn"></span><div class="title"><a href="../Generic_Dialog_Framework/gdf_basics.html" id="gdf_basics-d54385e19842-link">Generic Dialog Framework</a><div class="wh-tooltip"><p class="shortdesc">The Generic Dialog Framework is an easy way to generate your own dialogs by adjusting         a set of prefabricated panels.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e19954" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e19954-link" class="wh-expand-btn"></span><div class="title"><a href="../Einfache_Parametrierung/Einfache_Parametrierung1_2.html" id="topicID1-d54385e19954-link">Simple Configuration</a><div class="wh-tooltip"><p class="shortdesc">Simple configuration windows and panels support you in combining events (such as a         mouse click) with different actions such as setting datapoint values, showing panels or         changing attributes.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_management-d54385e20103" class="topicref" data-id="data_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_management-d54385e20103-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_management.html" id="data_management-d54385e20103-link">Data Management</a><div class="wh-tooltip"><p class="shortdesc">Classify, structure and archive your data.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_management-d54385e24184" class="topicref" data-id="data_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_management-d54385e24184-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/business_logic.html" id="data_management-d54385e24184-link">Business Logic / Control</a><div class="wh-tooltip"><p class="shortdesc">Endless possibilities in data processing for your projects.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_visualization-d54385e64646" class="topicref" data-id="data_visualization" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_visualization-d54385e64646-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_visualization.html" id="data_visualization-d54385e64646-link">Data Visualization</a><div class="wh-tooltip"><p class="shortdesc">User interfaces, Trends and Reports for every purpose and device.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="southbound_interfaces-d54385e67006" class="topicref" data-id="southbound_interfaces" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action southbound_interfaces-d54385e67006-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/southbound_interfaces.html" id="southbound_interfaces-d54385e67006-link">Southbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">The process connection to the actual machines/sensors.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="north_bound-d54385e70326" class="topicref" data-id="north_bound" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action north_bound-d54385e70326-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/northbound_interfaces.html" id="north_bound-d54385e70326-link">Northbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Your portal to the cloud or supervising systems.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="webconnectivity-d54385e71612" class="topicref" data-id="webconnectivity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action webconnectivity-d54385e71612-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/webconnectivity.html" id="webconnectivity-d54385e71612-link">Web Connectivity / Network Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Data exchange, APIs and web technologies</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="user_management-d54385e75413" class="topicref" data-id="user_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action user_management-d54385e75413-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/user_management.html" id="user_management-d54385e75413-link">User Management</a><div class="wh-tooltip"><p class="shortdesc">All about authorization, authentication and login-customization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="availability-d54385e76708" class="topicref" data-id="availability" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action availability-d54385e76708-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/availability.html" id="availability-d54385e76708-link">Availability</a><div class="wh-tooltip"><p class="shortdesc">How to get your system uptime to the maximum.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reporting-d54385e77549" class="topicref" data-id="reporting" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reporting-d54385e77549-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reporting.html" id="reporting-d54385e77549-link">Reporting</a><div class="wh-tooltip"><p class="shortdesc">Create state of the art project reports without limits.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="addons-d54385e78241" class="topicref" data-id="addons" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action addons-d54385e78241-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/addons.html" id="addons-d54385e78241-link">Addons</a><div class="wh-tooltip"><p class="shortdesc">Useful tools and enhancements for special demands.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reference_tables-d54385e81051" class="topicref" data-id="reference_tables" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reference_tables-d54385e81051-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reference_tables.html" id="reference_tables-d54385e81051-link">Reference Tables</a><div class="wh-tooltip"><p class="shortdesc">Detailed and extensive content for special project adaptation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_videos-d54385e83295" class="topicref" data-id="main_videos" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_videos-d54385e83295-link" class="wh-expand-btn"></span><div class="title"><a href="../videos/video_tutorials.html" id="main_videos-d54385e83295-link">Videos &amp; Tutorials</a><div class="wh-tooltip"><p class="shortdesc">Explore the capabilities of <span class="ph">WinCC OA</span> with our carefully selected         collection of video tutorials and guides.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="documentation-d54385e83842" class="topicref" data-id="documentation" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action documentation-d54385e83842-link" class="wh-expand-btn"></span><div class="title"><a href="../general/topics/documentation.html" id="documentation-d54385e83842-link">Documentation</a><div class="wh-tooltip"><p class="shortdesc">Basic information about terms and functions within the documentation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support-d54385e83905" class="topicref" data-id="support" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support-d54385e83905-link" class="wh-expand-btn"></span><div class="title"><a href="../Support/topics/support.html" id="support-d54385e83905-link">Support &amp; Services</a><div class="wh-tooltip"><p class="shortdesc">An experienced team of support agents, consultants and trainers are ready to         facilitate active partnerships with our customers, so they can profit from our comprehensive         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="disclaimer-d54385e83935" class="topicref" data-id="disclaimer" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action disclaimer-d54385e83935-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/disclaimer.html" id="disclaimer-d54385e83935-link">Disclaimer</a><div class="wh-tooltip"><p class="shortdesc">A brief clarification of liability exclusions or legal notices.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic topic" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">SQL keywords</h1>
+    <div class="- topic/body body">
+        <section class="- topic/section section" id="Query-06__WHERE" data-ofbid="Query-06__WHERE"><h2 class="- topic/title title sectiontitle">WHERE</h2>
+            
+            <p class="- topic/p p">With the option "WHERE" additional filters can be specified in an SQL statement that
+                are not to be adopted from the FROM specification (for example, with filter options
+                that are not possible in the FROM section).</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">
+                <p class="- topic/p p">When you query datapoint elements in a select statement, you have to use the
+                    datapoint type clause since <span class="- topic/ph ph">WinCC OA</span> uses IDs and the same
+                    datapoint element name may have different IDs for different DP types. Therefore,
+                    you may NOT use a query like: </p>
+                <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>string strQuery = <span class="hl-string">"SELECT '.name:_original.._value, .Datapoint1.Element1:_original.._value' FROM '*'"</span>;</code></pre>
+                <p class="- topic/p p">Instead use:</p>
+                <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>string strQuery = <span class="hl-string">"SELECT '.name:_original.._value,.Datapoint.Element1:_original.._value' FROM '*' WHERE _DPT = \"ExampleDp_Float\""</span>;</code></pre>
+                
+            </div></div>
+            <div class="- topic/note note note note_note" id="Query-06__note_rzw_lcg_xfc" data-ofbid="Query-06__note_rzw_lcg_xfc"><span class="note__title">Note:</span> <div class="note__body">In a <code class="+ topic/ph pr-d/codeph ph codeph">SELECT</code> statement
+                    in the <code class="+ topic/ph pr-d/codeph ph codeph">WHERE</code> part of a query, you can use <code class="+ topic/ph pr-d/codeph ph codeph">WHERE
+                        _DP=</code> to restrict a query to a datapoint instead of <code class="+ topic/ph pr-d/codeph ph codeph">WHERE
+                        _DPT=</code> to restrict to a type.</div></div>
+            <div class="- topic/note note restriction note_restriction"><span class="note__title">Restriction:</span> <div class="note__body">
+                <p class="- topic/p p">Only config attributes can be used as WHERE condition in the SQL panel.</p>
+                <p class="- topic/p p">Do not use the same attribute twice in a SELECT clause.</p>
+            </div></div>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">A change of the alias or comment does not trigger a new evaluation of the filter
+                (queryConnect()). This is only done on change of a subscribed attribute.</div></div>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+                <p class="- topic/p p">To execute the query faster, specify the datapoint directly after the FROM
+                    statement.</p>
+                <p class="- topic/p p">See the relevant chapter of this section for explanations on the <a class="- topic/xref xref" href="Query-06.html#Query-06__TIMERANGE">TIMERANGE() function</a> or <a class="- topic/xref xref" href="Query-06.html#Query-06__Gruppenfunktionen">Group functions</a>.</p>
+            </div></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__value_larger" data-ofbid="Query-06__value_larger"><h2 class="- topic/title title sectiontitle">Example - values of datapoints whose online value is greater than 45</h2>
+            
+            <p class="- topic/p p">In this case only the values of datapoints whose online value is greater than 45 are
+                written to the results table.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+  dyn_dyn_anytype tab;
+  <strong class="hl-keyword">int</strong> z;
+
+  dpQuery(<span class="hl-string">"SELECT '_original.._value' FROM 'ExampleDP_Arg*' WHERE ('_original.._value' &gt; 45) TIMERANGE(\"2007.10.06 09:00:00.000\", \"2007.10.06 10:55:00.000\",1,2)"</span>, tab);
+
+  <em class="hl-comment">/* Note that the query has to be written on one row without line breaks */</em>
+  shape list1=getShape(<span class="hl-string">"SELECTION_LIST1"</span>);
+
+  <strong class="hl-keyword">for</strong>(z=<span class="hl-number">2</span>;z&lt;=dynlen(tab);z++)
+  <em class="hl-comment">// dynlen(tab) Returns the length of tab.</em>
+
+  setValue(list1,<span class="hl-string">"appendItem"</span>,tab[z][<span class="hl-number">2</span>]);
+}</code></pre></div>
+        <div class="- topic/example example" id="Query-06__from_0" data-ofbid="Query-06__from_0"><h2 class="- topic/title title sectiontitle">Example - datapoints of the type ExampleDP_Float</h2>
+            
+            <p class="- topic/p p">The FROM statement in this example accepts the online values of all datapoints. Via
+                the WHERE function, only datapoints of the type ExampleDP_Float are permitted.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM '*'WHERE _DPT = \"ExampleDP_Float\" TIMERANGE(\""</span>+start+<span class="hl-string">"\",\""</span>+stop+<span class="hl-string">"\", 1, 2)"</span>, tab);</code></pre>
+        </div>
+        <div class="- topic/example example" id="Query-06__from_1" data-ofbid="Query-06__from_1"><h2 class="- topic/title title sectiontitle">Example - datapoints whose alias begins with an "A" </h2>
+            
+            <p class="- topic/p p">The FROM statement in this example accepts the online values of all datapoints. Via
+                the WHERE function, only datapoints whose alias begins with an "A" are
+                permitted.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_original.._value' FROM '*' WHERE _ALIAS LIKE "</span>A*<span class="hl-string">""</span>, tab);</code></pre>
+        </div>
+        <div class="- topic/example example" id="Query-06__from_2" data-ofbid="Query-06__from_2"><h2 class="- topic/title title sectiontitle">Example - datapoints whose comment contains "OP"</h2>
+            
+            <p class="- topic/p p">The FROM statement in this example accepts the online values of all datapoints. Via
+                the WHERE function, only datapoints whose comment contains "OP" are permitted.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_original.._value' FROM '*' WHERE _COMMENT LIKE "</span>*OP*<span class="hl-string">""</span>, tab);</code></pre>
+        </div>
+        <div class="- topic/example example" id="Query-06__asterix" data-ofbid="Query-06__asterix"><h2 class="- topic/title title sectiontitle">Example - datapoints (*.**) of datapoint type "PUMP1" </h2>
+            
+            <p class="- topic/p p">In this example all datapoint elements of all datapoints (*.**) of datapoint type
+                "PUMP1" from 09.07.2018 16.02 to 09.07.2018 16:22 are queried.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+    dyn_dyn_anytype tab;
+    <strong class="hl-keyword">int</strong> z;
+    dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM '*.**' WHERE _DPT = \"PUMP1\"  TIMERANGE(\"2018.07.09 16:02:00.000\", \"2018.07.09 16:22:00.000\",1,2)"</span>, tab);
+    <em class="hl-comment">/* Note that the query must be written on one row without line breaks */</em>
+    shape list1=getShape(<span class="hl-string">"SELECTION_LIST1"</span>);
+    <strong class="hl-keyword">for</strong>(z=<span class="hl-number">2</span>;z&lt;=dynlen(tab);z++)
+       <em class="hl-comment">//dynlen(tab) returns the length of tab</em>
+       setValue(list1,<span class="hl-string">"appendItem"</span>,tab[z][<span class="hl-number">2</span>]);
+ }</code></pre></div>
+        <section class="- topic/section section" id="Query-06__where_and" data-ofbid="Query-06__where_and"><h2 class="- topic/title title sectiontitle">WHERE and AND</h2>
+            
+            <p class="- topic/p p">With the keyword AND you can restrict a WHERE query. With the example query below,
+                you can query all online values with leaf elements that have userbit7 set. The query
+                has to be programmed on one line (without a line break) because otherwise a syntax
+                error will be shown.</p>
+        </section>
+        <div class="- topic/example example"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+  dyn_dyn_anytype tab;
+  <strong class="hl-keyword">int</strong> z;
+  <strong class="hl-keyword">int</strong> length;
+
+  dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM '*' WHERE _LEAF AND '_online.._userbit7' == 1"</span>,tab);
+  <em class="hl-comment">//select all online values with leaf</em>
+
+  <em class="hl-comment">//elements that have the userbit7 set.</em>
+  length=dynlen(tab);
+
+  DebugN(<span class="hl-string">"Length:"</span>,length);
+
+  <strong class="hl-keyword">for</strong>(z=<span class="hl-number">1</span>;z&lt;=length;z++)
+  {
+    DebugN(tab[z]);
+  }
+}</code></pre>
+        </div>
+        <div class="- topic/example example" id="Query-06__dp_keywords" data-ofbid="Query-06__dp_keywords"><h2 class="- topic/title title sectiontitle">Example of Datapoint keywords</h2>
+            
+            <p class="- topic/p p">It is also possible to reduce the data by using the <a class="- topic/xref xref" href="Query.html#Query__Keywords_data_points">keywords for data
+                points</a>.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+  dyn_dyn_anytype tab;
+  dpQuery(<span class="hl-string">"SELECT ALL '_online.._value' FROM '*' WHERE _DPT = \"ANALOG1\" AND _EL = \"C1.AVG_WT0\""</span>, tab);
+  DebugN(tab);
+}</code></pre>
+            <p class="- topic/p p">or</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{dyn_dyn_anytype tab;
+dpQuery(<span class="hl-string">"SELECT ALL '_online.._value' FROM '*' WHERE _DPT = \"ANALOG1\" AND _EL = \"C1.AVG_WT0\" AND DP = \"DP1 \""</span>, tab);
+DebugN(tab);
+}</code></pre>
+        </div>
+        <section class="- topic/section section" id="Query-06__booleanComparion" data-ofbid="Query-06__booleanComparion"><h2 class="- topic/title title sectiontitle">Boolean comparison in a WHERE clause - \"TRUE\" and \"FALSE\"</h2>
+            
+            <p class="- topic/p p">If you want to use a boolean comparison in a WHERE clause the key words TRUE or FALSE
+                have to be written as follows (\"TRUE\"):</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>string SQLAbf = <span class="hl-string">"SELECT '_online.._value' FROM '*' WHERE _LEAF AND '_online.._userbit7' == \"TRUE\" "</span>;</code></pre>
+            <p class="- topic/p p">The query can be used in the same way as the query in the "AND" example above.</p>
+        </section>
+        <section class="- topic/section section" id="Query-06__TIMERANGE" data-ofbid="Query-06__TIMERANGE"><h2 class="- topic/title title sectiontitle">TIMERANGE() function</h2>
+            
+            <p class="- topic/p p">The TIMERANGE() function is beyond SQL. It allows time-dependent queries to be run on
+                datapoints but it must follow a SELECT statement. This function is the counterpart
+                to the dpGetPeriod() functionality in <span class="- topic/ph ph">WinCC OA</span>, but is not
+                available with Connect functions (since they connect to current values).</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">The historical alert texts cannot be queried.</div></div>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">A query with the keyword TIMERANGE is processed in the Data Manager. If this
+                keyword is not specified, the query is processed in the Event Manager.</div></div>
+            <p class="- topic/p p">The syntax of the function is:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>TIMERANGE (start , stop , modus , bonus)</code></pre>
+            <p class="- topic/p p">Here, start and stop indicate the time range for which the data will be read out. It
+                must be noted that start and stop are of the type string (and not of the type time)
+                and must have the following format:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>YYYY.MM.DD hh:mm:ss.ttt</code></pre>
+            <p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">1998.03.05 14:06:45.012</code>, as an example</p>
+            <p class="- topic/p p">In addition to "now", the keywords “min” and “max” can be used.</p>
+            <p class="- topic/p p">The option "now" can be used to query values as of a point in time until now or to
+                query the current value:</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">For the timerange times until the year 2038 can be used.</div></div>
+            <div class="- topic/note note important note_important"><span class="note__title">Important:</span> <div class="note__body">The option "now" must be lower-cased!</div></div>
+            <div class="- topic/note note important note_important" id="Query-06__note_s31_b5v_q2c" data-ofbid="Query-06__note_s31_b5v_q2c"><span class="note__title">Important:</span> <div class="note__body">The BONUS parameter for the TIMERANGE
+                keyword does not work with AGGREGATE functions. e.g.:
+                <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>SELECT 'AVG(:_offline.._value)', 'MAX(:_offline.._value)', 'MIN(:_offline.._value)', ':_offline.._stime'
+FROM 'System1:ExampleDP_Arg1.'        
+TIMERANGE("2025-02-12T10:00:00.000Z", "2025-02-13T12:00:00.000Z", 1, 1) SORT BY 0 GROUP BY SECS (300)</code></pre>
+            </div></div>
+            <div class="- topic/note note restriction note_restriction" id="Query-06__note_iso_time_format_for_dst_and_timezones" data-ofbid="Query-06__note_iso_time_format_for_dst_and_timezones"><span class="note__title">Restriction:</span> <div class="note__body">
+                <p class="- topic/p p">If the handling of daylight saving time or different timezones are an important
+                    topic within the project, then the ISO8601 time format in strings must be used
+                    instead of default string format for time variables.</p>
+                
+                </div></div>
+            <div class="- topic/note note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">Further information on time variable conversion can be found in <a class="- topic/xref xref" href="../Control_Grundlagen/topics/timeVar_conversion.html">Time Variable Conversion</a></div></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__selList" data-ofbid="Query-06__selList"><h2 class="- topic/title title sectiontitle">Example - Values in a selection list</h2>
+            
+            <p class="- topic/p p">In the example below the values are written into a selection list.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code><em class="hl-comment">/* Query as of 16.8.2017, 9 o'clock until now + 1 value before and after the interval. 
+Note that in order that the example works you need a selection list (In the example "SELECTION_LIST1").
+
+Add the selection list to your panel. See Graphics editor GEDI -&gt; </em><a class="- topic/xref xref" href="../Native_GEDI/Referenz_Native_GEDI-43.html">
+Selection list</a>.
+Add also <a class="- topic/xref xref" href="../Referenz_PARA/Referenz_PARA-11.html">
+an archive config</a> to the datapoint ExampleDP_Arg1. that is queried.*/
+
+main(mapping event)
+{
+   dyn_dyn_anytype tab;
+   <strong class="hl-keyword">int</strong> z;
+   shape list1=getShape(<span class="hl-string">"SELECTION_LIST1"</span>);
+   dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM 'ExampleDP_Arg1' WHERE _DPT = \"ExampleDP_Float\"TIMERANGE(\"2017.08.16 09:00:00.000\", \"now\", 1, 1)"</span>, tab);
+   <strong class="hl-keyword">for</strong>(z=<span class="hl-number">2</span>;z&lt;=dynlen(tab);z++)
+   <em class="hl-comment">// dynlen(tab) returns the length of tab</em>
+   setValue(list1,<span class="hl-string">"appendItem"</span>,tab[z][<span class="hl-number">2</span>]);
+ }
+
+<em class="hl-comment">/* The following example returns the current value + 1 value before and after the interval. 
+Note that in order that the example works you need a selection list (In the example "SELECTION_LIST1").
+
+Add the selection list to your panel. See Graphics editor GEDI -&gt; </em><a class="- topic/xref xref" href="../Native_GEDI/Referenz_Native_GEDI-43.html">
+Selection list</a>.
+Add also <a class="- topic/xref xref" href="../Referenz_PARA/Referenz_PARA-11.html">
+an archive config</a> to the datapoint ExampleDP_Arg1. that is queried.*/
+                        
+main(mapping event)
+{
+   dyn_dyn_anytype tab;
+   <strong class="hl-keyword">int</strong> z;
+   shape list1=getShape(<span class="hl-string">"SELECTION_LIST1"</span>);
+   dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM 'ExampleDP_Arg1' WHERE _DPT = \"ExampleDP_Float\"TIMERANGE(\"now\", \"now\", 1, 1)"</span>, tab);
+   <strong class="hl-keyword">for</strong>(z=<span class="hl-number">2</span>;z&lt;=dynlen(tab);z++)
+   <em class="hl-comment">// dynlen(tab) returns the length of tab</em>
+   setValue(list1,<span class="hl-string">"appendItem"</span>,tab[z][<span class="hl-number">2</span>]);
+}</code></pre>
+        </div>
+        <section class="- topic/section section" id="Query-06___corr" data-ofbid="Query-06___corr"><h2 class="- topic/title title sectiontitle">"_corr.._manager" and "_corr.._user"</h2>
+            
+            <p class="- topic/p p">"_corr.._manager" and "_corr.._user" attributes can only be used in an SQL query
+                within the "WHERE" clause together with the "TIMERANGE" keyword. The
+                "_corr.._manager" attribute is only available for NGA.</p>
+            <p class="- topic/p p">This is a valid query with "_corr.._manager" attribute:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="Query-06__codeblock_kgj_jpl_5bc" data-ofbid="Query-06__codeblock_kgj_jpl_5bc"><code>SELECT '_original.._value' FROM '*.**' WHERE '_corr.._manager' == 16844034 TIMERANGE("2023.09.10 16:29:56","2023.09.11 16:29:59",1,0)</code></pre>
+            <div class="- topic/note note restriction note_restriction" id="Query-06__note_b3p_npl_5bc" data-ofbid="Query-06__note_b3p_npl_5bc"><span class="note__title">Restriction:</span> <div class="note__body">"_corr.._manager" and "_corr.._user"
+                attributes cannot be queried by using <a class="- topic/xref xref" href="../ControlA_D/dpQuery.html" title="Retrieves attribute values with the help of SQL statements.">dpQuery()</a> or
+                    <a class="- topic/xref xref" href="../ControlA_D/dpGetPeriod.html" title="The function queries DP attributes over a specified period of time.">dpGetPeriod()</a>.</div></div>
+        </section>
+        <section class="- topic/section section" id="Query-06__archivenum" data-ofbid="Query-06__archivenum"><h2 class="- topic/title title sectiontitle">ARCHIVENUM</h2>
+            
+            <p class="- topic/p p">By using the keyword ARCHIVENUM, a specific archive can be queried. In the example
+                below, the archive with the number 2 is queried:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM 'ExampleDP_Arg1' WHERE _DPT = \"ExampleDP_Float\" TIMERANGE(\"2005.10.26 00:00:00.000\", \"2005.10.26 23:59:59.000\", 1, 2) ARCHIVENUM 2"</span>, tab);</code></pre>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">The keyword ARCHIVENUM has to be defined at the end of the query after the keyword
+                TIMERANGE (see example above).</div></div>
+        </section>
+        <section class="- topic/section section" id="Query-06__modus" data-ofbid="Query-06__modus"><h2 class="- topic/title title sectiontitle">Modus - Modus = 1</h2>
+            
+            <div class="- topic/note note restriction note_restriction"><span class="note__title">Restriction:</span> <div class="note__body">For historical reasons, the Modus function is still included.
+                The use of values other than 1 (2, 3) is not supported anymore.</div></div>
+        </section>
+        <section class="- topic/section section" id="Query-06__bonus" data-ofbid="Query-06__bonus"><h2 class="- topic/title title sectiontitle">Bonus</h2>
+            
+            <p class="- topic/p p">In addition to the modus parameter, the number of additional required values can also
+                be transferred. So, for example, a modus 1 with bonus 2 returns all the values in
+                accordance with standard behavior plus (at least) two events before and after the
+                interval. The values before and after the limit must be specified for each
+                attribute. This ensures that there are really two valid values for each column of
+                the query.</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">The bonus parameter is not supported for alert queries.</div></div>
+            <div class="- topic/note note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">The bonus parameter can be used for single queries only (without
+                wildcards).</div></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__P1006_25654" data-ofbid="Query-06__P1006_25654"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <p class="- topic/p p">with start ="1998.05.26 11:04:25.000" of the type string and stop ="1998.05.26
+                23:59:59.000" of the type string results in:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM 'mld_*.**' TIMERANGE(\""</span>+start+<span class="hl-string">"\",\""</span>+stop+<span class="hl-string">"\",1,2)"</span>, tab);</code></pre>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">The query syntax allows two options for the string definition (see, for example,
+                        <u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="Query-05.html#Query-05__Example">main</a></u>).</div></div>
+        </div>
+        <section class="- topic/section section" id="Query-06__SORT" data-ofbid="Query-06__SORT"><h2 class="- topic/title title sectiontitle">SORT BY function - SORT BY x [ASC | DESC]</h2>
+            
+            <p class="- topic/p p">This function sorts the result by the x. entry between the keywords SELECT and FROM.
+                The ASC parameter ensures that the data is sorted in ascending order (default
+                setting), the DESC ensures sorting in descending order. This function is not
+                available with Connect commands. SORT/ORDER BY 0 refers to the timestamp (first
+                column of the result table). SORT\ORDER BY 1 refers to the first attribute after the
+                'SELECT' (second column of the result table). If you do not specify a sort order,
+                the function sorts according to the timestamp.</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">If datapoints of different types are mixed with this command, this
+                could result in unexpected events (now is 1 greater than or less than
+                "abc"?).</div></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_timerange_0" data-ofbid="Query-06__dpQuery_timerange_0"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value', '_online.._stime'FROM 'mld_float.**' TIMERANGE (\"1998.05.2600:00:00.000\", .\"1998.05.26 23:59:59.000\",1,2) SORT BY 1 DESC"</span>, tab);</code></pre>
+            <p class="- topic/p p">After retrieving the values (_online.._value and _online.._stime) in the specified
+                time range, they are sorted in descending order after the first specification
+                between the SELECT and FROM (here: _online.._value).</p>
+        </div>
+        <div class="- topic/example example" id="Query-06__dpQuery_selectAlert" data-ofbid="Query-06__dpQuery_selectAlert"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT ALERT '_alert_hdl.._value', '_alert_hdl.._text' FROM 'mld_float.**' TIMERANGE(\""</span>+start+<span class="hl-string">"\",\""</span>+stop+<span class="hl-string">"\", 1, 2) SORT BY 2,1"</span>, tab);</code></pre>
+            <p class="- topic/p p"> Here the data is first sorted by the message text so that all messages with the same
+                text are together. If three ranges are defined for alert handling, two groups will
+                emerge (exceed or fall below the range). These two groups are then ordered by
+                size.</p>
+            <p class="- topic/p p">Explanations on the <a class="- topic/xref xref" href="Query-06.html#Query-06__TIMERANGE">TIMERANGE() function</a> or <a class="- topic/xref xref" href="Query-06.html#Query-06__Gruppenfunktionen">Group functions</a> can be found in the relevant
+                chapter of this section.</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">The SORT BY function must be called before the GROUP BY
+                function!</div></div>
+        </div>
+        <section class="- topic/section section" id="Query-06__orderBy" data-ofbid="Query-06__orderBy"><h2 class="- topic/title title sectiontitle">ORDER BY function</h2>
+            
+            <p class="- topic/p p">See <a class="- topic/xref xref" href="Query-06.html#Query-06__SORT">SORT BY function - SORT BY x [ASC | DESC]</a>. The functions are identical with regard to their
+                call and internal mode of operation.</p>
+        </section>
+        <section class="- topic/section section" id="Query-06__GROUP" data-ofbid="Query-06__GROUP"><h2 class="- topic/title title sectiontitle">GROUP BY function - GROUP BY x</h2>
+            
+            <p class="- topic/p p"> This function puts the data into groups. First, the data must be sorted by the same
+                column (see SORT BY).</p>
+            <p class="- topic/p p">The use of the GROUP BY function only makes sense with a group function since one
+                line is returned as the result of grouping (exception, for example,. the sum
+                    <em class="+ topic/ph hi-d/i ph i">of</em> all values obtained from an SQL statement). Without the group
+                function, the result column contains the entry of the last line of this group.</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">This method is not intended for processing alarm values (ALERT) and
+                in conjunction with Connect commands. </div></div>
+            <div class="- topic/note note restriction note_restriction" id="Query-06__note_read_option" data-ofbid="Query-06__note_read_option"><span class="note__title">Restriction:</span> <div class="note__body">When using the RDB manager with the
+                Direct Read option enabled, the GROUP BY clause cannot be used in combination with
+                aggregate functions such as MIN, MAX, and similar.</div></div>
+            <p class="- topic/p p"> Three different grouping methods exist:</p>
+        </section>
+        <section class="- topic/section section" id="Query-06__groupBy" data-ofbid="Query-06__groupBy"><h2 class="- topic/title title sectiontitle">GROUP BY function by datapoint elements</h2>
+            
+            <p class="- topic/p p">with a number from 1 to n, where n is the number of datapoint parts in front of the
+                FROM statement.</p>
+        </section>
+        <div class="- topic/example example"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpSet(<span class="hl-string">"mld_float.:_original.._value"</span>, <span class="hl-number">28</span>);
+  delay(<span class="hl-number">1</span>);
+  dpSet(<span class="hl-string">"mld_float.:_original.._value"</span>, <span class="hl-number">5</span>);
+  delay(<span class="hl-number">1</span>);
+  dpSet(<span class="hl-string">"mld_float.:_original.._value"</span>, <span class="hl-number">28</span>);
+  delay(<span class="hl-number">1</span>);
+  dpSet(<span class="hl-string">"mld_float.:_original.._value"</span>, <span class="hl-number">5</span>);
+  delay(<span class="hl-number">1</span>);
+  dpSet(<span class="hl-string">"mld_float.:_original.._value"</span>, <span class="hl-number">28</span>);
+  delay(<span class="hl-number">1</span>);
+  dpSet(<span class="hl-string">"mld_float.:_original.._value"</span>, <span class="hl-number">5</span>);
+  ...
+  ...</code></pre>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM 'mld_float.**' TIMERANGE(\"1998.05.26 00:00:00.000\",\"1998.05.26 23:59:59.000\",1,2) ORDER BY 1 GROUP BY 1"</span>, tab);</code></pre>
+            <p class="- topic/p p">Here all the values occurring are ordered and grouped by size. There is one output
+                line for each group. Thus all values that occur several times are combined in a
+                group:</p>
+            <div class="table-container"><table class="- topic/table table" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Query GROUP BY</span></caption><colgroup><col/><col/><col/></colgroup><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <strong class="+ topic/ph hi-d/b ph b">1</strong>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <strong class="+ topic/ph hi-d/b ph b">2</strong>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <strong class="+ topic/ph hi-d/b ph b">1</strong>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">Type:0 Sys:0 Dp:0 El:0 Conf:29 Det:0 Attr:0</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <p class="- topic/p p">:_online.._value</p>
+                                <p class="- topic/p p"> Type:131173 Sys:0 Dp:0 El:0 Conf:29 Det:0 Attr:0</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <strong class="+ topic/ph hi-d/b ph b">2</strong>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <p class="- topic/p p">System1: mld_float.</p>
+                                <p class="- topic/p p">Type:1 Sys:1651 Dp:1 El:0 Conf:0 Det:0 Attr:0</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">5</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <strong class="+ topic/ph hi-d/b ph b">3</strong>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">
+                                <p class="- topic/p p">System1: mld_float.</p>
+                                <p class="- topic/p p">Type:0 Sys:1 Dp:1651 El:1 Conf:0 Det: 0 Attr:0</p>
+                            </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">28</td>
+                        </tr>
+                    </tbody></table></div>
+        </div>
+        <section class="- topic/section section" id="Query-06__groupByTime" data-ofbid="Query-06__groupByTime"><h2 class="- topic/title title sectiontitle">GROUP BY function by the time</h2>
+            
+            <p class="- topic/p p">Here, with the command SECS[x], the data can be grouped in packages of x seconds.</p>
+            <p class="- topic/p p">With MONTH the data read is grouped by the month. "0" must be specified as the sort
+                characteristic.</p>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_selectMin" data-ofbid="Query-06__dpQuery_selectMin"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'MIN(_online.._value)' FROM 'mld_float.**' TIMERANGE(\"1998.05.26 00:00:00.000\", \"1998.05.26 23:59:59.000\",1,2) ORDER BY 0 GROUP BY SECS(60)"</span>, tab);</code></pre>
+            <p class="- topic/p p"> The data that occurred in the specified time range is sorted by the time (ORDER BY
+                0) and fitted into groups of 60 seconds. The minimum of these values is
+                determined.</p>
+        </div>
+        <section class="- topic/section section" id="Query-06__groupBy_dpLevels" data-ofbid="Query-06__groupBy_dpLevels"><h2 class="- topic/title title sectiontitle">GROUP BY function by datapoint levels</h2>
+            
+            <p class="- topic/p p">If one of the following keys is used as the grouping characteristic, n groups are
+                formed for n different occurrences within the key. Grouping by one of these
+                characteristics requires that "0" is specified as the sorting characteristic.</p>
+            <p class="- topic/p p">The keywords for the components of the datapoints and types are:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>_SYS, _DP, _EL and_ELC</code></pre>
+            <p class="- topic/p p">For explanations on this, refer to "Keywords for the individual parts of a <u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="Query.html#Query__Keywords_data_points">datapoint</a></u>".</p>
+        </section>
+        <div class="- topic/example example" id="Query-06__selectCount" data-ofbid="Query-06__selectCount"><h2 class="- topic/title title sectiontitle">Example - The result is grouped by datapoints</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'COUNT(_online.._value)' FROM 'mld_*.**' TIMERANGE(\"1998.05.26 11:04:25.000\",\"1998.05.26 23:59:59.000\",1,2) GROUP BY _DP"</span>, tab); SORT BY <span class="hl-number">0</span></code></pre>
+            <p class="- topic/p p">The result is grouped by datapoints (if there are three different datapoints, there
+                will be three groups). The number of saved values is generated for each data
+                point.</p>
+        </div>
+        <section class="- topic/section section" id="Query-06__LAST" data-ofbid="Query-06__LAST"><h2 class="- topic/title title sectiontitle">LAST function - LAST x</h2>
+            
+            <p class="- topic/p p">With this command (at the most) the last x lines of the result table are returned, or
+                less if the query is restricted by other conditions.</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">This function is not available with Connect commands.</div></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_last" data-ofbid="Query-06__dpQuery_last"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT ALERT '_alert_hdl.._value', '_alert_hdl.._text' FROM 'mld_*.**' LAST 2"</span>, tab);
+DebugN(<span class="hl-string">"Number n-1: "</span>,tab[<span class="hl-number">2</span>][<span class="hl-number">3</span>]);
+DebugN(<span class="hl-string">"Text n-1: "</span>,tab[<span class="hl-number">2</span>][<span class="hl-number">4</span>]);
+DebugN(<span class="hl-string">"Number n : "</span>,tab[<span class="hl-number">3</span>][<span class="hl-number">3</span>]);
+DebugN(<span class="hl-string">"Text n : "</span>,tab[<span class="hl-number">3</span>][<span class="hl-number">4</span>]);</code></pre>
+        </div>
+        <section class="- topic/section section" id="Query-06__firstFunction" data-ofbid="Query-06__firstFunction"><h2 class="- topic/title title sectiontitle">FIRST function - FIRST x</h2>
+            
+            <p class="- topic/p p">as LAST, only in this case the first x lines of the result table are returned.</p>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery" data-ofbid="Query-06__dpQuery"><h2 class="- topic/title title sectiontitle">Example FIRST 2</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT ALERT '_alert_hdl.._value','_alert_hdl.._text' FROM 'mld_float.**' FIRST 2"</span>, tab);
+DebugN(<span class="hl-string">"Number 1: "</span>,tab[<span class="hl-number">2</span>][<span class="hl-number">3</span>]);
+DebugN(<span class="hl-string">"Text 1: "</span>,tab[<span class="hl-number">2</span>][<span class="hl-number">4</span>]);
+DebugN(<span class="hl-string">"Number 2: "</span>,tab[<span class="hl-number">3</span>][<span class="hl-number">3</span>]);
+DebugN(<span class="hl-string">"Text 2: "</span>,tab[<span class="hl-number">3</span>][<span class="hl-number">4</span>]);</code></pre>
+        </div>
+        <section class="- topic/section section" id="Query-06__NULL" data-ofbid="Query-06__NULL"><h2 class="- topic/title title sectiontitle">NULL</h2>
+            
+            <p class="- topic/p p">In contrast to "0", NULL determines whether, for example, the value of an existing
+                datapoint attribute is 0.</p>
+            <p class="- topic/p p">A query must be made for "0" to determine the existence of an attribute.</p>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_NULL" data-ofbid="Query-06__dpQuery_NULL"><h2 class="- topic/title title sectiontitle">Example</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM '*' WHERE '_alert_hdl.._type' != NULL"</span>, tab);</code></pre>
+            <p class="- topic/p p">This query does not make much sense: All the datapoints in this project are output as
+                the query result. This happens because the type attribute is always defined.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM '*' WHERE '_alert_hdl.._type' !=0"</span>, tab);</code></pre>
+            <p class="- topic/p p">With this constellation, all datapoints with alert handling are output.</p>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">When using a query with the option "queryRDBDirect = 1" the
+                condition "!= NULL" in the WHERE clause (e.g. "'_online.._value' != NULL") will
+                translate directly to "is not NULL" for Oracle. Since empty strings are stored as
+                NULL in Oracle, this condition will rule out empty strings. The same thing applies
+                to "= NULL" or "is NULL".</div></div>
+        </div>
+        <section class="- topic/section section" id="Query-06__logComparison" data-ofbid="Query-06__logComparison"><h2 class="- topic/title title sectiontitle">Logical comparisons</h2>
+            
+            <p class="- topic/p p">Logical comparisons are used to select individual attributes. The following logical
+                operators are available:</p>
+            <div class="table-container"><table class="- topic/table table" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Logical comparisons</span></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="Query-06__logComparison__entry__1">Operator</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="Query-06__logComparison__entry__2">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">=,==, IS</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">is equal to</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">!=,&lt;&gt;, IS NOT</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">is not equal to</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">&gt;, &gt;=</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">greater (equal to)</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">&lt;,&lt;=</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">less than or equal to</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">&amp;&amp;, AND</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">logical and</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">||, OR</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">logical or</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">IN (a1,a2,...)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">selection list, see example below</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">LIKE "string"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">comparison of string with wildcards, see example below</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__1">NOT LIKE "string"</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="Query-06__logComparison__entry__2">negation of comparison of string with wildcards, see example
+                                below</td>
+                        </tr>
+                    </tbody></table></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__inComparison" data-ofbid="Query-06__inComparison"><h2 class="- topic/title title sectiontitle">IN comparison</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM '*' WHERE _DP IN (\"mld_float\",\"mld_bit\")"</span>, tab);</code></pre>
+            <p class="- topic/p p">The online values of all datapoints are read and then filtered later, whether the
+                level DP is called mld_floator mld_bit.</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">In this example, for performance reasons, the datapoint expression should be
+                specified directly after the FROM, as this means that not all datapoint values will
+                have to be read.</div></div>
+        </div>
+        <div class="- topic/example example" id="Query-06__likeComparison" data-ofbid="Query-06__likeComparison"><h2 class="- topic/title title sectiontitle">LIKE comparison</h2>
+            
+            <p class="- topic/p p">A text comparison is carried out that only allows datapoints that begin with mld. One
+                line for each datapoint is returned with the online value as the result.</p>
+            <div class="- topic/note note note note_note" id="Query-06__note_rvc_l52_cvb" data-ofbid="Query-06__note_rvc_l52_cvb"><span class="note__title">Note:</span> <div class="note__body">For _alias and _comment (they are part of _common config)
+                LIKE must be used instead of an equal sign (=).</div></div>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT '_online.._value' FROM '*' WHERE _DP  LIKE \"mld*\""</span>, tab);</code></pre>
+            <div class="- topic/note note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">In this example, for performance reasons, the datapoint expression
+                should be specified directly after the FROM since this means that not all datapoint
+                values will have to be read. </div></div>
+        </div>
+        <div class="- topic/example example" id="Query-06__notLile_comparison" data-ofbid="Query-06__notLile_comparison"><h2 class="- topic/title title sectiontitle">NOT LIKE comparison</h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT ALL '_online.._value' FROM 'ExampleDPArg*.' WHERE  _DP NOT LIKE "</span>ExampleDPArg3<span class="hl-string">", tab);</span></code></pre>
+            <p class="- topic/p p"> All datapoints ExampleDPArg* are returned except ExampleDPArg3.</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">In this example, for performance reasons, the datapoint expression should be
+                specified directly after the FROM since this means that not all datapoint values
+                will have to be read.</div></div>
+        </div>
+        <section class="- topic/section section" id="Query-06__Gruppenfunktionen" data-ofbid="Query-06__Gruppenfunktionen"><h2 class="- topic/title title sectiontitle">Group functions</h2>
+            
+            <p class="- topic/p p">The following group functions that are also provided by standard SQL can be used to
+                evaluate a group of result lines.</p>
+            <p class="- topic/p p">If a group function is specified without a GROUP BY clause, the entire result table
+                is placed in one line. The argument of the group function must be a valid
+                specification before the FROM statement. The wildcard "*" is, in contrast to
+                standard SQL, not supported here.</p>
+            <p class="- topic/p p">If a GROUP BY clause is specified, the table must first have been sorted by the same
+                columns (in the same order): With SORT BY 1,3,4: GROUP BY 1,4 (but not GROUP BY
+                4,1).</p>
+            <p class="- topic/p p">The group command is followed by the statement in brackets before the FROM. The group
+                commands are listed as follows:</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">The functions MIN, MAX,AVG and COUNT only support numeric data types and dynamic
+                numeric data types.</div></div>
+        </section>
+        <section class="- topic/section section" id="Query-06__count_count_x" data-ofbid="Query-06__count_count_x"><h2 class="- topic/title title sectiontitle">COUNT - COUNT(x)</h2>
+            
+            <p class="- topic/p p">This function returns the number of lines of a group.</p>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_timerange" data-ofbid="Query-06__dpQuery_timerange"><h2 class="- topic/title title sectiontitle">Example - dpQuery with <code class="+ topic/ph pr-d/codeph ph codeph">TIMERANGE</code></h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'COUNT(_online.._value)' FROM 'mld_float.**' TIMERANGE(\"1998.05.26 00:00:00.000\", \"1998.05.26 23:59:59.000\",1,2)"</span>,  tab);</code></pre>
+        </div>
+        <section class="- topic/section section" id="Query-06__min_min_x" data-ofbid="Query-06__min_min_x"><h2 class="- topic/title title sectiontitle">MIN - MIN(x)</h2>
+            
+            <p class="- topic/p p"> The function MIN is used to output the minimum within a group.</p>
+            <div class="- topic/note note restriction note_restriction"><span class="note__title">Restriction:</span> <div class="note__body">When using the RDB manager with the
+                Direct Read option enabled, the GROUP BY clause cannot be used in combination with
+                aggregate functions such as MIN, MAX, and similar.</div></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_timerange_2" data-ofbid="Query-06__dpQuery_timerange_2"><h2 class="- topic/title title sectiontitle">Example - <code class="+ topic/ph pr-d/codeph ph codeph">MIN</code></h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'MIN(_online.._value)' FROM 'mld_float.**' TIMERANGE(\"1998.05.26 00:00:00.000\", \"1998.05.26 23:59:59.000\",1,2)"</span>,  tab);</code></pre></div>
+        <section class="- topic/section section" id="Query-06__dpQuery_timerange_3" data-ofbid="Query-06__dpQuery_timerange_3"><h2 class="- topic/title title sectiontitle">MAX - MAX(x)</h2>
+            
+            <p class="- topic/p p"> The option MAX returns the maximum of the group as the result.</p>
+            <div class="- topic/note note restriction note_restriction"><span class="note__title">Restriction:</span> <div class="note__body">When using the RDB manager with the
+                Direct Read option enabled, the GROUP BY clause cannot be used in combination with
+                aggregate functions such as MIN, MAX, and similar.</div></div>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_timerange4" data-ofbid="Query-06__dpQuery_timerange4"><h2 class="- topic/title title sectiontitle">Example - <code class="+ topic/ph pr-d/codeph ph codeph">MAX</code></h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'MAX(_online.._value)' FROM 'mld_float.**' TIMERANGE(\"1998.05.26 00:00:00.000\", \"1998.05.26 23:59:59.000\",1,2),  tab);</span></code></pre>
+        </div>
+        <section class="- topic/section section" id="Query-06__avg_avg_x" data-ofbid="Query-06__avg_avg_x"><h2 class="- topic/title title sectiontitle">AVG - AVG(x)</h2>
+            
+            <p class="- topic/p p">This group function returns the average value (arithmetic average) of the values in
+                question.</p>
+        </section>
+        <div class="- topic/example example" id="Query-06__sel_avg" data-ofbid="Query-06__sel_avg"><h2 class="- topic/title title sectiontitle">Example - <code class="+ topic/ph pr-d/codeph ph codeph">AVG</code></h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'AVG(_online.._value)' FROM 'mld_float.**' TIMERANGE(\"1998.05.26 00:00:00.000\", \"1998.05.26 23:59:59.000\",1,2),  tab);</span></code></pre></div>
+        <section class="- topic/section section" id="Query-06__sum_sum_x" data-ofbid="Query-06__sum_sum_x"><h2 class="- topic/title title sectiontitle">SUM - SUM(x)</h2>
+            
+            <p class="- topic/p p">The function SUM is used to form the group sum.</p>
+        </section>
+        <div class="- topic/example example" id="Query-06__dpQuery_timerange_5" data-ofbid="Query-06__dpQuery_timerange_5"><h2 class="- topic/title title sectiontitle">Example - <code class="+ topic/ph pr-d/codeph ph codeph">SUM</code></h2>
+            
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'SUM(_online.._value)' FROM 'mld_float.**' TIMERANGE(\"1998.05.26 00:00:00.000\", \"1998.05.26 23:59:59.000\",1,2)"</span>, tab);</code></pre>
+        </div>
+        <div class="- topic/example example" id="Query-06__groupFunctions" data-ofbid="Query-06__groupFunctions"><h2 class="- topic/title title sectiontitle">Example - Group functions</h2>
+            
+            <p class="- topic/p p">The result for all group functions can be queried with the following statement</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpQuery(<span class="hl-string">"SELECT 'MAX(_original.._value)', 'MIN(_original.._value)', 'SUM(_original.._value)','AVG(_original.._value)' FROM 'mld_float.**' TIMERANGE(\""</span>+start+<span class="hl-string">"\",\""</span>+stop+<span class="hl-string">"\",1,2)"</span>, tab);</code></pre>
+            <p class="- topic/p p" id="Query-06__P1384_35938" data-ofbid="Query-06__P1384_35938">Explanations on the <a class="- topic/xref xref" href="Query-06.html#Query-06__TIMERANGE">TIMERANGE</a> , on the variables <u class="+ topic/ph hi-d/u ph u"><a class="- topic/xref xref" href="Query-06.html#Query-06__P1006_25654">start and stop</a></u> can be
+                found in the relevant chapter of this section.</p>
+        </div>
+    </div>
+</article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns="" xmlns:whc="http://www.oxygenxml.com/webhelp/components" class="d-print-none"></whc:webhelp_feedback>
+                        <div id="oxygen-feedback-frame-container">
+    <script id="feedback-init" defer="defer" src="https://feedback.oxygenxml.com/app/init/init.js?deploymentToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJkZXBsb3ltZW50SWQiOjEwNDZ9.Z1wqIErte4dBbWAxxQnr_fHeATFbjXktFL-YJhZGIqTkGp1a6WK3pEQHY_0k2BgIRi6amadmqqEJyzGOW8YzSg"><!-- --></script>
+</div>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#Query-06__WHERE" data-tocid="Query-06__WHERE">WHERE</a></div></li><li class="section-title"><a href="#Query-06__value_larger" data-tocid="Query-06__value_larger">Example - values of datapoints whose online value is greater than 45</a></li><li class="section-title"><a href="#Query-06__from_0" data-tocid="Query-06__from_0">Example - datapoints of the type ExampleDP_Float</a></li><li class="section-title"><a href="#Query-06__from_1" data-tocid="Query-06__from_1">Example - datapoints whose alias begins with an "A" </a></li><li class="section-title"><a href="#Query-06__from_2" data-tocid="Query-06__from_2">Example - datapoints whose comment contains "OP"</a></li><li class="section-title"><a href="#Query-06__asterix" data-tocid="Query-06__asterix">Example - datapoints (*.**) of datapoint type "PUMP1" </a></li><li class="section-item"><div class="section-title"><a href="#Query-06__where_and" data-tocid="Query-06__where_and">WHERE and AND</a></div></li><li class="section-title"><a href="#Query-06__dp_keywords" data-tocid="Query-06__dp_keywords">Example of Datapoint keywords</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__booleanComparion" data-tocid="Query-06__booleanComparion">Boolean comparison in a WHERE clause - \"TRUE\" and \"FALSE\"</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__TIMERANGE" data-tocid="Query-06__TIMERANGE">TIMERANGE() function</a></div></li><li class="section-title"><a href="#Query-06__selList" data-tocid="Query-06__selList">Example - Values in a selection list</a></li><li class="section-item"><div class="section-title"><a href="#Query-06___corr" data-tocid="Query-06___corr">"_corr.._manager" and "_corr.._user"</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__archivenum" data-tocid="Query-06__archivenum">ARCHIVENUM</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__modus" data-tocid="Query-06__modus">Modus - Modus = 1</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__bonus" data-tocid="Query-06__bonus">Bonus</a></div></li><li class="section-title"><a href="#Query-06__P1006_25654" data-tocid="Query-06__P1006_25654">Example</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__SORT" data-tocid="Query-06__SORT">SORT BY function - SORT BY x [ASC | DESC]</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_timerange_0" data-tocid="Query-06__dpQuery_timerange_0">Example</a></li><li class="section-title"><a href="#Query-06__dpQuery_selectAlert" data-tocid="Query-06__dpQuery_selectAlert">Example</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__orderBy" data-tocid="Query-06__orderBy">ORDER BY function</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__GROUP" data-tocid="Query-06__GROUP">GROUP BY function - GROUP BY x</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__groupBy" data-tocid="Query-06__groupBy">GROUP BY function by datapoint elements</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__groupByTime" data-tocid="Query-06__groupByTime">GROUP BY function by the time</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_selectMin" data-tocid="Query-06__dpQuery_selectMin">Example</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__groupBy_dpLevels" data-tocid="Query-06__groupBy_dpLevels">GROUP BY function by datapoint levels</a></div></li><li class="section-title"><a href="#Query-06__selectCount" data-tocid="Query-06__selectCount">Example - The result is grouped by datapoints</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__LAST" data-tocid="Query-06__LAST">LAST function - LAST x</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_last" data-tocid="Query-06__dpQuery_last">Example</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__firstFunction" data-tocid="Query-06__firstFunction">FIRST function - FIRST x</a></div></li><li class="section-title"><a href="#Query-06__dpQuery" data-tocid="Query-06__dpQuery">Example FIRST 2</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__NULL" data-tocid="Query-06__NULL">NULL</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_NULL" data-tocid="Query-06__dpQuery_NULL">Example</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__logComparison" data-tocid="Query-06__logComparison">Logical comparisons</a></div></li><li class="section-title"><a href="#Query-06__inComparison" data-tocid="Query-06__inComparison">IN comparison</a></li><li class="section-title"><a href="#Query-06__likeComparison" data-tocid="Query-06__likeComparison">LIKE comparison</a></li><li class="section-title"><a href="#Query-06__notLile_comparison" data-tocid="Query-06__notLile_comparison">NOT LIKE comparison</a></li><li class="section-item"><div class="section-title"><a href="#Query-06__Gruppenfunktionen" data-tocid="Query-06__Gruppenfunktionen">Group functions</a></div></li><li class="section-item"><div class="section-title"><a href="#Query-06__count_count_x" data-tocid="Query-06__count_count_x">COUNT - COUNT(x)</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_timerange" data-tocid="Query-06__dpQuery_timerange">Example - dpQuery with <code class="+ topic/ph pr-d/codeph ph codeph">TIMERANGE</code></a></li><li class="section-item"><div class="section-title"><a href="#Query-06__min_min_x" data-tocid="Query-06__min_min_x">MIN - MIN(x)</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_timerange_2" data-tocid="Query-06__dpQuery_timerange_2">Example - <code class="+ topic/ph pr-d/codeph ph codeph">MIN</code></a></li><li class="section-item"><div class="section-title"><a href="#Query-06__dpQuery_timerange_3" data-tocid="Query-06__dpQuery_timerange_3">MAX - MAX(x)</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_timerange4" data-tocid="Query-06__dpQuery_timerange4">Example - <code class="+ topic/ph pr-d/codeph ph codeph">MAX</code></a></li><li class="section-item"><div class="section-title"><a href="#Query-06__avg_avg_x" data-tocid="Query-06__avg_avg_x">AVG - AVG(x)</a></div></li><li class="section-title"><a href="#Query-06__sel_avg" data-tocid="Query-06__sel_avg">Example - <code class="+ topic/ph pr-d/codeph ph codeph">AVG</code></a></li><li class="section-item"><div class="section-title"><a href="#Query-06__sum_sum_x" data-tocid="Query-06__sum_sum_x">SUM - SUM(x)</a></div></li><li class="section-title"><a href="#Query-06__dpQuery_timerange_5" data-tocid="Query-06__dpQuery_timerange_5">Example - <code class="+ topic/ph pr-d/codeph ph codeph">SUM</code></a></li><li class="section-title"><a href="#Query-06__groupFunctions" data-tocid="Query-06__groupFunctions">Example - Group functions</a></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <div data-whc_version="25.0" class="navbar navbar-default wh_footer">
+  <div class="footer_div_left">
+    <a href="../oxygen-webhelp/template/../../iec_62443/topics/iec_62443_certification.html" target="_blank"><img class="cert-image_iec62443"/></a>
+    <a href="../oxygen-webhelp/template/../../iec_61508/iec_61508_certification.html" target="_blank"><img class="cert-image_iec61508"/></a>
+  </div>
+  <div class="footer_div_center">
+    <p>SIMATIC WinCC Open Architecture Version 3.21.1 - © ETM professional control GmbH <span id="span_year"></span> - <a href="mailto:documentation@etm.at" target="_blank"><img class="sm_icon mail"/></a> | <a href="https://www.linkedin.com/company/etm-professional-control/" target="_blank"><img class="sm_icon linkedin"/></a> | <a href="https://www.facebook.com/WinCC.OA" target="_blank"><img class="sm_icon facebook"/></a> | <a href="https://www.youtube.com/@WinCCOA" target="_blank"><img class="sm_icon youtube"/></a> - <a href="https://www.winccoa.com/rights/privacy-policy.html" target="_blank">Privacy Policy</a> - <a href="https://www.siemens.com/global/en/general/cookie-notice.html" target="_blank">Cookie Policy</a> - <a href="https://www.winccoa.com/rights/terms-of-use.html" target="_blank">Terms of use</a> -  <a href="https://www.siemens.com/global/en/company/about/compliance/reporting-channels.html" target="_blank">Whistleblowing</a> - <a href="https://www.winccoa.com/company/imprint.html" target="_blank">Imprint</a></p>
+    <script>document.querySelector('#span_year').innerHTML = new Date().getFullYear();</script>
+  </div>
+  <div class="footer_div_right"></div>
+</div>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" alt=""/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <div id="chatbot">
+ <iframe id="openassistantgpt-chatbot-button-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/button?chatbox=false" style="display:none; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+ <!-- This chatbot is build using https://openassistantgpt.io/ -->
+ <iframe allowfullscreen="" id="openassistantgpt-chatbot-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/window?chatbox=false&amp;withExitX=true" style="margin-right: 1rem; margin-bottom: 6rem; display: none; position: fixed; right: 0; bottom: 0; pointer-events: none; overflow: hidden; height: 65vh; border: 2px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); width: 30rem;"></iframe>
+  <script><!--
+
+   var currentUrl = window.location.href; //get current url
+   var btn = document.getElementById("openassistantgpt-chatbot-button-iframe"); //get the chatbot button
+   var btn_oa = document.getElementById("assistant_button"); //get the chatbot button
+   if(['/3.20/', '/latest/'].some(el => currentUrl.includes(el))){
+    btn.style.display = "inline-block"; //enable chatbot button
+    btn_oa.style.display = "inline-block"; //enable chatbot button
+    window.addEventListener("message", function(t) {
+      var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+       s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+  
+      function toggleChatVisibility() {
+       if (e && s) {
+        e.contentWindow.postMessage("openChat", "*");
+        s.contentWindow.postMessage("openChat", "*");
+        e.style.pointerEvents = "auto";
+        e.style.display = "block";
+        if (window.innerWidth < 640) {
+         e.style.position = "fixed";
+         e.style.width = "100%";
+         e.style.height = "100%";
+         e.style.top = "0";
+         e.style.left = "0";
+         e.style.zIndex = "9999";
+        } else {
+         e.style.position = "fixed";
+         e.style.width = "30rem";
+         e.style.height = "65vh";
+         e.style.bottom = "0";
+         e.style.right = "0";
+         e.style.top = "";
+         e.style.left = "";
+        }
+       } else {
+        console.error("iframe not found");
+       }
+      }
+      function closeChat() {
+       if (e && s) {
+        e.style.display = "none";
+        e.style.pointerEvents = "none";
+        e.contentWindow.postMessage("closeChat", "*");
+        s.contentWindow.postMessage("closeChat", "*");
+       }
+      }
+      if (t.data === "openChat") {
+       toggleChatVisibility();
+      } else if (t.data === "closeChat") {
+       closeChat();
+      }
+     });
+     // Add event listener for assistant_button click
+     document.getElementById("assistant_button").addEventListener("click", function() {
+      var event = new Event("message");
+      if(document.getElementById("openassistantgpt-chatbot-iframe").style.display == "block")
+      {
+       event.data = "closeChat";
+      }
+      else
+      {
+       event.data = "openChat";
+      }
+      window.dispatchEvent(event);
+     });
+    }
+   
+--></script>
+   <script><!--
+
+    document.getElementById("menu_toggler").addEventListener("click", function() {
+     document.querySelector('#wh_menu_mobile_button').click();
+   });
+  
+--></script>
+  <script><!--
+
+   function getBrowserColorScheme() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+     return "dark";
+    } 
+    return "light";  
+   }
+   function getLocalColorScheme(){
+    return localStorage.getItem("theme");
+   }
+   function setSchemeClass(colorScheme){
+    document.body.classList.add(colorScheme);
+    if(colorScheme === "light"){
+     document.body.classList.remove("dark");
+    }
+    else{
+     document.body.classList.remove("light");
+    }
+   }
+   function isSchemeClassSet(colorScheme)
+   {
+    return document.body.classList.contains(colorScheme);
+   }
+   function setLocalColorScheme(colorScheme){
+    localStorage.setItem("theme", colorScheme);
+    setSchemeClass(colorScheme);
+   }
+   function isLocalColorSchemeSet() {
+    if(getLocalColorScheme() === null){
+     return false;
+    }
+    return true;
+   }
+   function toggleLocalColorScheme(currentSchema){
+    if(currentSchema === "light"){
+     setLocalColorScheme("dark");
+    }
+    else
+    {
+     setLocalColorScheme("light");
+    }
+   }
+   if(isLocalColorSchemeSet())
+   {
+    setSchemeClass(getLocalColorScheme());
+   }
+   else{
+    setLocalColorScheme(getBrowserColorScheme());
+   }
+   
+   document.getElementById("theme_toggler").addEventListener("click", function() {
+    if(isLocalColorSchemeSet()){
+     toggleLocalColorScheme(getLocalColorScheme());
+    }
+    else
+    {
+     toggleLocalColorScheme(getBrowserColorScheme());
+    }
+   });
+  
+--></script>
+</div>
+<div>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-2142215-10"></script>
+    <script><!--
+ window.dataLayer = window.dataLayer || []; function
+        gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','UA-2142215-10'); 
+--></script>
+</div>
+    </body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="25.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><link rel="icon" href="../../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="keywords" content="WinCCOA, OnlineHelp, Online Help, Documentation, OA, SIMATIC, WinCC OA, WCCOA"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="-1"/><meta name="description" content="A manager can execute several CTRL scripts simultaneously. A script can contain several threads. You can analyze a script or a thread in the script. Open the CTRL debugger panel via GEDI &gt; Tools &gt; ..."/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="DC.subject" content="ctrl debugger,CTRL Debugger,ctrl debugger panel"/><meta name="keywords" content="ctrl debugger, CTRL Debugger, ctrl debugger panel"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="ctrl_debugger_panel"/><title>CTRL Debugger Panel</title><!--  Generated with Oxygen version 27.0, build number 2024121223.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content=""/><meta name="wh-source-relpath" content="CTRL_Debugger/topics/ctrl_debugger_panel.dita"/><meta name="wh-out-relpath" content="CTRL_Debugger/topics/ctrl_debugger_panel.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2024121223"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2024121223"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20260226124654"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2024121223"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20260226124654"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2024121223"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2024121223"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/style.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/mobile.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/tile-icons.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/single-line-dlentry.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/footer.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/chatbot.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/syntax.css?buildId=2024121223"/><script src="//assets.adobedtm.com/5dfc7d97c6fb/9452e85082e5/launch-b4ffda58d5f0.min.js" async="async"></script></head>
+
+    <body id="ctrl_debugger_panel" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="23.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/resources/images/modern/winccoa.png" alt="WinCC OA Documentation"/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"><span class="ph">WinCC OA Documentation</span></span></a></div>
+                    <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+                    <div id="assistant_button" title="AI powered WinCC OA Assistant"></div>
+                    <div id="menu_toggler" title="Toggle Main Menu"></div>
+                    <div id="theme_toggler" title="Toggle Dark/Light Theme"></div>
+                    <div id="lang_toggler"><a href="#" onclick="switchLanguage()" class="lang_switch_link">LANG</a></div>
+<script><!--
+
+  /* Set image of lang switch button */
+  var url = window.location.href;
+    
+  if(['/en/', '/en_US/'].some(el => url.includes(el)))
+  {
+    document.body.classList.add("lang-en");
+    document.getElementById("assistant_button").textContent = "WinCC OA AI Assistant";
+  }
+  else
+  {
+    document.body.classList.add("lang-de");
+    document.getElementById("assistant_button").textContent = "WinCC OA KI-Assistent";
+  }
+
+  /* Click event for lang switch button */
+  function switchLanguage() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+    if(['/en/', '/en_US/'].some(el => currentUrl.includes(el)))
+    {      
+      newUrl = currentUrl.replace('/en/', '/de/');
+      newUrl = currentUrl.replace('/en_US/', '/de_AT/');
+    }
+    else if(['/de/', '/de_AT/'].some(el => currentUrl.includes(el)))
+    {
+      newUrl = currentUrl.replace('/de/', '/en/');
+      newUrl = currentUrl.replace('/de_AT/', '/en_US/');
+    } 
+    window.location.href = newUrl;
+  }
+
+--></script>
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="version_information-d54385e2159-mi" data-tocid="version_information-d54385e2159" data-state="not-ready" class=" topicref " data-id="version_information"><span class="title"><a href="../../release_notes/version_information.html">Version Information</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e5517-mi" data-tocid="concepts-d54385e5517" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../../_resources/toc/concepts.html">Concepts</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e6907-mi" data-tocid="concepts-d54385e6907" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../../_resources/toc/deployment.html">Deployment</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_security-d54385e10162-mi" data-tocid="main_security-d54385e10162" data-state="not-ready" class=" topicref " data-id="main_security"><span class="title"><a href="../../security/topics/security.html">Security</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="engineering-d54385e11399-mi" data-tocid="engineering-d54385e11399" data-state="not-ready" class=" topicref " data-id="engineering"><span class="title"><a href="../../_resources/toc/engineering.html">Engineering</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e20103-mi" data-tocid="data_management-d54385e20103" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../../_resources/toc/data_management.html">Data Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e24184-mi" data-tocid="data_management-d54385e24184" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../../_resources/toc/business_logic.html">Business Logic / Control</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_visualization-d54385e64646-mi" data-tocid="data_visualization-d54385e64646" data-state="not-ready" class=" topicref " data-id="data_visualization"><span class="title"><a href="../../_resources/toc/data_visualization.html">Data Visualization</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="southbound_interfaces-d54385e67006-mi" data-tocid="southbound_interfaces-d54385e67006" data-state="not-ready" class=" topicref " data-id="southbound_interfaces"><span class="title"><a href="../../_resources/toc/southbound_interfaces.html">Southbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="north_bound-d54385e70326-mi" data-tocid="north_bound-d54385e70326" data-state="not-ready" class=" topicref " data-id="north_bound"><span class="title"><a href="../../_resources/toc/northbound_interfaces.html">Northbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="webconnectivity-d54385e71612-mi" data-tocid="webconnectivity-d54385e71612" data-state="not-ready" class=" topicref " data-id="webconnectivity"><span class="title"><a href="../../_resources/toc/webconnectivity.html">Web Connectivity / Network Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="user_management-d54385e75413-mi" data-tocid="user_management-d54385e75413" data-state="not-ready" class=" topicref " data-id="user_management"><span class="title"><a href="../../_resources/toc/user_management.html">User Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="availability-d54385e76708-mi" data-tocid="availability-d54385e76708" data-state="not-ready" class=" topicref " data-id="availability"><span class="title"><a href="../../_resources/toc/availability.html">Availability</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reporting-d54385e77549-mi" data-tocid="reporting-d54385e77549" data-state="not-ready" class=" topicref " data-id="reporting"><span class="title"><a href="../../_resources/toc/reporting.html">Reporting</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="addons-d54385e78241-mi" data-tocid="addons-d54385e78241" data-state="not-ready" class=" topicref " data-id="addons"><span class="title"><a href="../../_resources/toc/addons.html">Addons</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reference_tables-d54385e81051-mi" data-tocid="reference_tables-d54385e81051" data-state="not-ready" class=" topicref " data-id="reference_tables"><span class="title"><a href="../../_resources/toc/reference_tables.html">Reference Tables</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_videos-d54385e83295-mi" data-tocid="main_videos-d54385e83295" data-state="not-ready" class=" topicref " data-id="main_videos"><span class="title"><a href="../../videos/video_tutorials.html">Videos &amp; Tutorials</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="documentation-d54385e83842-mi" data-tocid="documentation-d54385e83842" data-state="not-ready" class=" topicref " data-id="documentation"><span class="title"><a href="../../general/topics/documentation.html">Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support-d54385e83905-mi" data-tocid="support-d54385e83905" data-state="not-ready" class=" topicref " data-id="support"><span class="title"><a href="../../Support/topics/support.html">Support &amp; Services</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="disclaimer-d54385e83935-mi" data-tocid="disclaimer-d54385e83935" data-state="not-ready" class=" topicref " data-id="disclaimer"><span class="title"><a href="../../_resources/toc/disclaimer.html">Disclaimer</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "></div>
+
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                    
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" id="wh_topic_body">
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic topic" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">CTRL Debugger Panel</h1>
+    
+    <div class="- topic/body body">
+        <p class="- topic/p p">A manager can execute several CTRL scripts simultaneously. A script can contain several
+            threads. You can analyze a script or a thread in the script.</p>
+        <p class="- topic/p p">Open the CTRL debugger panel via <span class="+ topic/ph ui-d/menucascade ph menucascade"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">GEDI</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">Tools</span><abbr title="and then"> &gt; </abbr><span class="+ topic/ph ui-d/uicontrol ph uicontrol">CTRL Debugger</span></span>. </p>
+        <figure class="- topic/fig fig fignone" id="ctrl_debugger_panel__OpenViaGedi" data-ofbid="ctrl_debugger_panel__OpenViaGedi"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Tools menu in the GEDI</span></figcaption>
+            
+            <img class="- topic/image image" src="../images/CTRLDebugger-01.png"/>
+        </figure>
+        <p class="- topic/p p">Or via the same symbol <img class="- topic/image image" src="../images/CTRLDebugger-07.png"/> in the <span class="- topic/ph ph">WinCC OA</span> console. Control (CTRL) and UI managers can be debugged.</p>
+        <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">If the CTRL Debugger panel is opened via the console, a new UI is started. Thus, a
+            free UI license is required. Furthermore, note that you have to log in first when you
+            open the panel via the console.</div></div>
+        <div class="- topic/note note restriction note_restriction"><span class="note__title">Restriction:</span> <div class="note__body">Debugger cannot be started via the console when <a class="- topic/xref xref" href="../../Authentication/Serverside_auth/topics/serversideauth_basics.html" title="When using the server-side authentication for UI managers the user has to authenticate himself to the User Interface via the HTTP server. Communication between the user interface and the WinCC OA core (Data manager / Event manager) is only possible if the login credentials are verified by the HTTP server and clearance is ensured via a user interface specific token.">SSA</a> is activated.</div></div>
+        <div class="- topic/note note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">In order to debug a manager, the manager must be running!</div></div>
+        <div class="- topic/note note important note_important"><span class="note__title">Important:</span> <div class="note__body">Scripts of a panel are only available within the Debugger, if the
+            scripts have been called once while the Debugger is active.</div></div>
+        <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">CTRL Debugger - Select a Manager</span></figcaption>
+            
+            <img class="- topic/image image" src="../images/CTRLDebugger-02.png"/>
+        </figure>
+        <p class="- topic/p p">With the CTRL Debugger you can debug scripts or threads. The scripts can, however, not be
+            changed in the debugger. You can, however, open a script in the script editor via the
+            CTRL debugger or a panel in the GEDI. See <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__OpenScriotEditor">further
+                below</a>.</p>
+        <p class="- topic/p p"><a class="- topic/xref xref" href="../../Native_GEDI/Referenz_Native_GEDI-21.html#Referenz_Native_GEDI-21__ScopeLib">ScopeLibs</a> cannot be debugged!</p>
+        <p class="- topic/p p">The panel contains 5 main areas that are described in detail in the following:</p>
+        <ul class="- topic/ul ul">
+            <li class="- topic/li li">
+                <p class="- topic/p p">
+                    <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__MainPanel">the script
+                        window (in the middle)</a>
+                </p>
+            </li>
+            <li class="- topic/li li">
+                <p class="- topic/p p">
+                    <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__LibrariesScripte">The
+                        Window for CTRL libraries, scripts and breakpoints (left-hand side)</a>
+                </p>
+            </li>
+            <li class="- topic/li li">
+                <p class="- topic/p p">
+                    <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Variablen">Window for
+                        variables - local variables, script local variables, global variables (at
+                        the bottom)</a>
+                </p>
+            </li>
+            <li class="- topic/li li">
+                <p class="- topic/p p"><a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Kommandozeile">Help
+                        window for old commands under "Command line"</a> and <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__callStack">call
+                        stack</a> (at the bottom right)</p>
+            </li>
+            <li class="- topic/li li">
+                <p class="- topic/p p"><a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Infofenster">Info
+                        window</a> (top right)</p>
+            </li>
+        </ul>
+        <p class="- topic/p p">as well as the</p>
+        <p class="- topic/p p">
+            <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Buttons">buttons</a>
+        </p>
+        <p class="- topic/p p">Since the windows are DOC modules, these can be moved and placed freely.</p>
+        <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The CTRL Debugger - UI Manager</span></figcaption>
+            
+            <img class="- topic/image image" src="../images/CTRLDebugger-03.png"/>
+        </figure>
+        <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">CTRL-Debugger - CTRL-Manager</span></figcaption>
+            
+            <img class="- topic/image image" src="../images/CTRLDebugger-39.png"/>
+        </figure>
+        <p class="- topic/p p">If all modules were closed, individual modules can be activated via right mouse click
+            (see figure below):</p>
+        <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 5</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">CTRL Debugger, Activate individual modules</span></figcaption>
+            
+            <img class="- topic/image image" src="../images/CTRLDebugger-14.png"/>
+        </figure>
+        <p class="- topic/p p">If the user interface or the CTRL manager that should be debugged, does not run, an error
+            message is shown in the main window: </p>
+        <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 6</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Error message, if the manager that should be debugged does not run</span></figcaption>
+            
+            <img class="- topic/image image" src="../images/CTRLDebugger-21.png"/>
+        </figure>
+        <p class="- topic/p p">After the restart of a manager, all views of the debugger are updated.</p>
+        <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">Note that in order to debug a manager, the debugger must be connected to the Data and
+            Event managers. Thus, do no start the debugger with the option -n when starting the
+            debugger via the console.</div></div>
+        <section class="- topic/section section">
+            
+        </section>
+        <section class="- topic/section section" id="ctrl_debugger_panel__MainPanel" data-ofbid="ctrl_debugger_panel__MainPanel"><h2 class="- topic/title title sectiontitle">Script Window</h2>
+            
+            <p class="- topic/p p">In the script window, scripts and CTRL libraries can be debugged. You can set
+                breakpoints and execute scripts (see figure below). The buttons of the debugger are
+                described further below.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 7</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">CTRL Debugger: Script window</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-34.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section" id="ctrl_debugger_panel__Buttons" data-ofbid="ctrl_debugger_panel__Buttons"><h2 class="- topic/title title sectiontitle">Buttons</h2>
+            
+            <p class="- topic/p p"> Furthermore the panel contains the following buttons:</p>
+            <p class="- topic/p p"><img class="- topic/image image" src="../images/CTRLDebugger-08.png"/> Pauses the script. You can also use
+                the Pause, Break" button of the keyboard.</p>
+            <p class="- topic/p p"><img class="- topic/image image" src="../images/CTRLDebugger-09.png"/> Continues the execution of the script
+                (Hotkey: F5)</p>
+            <p class="- topic/p p"> Jumps to the function that is currently executed or to the next line when the code
+                that is executed does not contain a function (Hotkey: F8)</p>
+            <p class="- topic/p p"><img class="- topic/image image" src="../images/CTRLDebugger-11.png"/> Jumps to the current line (Hotkey:
+                F10)</p>
+            <p class="- topic/p p">
+                <img class="- topic/image image" src="../images/CTRLDebugger-12.png"/> Deletes all breakpoints (Hotkey: Strg
+                + F9). In the script window the F9 key sets a breakpoint.</p>
+            <p class="- topic/p p"><img class="- topic/image image" src="../images/CTRLDebugger-41.png"/> Opens the online help.</p>
+            <p class="- topic/p p">If the content of a script is not shown in the main window, the script is
+                encrypted!</p>
+            <p class="- topic/p p">If the CTRL debugger is stopped, the last edited managers remain in their debug
+                state, for example, stopped or single step mode. If a manager is restarted, the
+                manager resumes to normal mode again.</p>
+            <p class="- topic/p p">By clicking a script or a panel in a tree (see the figure "<a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Baum">Scripts in the tree
+                    view</a>"), the events of scripts, panels and graphic objects can be opened.
+                For panel scripts the module name, the object name as well as the event name are
+                shown under the panel name. A click on an event (see figure <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Baum">Scripts in the tree
+                    view</a>) or a click on a library name (see figure <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__BaumLibName">CTRL libraries
+                    in the tree view</a>) shows the code on the right in the main window. You can
+                now debug the code. Use the <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Buttons">buttons</a> to
+                debug the scripts. Note that the a script cannot be changed here. In order to change
+                a script, double-click a script on the top right in the CTRL debugger window (see
+                figure below) and the script is opened in the script editor. Edit the script in the
+                original file. The same applies to panels, double-click a panel name in order to
+                open a panel in the GEDI.</p>
+            <figure class="- topic/fig fig fignone" id="ctrl_debugger_panel__OpenScriotEditor" data-ofbid="ctrl_debugger_panel__OpenScriotEditor"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 8</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">CTRL Debugger - A double-click on the script opens the script in the script
+                    editor</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-15.png"/>
+            </figure>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">Note that the original files can only be opened via a double-click if the CTRL
+                debugger was opened via the graphics editor (for how to open the debugger see the
+                    <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__OpenViaGedi">description</a> at the beginning of this chapter).</div></div>
+        </section>
+        <section class="- topic/section section" id="ctrl_debugger_panel__LibrariesScripte" data-ofbid="ctrl_debugger_panel__LibrariesScripte"><h2 class="- topic/title title sectiontitle">Ctrl Libraries, Skripte, Breakpoints</h2>
+            
+            <p class="- topic/p p" id="ctrl_debugger_panel__Suche" data-ofbid="ctrl_debugger_panel__Suche">You can switch between "<strong class="+ topic/ph hi-d/b ph b">Ctrl Libraries</strong>", "<strong class="+ topic/ph hi-d/b ph b">skripts</strong>" and
+                    "<strong class="+ topic/ph hi-d/b ph b">breakpoints</strong>" via the tabs. The input field on the top left contains a
+                search field (see figure below). Here you can search for scripts, CTRL libs or
+                breakpoints. Individual letters can be used a search key. The key is searched in
+                scripts, CTRL libs or breakpoints. All files where the key is found are shown. The *
+                key after a letter searches for files that contain this letter. If you enter, for
+                example, ca*, the debugger searches for files that start with the letter combination
+                ca*. The search key *ca* searches for files where the letter combination "ca" is
+                found. A question mark can be used for an arbitrary sign. This means that the search
+                for ca? returns a result with ca + an arbitrary sign. Signs within square brackets
+                replace one of the signs specified in the square brackets. Note also that the search
+                is not case sensitive and that if you do not use a wild card, an asterisk * is added
+                before and after the search key. Note that if you search in one of the lower levels,
+                the <strong class="+ topic/ph hi-d/b ph b">colon :</strong><strong class="+ topic/ph hi-d/b ph b">must be used as separator</strong> between the levels. See figure
+                below.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 9</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Colon as a separator between the levels</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-36.png"/>
+            </figure>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 10</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Colon as a separator between the levels</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-37.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section">
+            
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">
+                <strong class="+ topic/ph hi-d/b ph b">Ctrl Libraries</strong>
+            </h2>
+            
+            <p class="- topic/p p">The <strong class="+ topic/ph hi-d/b ph b">Ctrl Libraries</strong> tab contains all <a class="- topic/xref xref" href="../../Control_Grundlagen/Referenz_GEDI-53.html">Control libraries</a> that are loaded (being
+                used) for the current UI or CTRL manager (the manager that is debugged).</p>
+            <figure class="- topic/fig fig fignone" id="ctrl_debugger_panel__BaumLibName" data-ofbid="ctrl_debugger_panel__BaumLibName"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 11</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">CTRL Libraries in the tree view</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-18.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section">
+            
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Scripts</h2>
+            
+            <p class="- topic/p p">Under Scripts, the scripts for panels of the current UI manager are shown.</p>
+            <figure class="- topic/fig fig fignone" id="ctrl_debugger_panel__Baum" data-ofbid="ctrl_debugger_panel__Baum"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 12</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Scripts in the tree view</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-13.png"/>
+            </figure>
+            <p class="- topic/p p">The relative path is shown as a tooltip in the tree view.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 13</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Open several modules simultaneously</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-40.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section">
+            
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Breakpoints</h2>
+            
+            <p class="- topic/p p">Breakpoints can be set on the tab of the same name. When a breakpoint is set, the
+                execution of a script stops where the breakpoint was set. Note that breakpoints are
+                shown only after updating the tree view <img class="- topic/image image" src="../images/CTRLDebugger-20.png"/>. The breakpoints are created according to line numbers, the breakpoint "29", for
+                example, means a breakpoint on the line 29. A click on the breakpoint jumps to the
+                line where the breakpoint was set. If the script is selected in the tree view (see
+                figure below), the first line of the script is selected.You can also search for
+                breakpoints. See <a class="- topic/xref xref" href="ctrl_debugger_panel.html#ctrl_debugger_panel__Suche">description of the search function</a>.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 14</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Breakpoints in the tree view</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-19.png"/>
+            </figure>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 15</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Searching for the breakpoint 5</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-33.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section" id="ctrl_debugger_panel__Variablen" data-ofbid="ctrl_debugger_panel__Variablen"><h2 class="- topic/title title sectiontitle">Local Variables, Script global Variables, Global Variables</h2>
+            
+            <p class="- topic/p p">At the bottom of the main panel, <strong class="+ topic/ph hi-d/b ph b">local variables</strong>, <strong class="+ topic/ph hi-d/b ph b">script local
+                    variables</strong> and <strong class="+ topic/ph hi-d/b ph b">global variables</strong> are shown. These can also be edited
+                here. This means you can set values for the variables (see second figure below).
+                Note that constants are not shown.</p>
+            <p class="- topic/p p">If you set new values for a script, for example, via PARA, click on the <img class="- topic/image image" src="../images/CTRLDebugger-38.png"/>update button in order to update the
+                values.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 16</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Global Variables</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-05.png"/>
+            </figure>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 17</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Set a local Variable</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-31.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section" id="ctrl_debugger_panel__Kommandozeile" data-ofbid="ctrl_debugger_panel__Kommandozeile"><h2 class="- topic/title title sectiontitle">Command line</h2>
+            
+            <p class="- topic/p p">Down right in the panel, the old CTRL debugger commands and variables are shown. The
+                variables are available for compatibility reasons. The commands can be used. Click
+                on the I button or enter "h" into the input field and the commands are shown (see
+                first figure below). Double-click the command and the command is shown in the input
+                field and can be used.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 18</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Command line, commands</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-27.png"/>
+            </figure>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 19</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Command line, Variables</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-06.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section" id="ctrl_debugger_panel__callStack" data-ofbid="ctrl_debugger_panel__callStack"><h2 class="- topic/title title sectiontitle">Call stack</h2>
+            
+            <p class="- topic/p p">The Call stack window shows information about the script that is currently
+                executed:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">
+                    <p class="- topic/p p">Which function is currently executed</p>
+                </li>
+                <li class="- topic/li li">
+                    <p class="- topic/p p">On which line the script is currently executed</p>
+                </li>
+                <li class="- topic/li li">
+                    <p class="- topic/p p">In which panel does the script run</p>
+                </li>
+                <li class="- topic/li li">
+                    <p class="- topic/p p">The object for which the code was set (in case of a panel script)</p>
+                </li>
+                <li class="- topic/li li">
+                    <p class="- topic/p p">In which module does the script run</p>
+                </li>
+            </ul>
+            <p class="- topic/p p">In the following, a breakpoint was set for the function dpSet on the line 28 in the
+                "clicked" event as well as on the line 31 of the button2 in the "trend" panel. The
+                panel was opened via the QuickTest. This information is shown the call stack, i.e.
+                the function that is currently executed, the module in which the panel was opened,
+                the object for which the script was specified as well as the line where the script
+                is currently executed.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 20</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Breakpoints 28 and 31</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-35.png"/>
+            </figure>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 21</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">The event "Clicked" is executed</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-26.png"/>
+            </figure>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 22</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Call stack</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-25.png"/>
+            </figure>
+        </section>
+        <section class="- topic/section section" id="ctrl_debugger_panel__Infofenster" data-ofbid="ctrl_debugger_panel__Infofenster"><h2 class="- topic/title title sectiontitle">Info window "File:"</h2>
+            
+            <p class="- topic/p p">In the info window, the name of a script or a panel is shown. On the left next to the
+                panel name, the object name is shown, see the following figure:</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 23</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Info Window</span></figcaption>
+                
+                <img class="- topic/image image" src="../images/CTRLDebugger-16.png"/>
+            </figure>
+            <p class="- topic/p p">In order to edit a script, double-click a script on the top right in the info window
+                of the CTRL debugger and the script is opened in the script editor. Edit the script
+                directly in the original file. The same applies to panels, double-click on a panel
+                name (see figure above) in order to open a panel in the GEDI.</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">In a User Interface, scripts are only displayed once they have been executed for
+                the first time. This affects all scripts. The CTRL Interpreter only detects the
+                scripts and displays them as "present" once they have been executed. Scripts may
+                also disappear from the list of debuggable program sources (for example, when a
+                panel is closed).</div></div>
+            <p class="- topic/p p">If the CTRL debugger is stopped, the last edited managers remain in their debug
+                state, for example, stopped or single step mode. If a manage is restarted, the
+                manager resumes to normal mode again.</p>
+            <p class="- topic/p p">The chapter <a class="- topic/xref xref" href="ctrl_debugger_debug_script.html">CTRL Debugger - Script Debugging Examples</a>
+                shows an example of debugging a script.</p>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns="" xmlns:whc="http://www.oxygenxml.com/webhelp/components" class="d-print-none"></whc:webhelp_feedback>
+                        <div id="oxygen-feedback-frame-container">
+    <script id="feedback-init" defer="defer" src="https://feedback.oxygenxml.com/app/init/init.js?deploymentToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJkZXBsb3ltZW50SWQiOjEwNDZ9.Z1wqIErte4dBbWAxxQnr_fHeATFbjXktFL-YJhZGIqTkGp1a6WK3pEQHY_0k2BgIRi6amadmqqEJyzGOW8YzSg"><!-- --></script>
+</div>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#ctrl_debugger_panel__MainPanel" data-tocid="ctrl_debugger_panel__MainPanel">Script Window</a></div></li><li class="section-item"><div class="section-title"><a href="#ctrl_debugger_panel__Buttons" data-tocid="ctrl_debugger_panel__Buttons">Buttons</a></div></li><li class="section-item"><div class="section-title"><a href="#ctrl_debugger_panel__LibrariesScripte" data-tocid="ctrl_debugger_panel__LibrariesScripte">Ctrl Libraries, Skripte, Breakpoints</a></div></li><li class="section-item"><div class="section-title"><a href="#ctrl_debugger_panel__Variablen" data-tocid="ctrl_debugger_panel__Variablen">Local Variables, Script global Variables, Global Variables</a></div></li><li class="section-item"><div class="section-title"><a href="#ctrl_debugger_panel__Kommandozeile" data-tocid="ctrl_debugger_panel__Kommandozeile">Command line</a></div></li><li class="section-item"><div class="section-title"><a href="#ctrl_debugger_panel__callStack" data-tocid="ctrl_debugger_panel__callStack">Call stack</a></div></li><li class="section-item"><div class="section-title"><a href="#ctrl_debugger_panel__Infofenster" data-tocid="ctrl_debugger_panel__Infofenster">Info window "File:"</a></div></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <div data-whc_version="25.0" class="navbar navbar-default wh_footer">
+  <div class="footer_div_left">
+    <a href="../../oxygen-webhelp/template/../../iec_62443/topics/iec_62443_certification.html" target="_blank"><img class="cert-image_iec62443"/></a>
+    <a href="../../oxygen-webhelp/template/../../iec_61508/iec_61508_certification.html" target="_blank"><img class="cert-image_iec61508"/></a>
+  </div>
+  <div class="footer_div_center">
+    <p>SIMATIC WinCC Open Architecture Version 3.21.1 - © ETM professional control GmbH <span id="span_year"></span> - <a href="mailto:documentation@etm.at" target="_blank"><img class="sm_icon mail"/></a> | <a href="https://www.linkedin.com/company/etm-professional-control/" target="_blank"><img class="sm_icon linkedin"/></a> | <a href="https://www.facebook.com/WinCC.OA" target="_blank"><img class="sm_icon facebook"/></a> | <a href="https://www.youtube.com/@WinCCOA" target="_blank"><img class="sm_icon youtube"/></a> - <a href="https://www.winccoa.com/rights/privacy-policy.html" target="_blank">Privacy Policy</a> - <a href="https://www.siemens.com/global/en/general/cookie-notice.html" target="_blank">Cookie Policy</a> - <a href="https://www.winccoa.com/rights/terms-of-use.html" target="_blank">Terms of use</a> -  <a href="https://www.siemens.com/global/en/company/about/compliance/reporting-channels.html" target="_blank">Whistleblowing</a> - <a href="https://www.winccoa.com/company/imprint.html" target="_blank">Imprint</a></p>
+    <script>document.querySelector('#span_year').innerHTML = new Date().getFullYear();</script>
+  </div>
+  <div class="footer_div_right"></div>
+</div>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" alt=""/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <div id="chatbot">
+ <iframe id="openassistantgpt-chatbot-button-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/button?chatbox=false" style="display:none; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+ <!-- This chatbot is build using https://openassistantgpt.io/ -->
+ <iframe allowfullscreen="" id="openassistantgpt-chatbot-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/window?chatbox=false&amp;withExitX=true" style="margin-right: 1rem; margin-bottom: 6rem; display: none; position: fixed; right: 0; bottom: 0; pointer-events: none; overflow: hidden; height: 65vh; border: 2px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); width: 30rem;"></iframe>
+  <script><!--
+
+   var currentUrl = window.location.href; //get current url
+   var btn = document.getElementById("openassistantgpt-chatbot-button-iframe"); //get the chatbot button
+   var btn_oa = document.getElementById("assistant_button"); //get the chatbot button
+   if(['/3.20/', '/latest/'].some(el => currentUrl.includes(el))){
+    btn.style.display = "inline-block"; //enable chatbot button
+    btn_oa.style.display = "inline-block"; //enable chatbot button
+    window.addEventListener("message", function(t) {
+      var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+       s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+  
+      function toggleChatVisibility() {
+       if (e && s) {
+        e.contentWindow.postMessage("openChat", "*");
+        s.contentWindow.postMessage("openChat", "*");
+        e.style.pointerEvents = "auto";
+        e.style.display = "block";
+        if (window.innerWidth < 640) {
+         e.style.position = "fixed";
+         e.style.width = "100%";
+         e.style.height = "100%";
+         e.style.top = "0";
+         e.style.left = "0";
+         e.style.zIndex = "9999";
+        } else {
+         e.style.position = "fixed";
+         e.style.width = "30rem";
+         e.style.height = "65vh";
+         e.style.bottom = "0";
+         e.style.right = "0";
+         e.style.top = "";
+         e.style.left = "";
+        }
+       } else {
+        console.error("iframe not found");
+       }
+      }
+      function closeChat() {
+       if (e && s) {
+        e.style.display = "none";
+        e.style.pointerEvents = "none";
+        e.contentWindow.postMessage("closeChat", "*");
+        s.contentWindow.postMessage("closeChat", "*");
+       }
+      }
+      if (t.data === "openChat") {
+       toggleChatVisibility();
+      } else if (t.data === "closeChat") {
+       closeChat();
+      }
+     });
+     // Add event listener for assistant_button click
+     document.getElementById("assistant_button").addEventListener("click", function() {
+      var event = new Event("message");
+      if(document.getElementById("openassistantgpt-chatbot-iframe").style.display == "block")
+      {
+       event.data = "closeChat";
+      }
+      else
+      {
+       event.data = "openChat";
+      }
+      window.dispatchEvent(event);
+     });
+    }
+   
+--></script>
+   <script><!--
+
+    document.getElementById("menu_toggler").addEventListener("click", function() {
+     document.querySelector('#wh_menu_mobile_button').click();
+   });
+  
+--></script>
+  <script><!--
+
+   function getBrowserColorScheme() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+     return "dark";
+    } 
+    return "light";  
+   }
+   function getLocalColorScheme(){
+    return localStorage.getItem("theme");
+   }
+   function setSchemeClass(colorScheme){
+    document.body.classList.add(colorScheme);
+    if(colorScheme === "light"){
+     document.body.classList.remove("dark");
+    }
+    else{
+     document.body.classList.remove("light");
+    }
+   }
+   function isSchemeClassSet(colorScheme)
+   {
+    return document.body.classList.contains(colorScheme);
+   }
+   function setLocalColorScheme(colorScheme){
+    localStorage.setItem("theme", colorScheme);
+    setSchemeClass(colorScheme);
+   }
+   function isLocalColorSchemeSet() {
+    if(getLocalColorScheme() === null){
+     return false;
+    }
+    return true;
+   }
+   function toggleLocalColorScheme(currentSchema){
+    if(currentSchema === "light"){
+     setLocalColorScheme("dark");
+    }
+    else
+    {
+     setLocalColorScheme("light");
+    }
+   }
+   if(isLocalColorSchemeSet())
+   {
+    setSchemeClass(getLocalColorScheme());
+   }
+   else{
+    setLocalColorScheme(getBrowserColorScheme());
+   }
+   
+   document.getElementById("theme_toggler").addEventListener("click", function() {
+    if(isLocalColorSchemeSet()){
+     toggleLocalColorScheme(getLocalColorScheme());
+    }
+    else
+    {
+     toggleLocalColorScheme(getBrowserColorScheme());
+    }
+   });
+  
+--></script>
+</div>
+<div>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-2142215-10"></script>
+    <script><!--
+ window.dataLayer = window.dataLayer || []; function
+        gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','UA-2142215-10'); 
+--></script>
+</div>
+    </body>
+</html>

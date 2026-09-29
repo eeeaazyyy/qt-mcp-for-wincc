@@ -1,0 +1,870 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="25.0">
+    <head><link rel="shortcut icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><link rel="icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="keywords" content="WinCCOA, OnlineHelp, Online Help, Documentation, OA, SIMATIC, WinCC OA, WCCOA"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="-1"/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="description" content="Starts timed CTRL functions."/><meta name="DC.relation" content="../Control_Grundlagen/Control_Grundlagen-26.html"/><meta name="DC.relation" content="Timed_function_extension.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="timedFunc"/>        
+      <title>timedFunc()</title><!--  Generated with Oxygen version 27.0, build number 2024121223.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="timedFunc-d54385e28186"/><meta name="wh-source-relpath" content="ControlS_Z/timedFunc.dita"/><meta name="wh-out-relpath" content="ControlS_Z/timedFunc.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2024121223"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2024121223"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260226124654"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2024121223"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260226124654"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2024121223"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2024121223"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/style.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/mobile.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/tile-icons.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/single-line-dlentry.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/footer.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/chatbot.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/syntax.css?buildId=2024121223"/><script src="//assets.adobedtm.com/5dfc7d97c6fb/9452e85082e5/launch-b4ffda58d5f0.min.js" async="async"></script></head>
+
+    <body id="timedFunc" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="23.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/modern/winccoa.png" alt="WinCC OA Documentation"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title"><span class="ph">WinCC OA Documentation</span></span></a></div>
+                    <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+                    <div id="assistant_button" title="AI powered WinCC OA Assistant"></div>
+                    <div id="menu_toggler" title="Toggle Main Menu"></div>
+                    <div id="theme_toggler" title="Toggle Dark/Light Theme"></div>
+                    <div id="lang_toggler"><a href="#" onclick="switchLanguage()" class="lang_switch_link">LANG</a></div>
+<script><!--
+
+  /* Set image of lang switch button */
+  var url = window.location.href;
+    
+  if(['/en/', '/en_US/'].some(el => url.includes(el)))
+  {
+    document.body.classList.add("lang-en");
+    document.getElementById("assistant_button").textContent = "WinCC OA AI Assistant";
+  }
+  else
+  {
+    document.body.classList.add("lang-de");
+    document.getElementById("assistant_button").textContent = "WinCC OA KI-Assistent";
+  }
+
+  /* Click event for lang switch button */
+  function switchLanguage() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+    if(['/en/', '/en_US/'].some(el => currentUrl.includes(el)))
+    {      
+      newUrl = currentUrl.replace('/en/', '/de/');
+      newUrl = currentUrl.replace('/en_US/', '/de_AT/');
+    }
+    else if(['/de/', '/de_AT/'].some(el => currentUrl.includes(el)))
+    {
+      newUrl = currentUrl.replace('/de/', '/en/');
+      newUrl = currentUrl.replace('/de_AT/', '/en_US/');
+    } 
+    window.location.href = newUrl;
+  }
+
+--></script>
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="version_information-d54385e2159-mi" data-tocid="version_information-d54385e2159" data-state="not-ready" class=" topicref " data-id="version_information"><span class="title"><a href="../release_notes/version_information.html">Version Information</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e5517-mi" data-tocid="concepts-d54385e5517" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/concepts.html">Concepts</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e6907-mi" data-tocid="concepts-d54385e6907" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/deployment.html">Deployment</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_security-d54385e10162-mi" data-tocid="main_security-d54385e10162" data-state="not-ready" class=" topicref " data-id="main_security"><span class="title"><a href="../security/topics/security.html">Security</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="engineering-d54385e11399-mi" data-tocid="engineering-d54385e11399" data-state="not-ready" class=" topicref " data-id="engineering"><span class="title"><a href="../_resources/toc/engineering.html">Engineering</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e20103-mi" data-tocid="data_management-d54385e20103" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/data_management.html">Data Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e24184-mi" data-tocid="data_management-d54385e24184" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_visualization-d54385e64646-mi" data-tocid="data_visualization-d54385e64646" data-state="not-ready" class=" topicref " data-id="data_visualization"><span class="title"><a href="../_resources/toc/data_visualization.html">Data Visualization</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="southbound_interfaces-d54385e67006-mi" data-tocid="southbound_interfaces-d54385e67006" data-state="not-ready" class=" topicref " data-id="southbound_interfaces"><span class="title"><a href="../_resources/toc/southbound_interfaces.html">Southbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="north_bound-d54385e70326-mi" data-tocid="north_bound-d54385e70326" data-state="not-ready" class=" topicref " data-id="north_bound"><span class="title"><a href="../_resources/toc/northbound_interfaces.html">Northbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="webconnectivity-d54385e71612-mi" data-tocid="webconnectivity-d54385e71612" data-state="not-ready" class=" topicref " data-id="webconnectivity"><span class="title"><a href="../_resources/toc/webconnectivity.html">Web Connectivity / Network Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="user_management-d54385e75413-mi" data-tocid="user_management-d54385e75413" data-state="not-ready" class=" topicref " data-id="user_management"><span class="title"><a href="../_resources/toc/user_management.html">User Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="availability-d54385e76708-mi" data-tocid="availability-d54385e76708" data-state="not-ready" class=" topicref " data-id="availability"><span class="title"><a href="../_resources/toc/availability.html">Availability</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reporting-d54385e77549-mi" data-tocid="reporting-d54385e77549" data-state="not-ready" class=" topicref " data-id="reporting"><span class="title"><a href="../_resources/toc/reporting.html">Reporting</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="addons-d54385e78241-mi" data-tocid="addons-d54385e78241" data-state="not-ready" class=" topicref " data-id="addons"><span class="title"><a href="../_resources/toc/addons.html">Addons</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reference_tables-d54385e81051-mi" data-tocid="reference_tables-d54385e81051" data-state="not-ready" class=" topicref " data-id="reference_tables"><span class="title"><a href="../_resources/toc/reference_tables.html">Reference Tables</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_videos-d54385e83295-mi" data-tocid="main_videos-d54385e83295" data-state="not-ready" class=" topicref " data-id="main_videos"><span class="title"><a href="../videos/video_tutorials.html">Videos &amp; Tutorials</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="documentation-d54385e83842-mi" data-tocid="documentation-d54385e83842" data-state="not-ready" class=" topicref " data-id="documentation"><span class="title"><a href="../general/topics/documentation.html">Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support-d54385e83905-mi" data-tocid="support-d54385e83905" data-state="not-ready" class=" topicref " data-id="support"><span class="title"><a href="../Support/topics/support.html">Support &amp; Services</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="disclaimer-d54385e83935-mi" data-tocid="disclaimer-d54385e83935" data-state="not-ready" class=" topicref " data-id="disclaimer"><span class="title"><a href="../_resources/toc/disclaimer.html">Disclaimer</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="data_management"><div class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a><div class="wh-tooltip"><p class="shortdesc">Endless possibilities in data processing for your projects.</p></div></div></div></li><li><div class="topicref" data-id="topicID1"><div class="title"><a href="../Control_Grundlagen/Funktionsarten.html">Types of Control Functions</a><div class="wh-tooltip"><p class="shortdesc">An overview of the types of functions distinguished within Control.</p></div></div></div></li><li><div class="topicref" data-id="topicID1"><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-26.html">Time Functions</a></div></div></li><li class="active"><div class="topicref" data-id="timedFunc"><div class="title"><a href="../ControlS_Z/timedFunc.html">timedFunc()</a><div class="wh-tooltip"><p class="shortdesc"> Starts timed CTRL functions.</p></div></div></div></li></ol></div>
+
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        <button type="button" data-target="#wh_publication_toc" id="wh_toc_button" data-toggle="collapse" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="collapse col-lg-3 col-md-3 col-sm-12 d-md-block d-print-none" aria-label="Table of Contents Container">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="version_information-d54385e2159" class="topicref" data-id="version_information" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action version_information-d54385e2159-link" class="wh-expand-btn"></span><div class="title"><a href="../release_notes/version_information.html" id="version_information-d54385e2159-link">Version Information</a><div class="wh-tooltip"><p class="shortdesc">Release Notes, Update information, Certifications and Frequently Asked
+                Questions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e5517" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e5517-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/concepts.html" id="concepts-d54385e5517-link">Concepts</a><div class="wh-tooltip"><p class="shortdesc">Your first step into modern and powerful process visualization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e6907" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e6907-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/deployment.html" id="concepts-d54385e6907-link">Deployment</a><div class="wh-tooltip"><p class="shortdesc">Topics you need to know before using <span class="ph">WinCC OA</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_security-d54385e10162" class="topicref" data-id="main_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_security-d54385e10162-link" class="wh-expand-btn"></span><div class="title"><a href="../security/topics/security.html" id="main_security-d54385e10162-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Go beyond the norm in cybersecurity.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="engineering-d54385e11399" class="topicref" data-id="engineering" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action engineering-d54385e11399-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/engineering.html" id="engineering-d54385e11399-link">Engineering</a><div class="wh-tooltip"><p class="shortdesc">Powerful tools for easy or complex engineering tasks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_management-d54385e20103" class="topicref" data-id="data_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_management-d54385e20103-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_management.html" id="data_management-d54385e20103-link">Data Management</a><div class="wh-tooltip"><p class="shortdesc">Classify, structure and archive your data.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="data_management-d54385e24184" class="topicref" data-id="data_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action data_management-d54385e24184-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/business_logic.html" id="data_management-d54385e24184-link">Business Logic / Control</a><div class="wh-tooltip"><p class="shortdesc">Endless possibilities in data processing for your projects.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e24206" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e24206-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen.html" id="topicID1-d54385e24206-link">Introduction to CTRL</a><div class="wh-tooltip"><p class="shortdesc">An introduction to the product's own programming language Control(CTRL).</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="control_classes-d54385e24505" class="topicref" data-id="control_classes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action control_classes-d54385e24505-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/control_classes.html" id="control_classes-d54385e24505-link">Control Classes</a><div class="wh-tooltip"><p class="shortdesc">The overview of classes available in Control.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="topicID1-d54385e25834" class="topicref" data-id="topicID1" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action topicID1-d54385e25834-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Funktionsarten.html" id="topicID1-d54385e25834-link">Types of Control Functions</a><div class="wh-tooltip"><p class="shortdesc">An overview of the types of functions distinguished within Control.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="topicID1-d54385e25845" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-28.html" id="topicID1-d54385e25845-link"> 32/64 bit Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e25853" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-24.html" id="topicID1-d54385e25853-link">Administration of Managers, Modules and Panels - Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e25861" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-20.html" id="topicID1-d54385e25861-link">Alert Handling Functions</a><div class="wh-tooltip"><p class="shortdesc">These functions are associated with datapoints and respond to alerts and changes to         alerts.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e25872" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/blob-Funktionen.html" id="topicID1-d54385e25872-link">Blob Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e25880" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Communication_functions.html" id="topicID1-d54385e25880-link">Communication Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="connection_functions-d54385e25888" class="topicref" data-id="connection_functions" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action connection_functions-d54385e25888-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/connection_functions.html" id="connection_functions-d54385e25888-link">Connection Functions</a><div class="wh-tooltip"><p class="shortdesc">Connection functions can be used to establish connections to alerts, datapoints and         system events.</p></div></div></div></li><li role="treeitem"><div data-tocid="crypthographic_functions-d54385e26033" class="topicref" data-id="crypthographic_functions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/crypthographic_functions_2.html" id="crypthographic_functions-d54385e26033-link">Crypthographic Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e26041" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-36.html" id="topicID1-d54385e26041-link">Database Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e26049" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-19.html" id="topicID1-d54385e26049-link">Datapoint Functions</a></div></div></li><li role="treeitem"><div data-tocid="directWrite-d54385e26057" class="topicref" data-id="directWrite" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../directWrite/topics/directWrite.html" id="directWrite-d54385e26057-link">DirectWrite for PLC's (OPC UA Driver)</a><div class="wh-tooltip"><p class="shortdesc">This chapter provides an overview of the DirectWrite feature for PLC's (OPC UA         Driver)</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e26069" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-33.html" id="topicID1-d54385e26069-link">Error Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e26077" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e26077-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-27.html" id="topicID1-d54385e26077-link">File Functions</a><div class="wh-tooltip"><p class="shortdesc">File functions allow you to import, export, open, close, and manipulate files within         the application. This topic describes how to use file functions and important considerations         for cross-platform compatibility.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e26679" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-21.html" id="topicID1-d54385e26679-link">Graphics Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="helpViewer_functions-d54385e26687" class="topicref" data-id="helpViewer_functions" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action helpViewer_functions-d54385e26687-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/helpViewer_functions.html" id="helpViewer_functions-d54385e26687-link">Help Viewer Functions</a><div class="wh-tooltip"><p class="shortdesc">Available Functions for the Help Viewer.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="http_func-d54385e26758" class="topicref" data-id="http_func" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action http_func-d54385e26758-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/http_functions.html" id="http_func-d54385e26758-link">HTTP Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="imput_recording_functions-d54385e27071" class="topicref" data-id="imput_recording_functions" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action imput_recording_functions-d54385e27071-link" class="wh-expand-btn"></span><div class="title"><a href="../Native_GEDI/imput_recording_functions.html" id="imput_recording_functions-d54385e27071-link">Input Recording Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e27123" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e27123-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-45.html" id="topicID1-d54385e27123-link">Mapping Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27407" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-31.html" id="topicID1-d54385e27407-link">Mathematical Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27415" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/mindsphere_functions.html" id="topicID1-d54385e27415-link">MindSphere Connector Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27423" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-37.html" id="topicID1-d54385e27423-link">Miscellaneous Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e27431" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e27431-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-32.html" id="topicID1-d54385e27431-link">Multilingual Functionality</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27484" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Project_admin_functions.html" id="topicID1-d54385e27484-link">Project administration Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27492" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Prueffunktionen.html" id="topicID1-d54385e27492-link">Query Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27500" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Redu_Dist_Funktionen.html" id="topicID1-d54385e27500-link">Redu/Dist Functions</a></div></div></li><li role="treeitem"><div data-tocid="reference_focus_policy-d54385e27508" class="topicref" data-id="reference_focus_policy" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Native_GEDI/reference_focus_policy.html" id="reference_focus_policy-d54385e27508-link">Reference - Focus Policy - Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27516" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-25.html" id="topicID1-d54385e27516-link">Selection and Configuration Dialogs - Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27524" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Semaphorfunctions.html" id="topicID1-d54385e27524-link">Semaphore Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e27532" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e27532-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-29.html" id="topicID1-d54385e27532-link">String Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="subscrib_based_licensing_functions-d54385e27772" class="topicref" data-id="subscrib_based_licensing_functions" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action subscrib_based_licensing_functions-d54385e27772-link" class="wh-expand-btn"></span><div class="title"><a href="../subscrip_based_licensing/topics/subscrip_based_licensing_functions.html" id="subscrib_based_licensing_functions-d54385e27772-link">Subscription-based Licensing Functions</a><div class="wh-tooltip"><p class="shortdesc">CONTROL functions for querying information from subscription-based         licenses.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="system_tray-d54385e27838" class="topicref" data-id="system_tray" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action system_tray-d54385e27838-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grafik/system_tray.html" id="system_tray-d54385e27838-link">System Tray</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="topicID1-d54385e27945" class="topicref" data-id="topicID1" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action topicID1-d54385e27945-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-26.html" id="topicID1-d54385e27945-link">Time Functions</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="topicID1-d54385e27953" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/day.html" id="topicID1-d54385e27953-link">day()</a><div class="wh-tooltip"><p class="shortdesc"> Returns the day of the month.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27964" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/daylightsaving.html" id="topicID1-d54385e27964-link"> daylightsaving()</a><div class="wh-tooltip"><p class="shortdesc"> Checks whether the time is winter time or summer time.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27975" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/daySecond.html" id="topicID1-d54385e27975-link">daySecond()</a><div class="wh-tooltip"><p class="shortdesc">Returns the seconds of the day.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27986" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/formatTime.html" id="topicID1-d54385e27986-link">formatTime()</a><div class="wh-tooltip"><p class="shortdesc">Returns the time in a particular format.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e27997" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/formatTimeUTC.html" id="topicID1-d54385e27997-link">formatTimeUTC()</a><div class="wh-tooltip"><p class="shortdesc"> Returns the UTC time in a particular format.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28008" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/getCurrentTime.html" id="topicID1-d54385e28008-link">getCurrentTime()</a><div class="wh-tooltip"><p class="shortdesc"> Returns the current time.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28019" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/hour.html" id="topicID1-d54385e28019-link">hour()</a><div class="wh-tooltip"><p class="shortdesc">Returns the hour portion (0 to 23) of a time t.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28030" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/makeATime.html" id="topicID1-d54385e28030-link">makeATime()</a><div class="wh-tooltip"><p class="shortdesc">Returns an alert time in an internal time format incl. DP Identification.</p></div></div></div></li><li role="treeitem"><div data-tocid="makeTime-d54385e28041" class="topicref" data-id="makeTime" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/makeTime.html" id="makeTime-d54385e28041-link">makeTime()</a><div class="wh-tooltip"><p class="shortdesc">Returns a time or alert time in the internal time format.</p></div></div></div></li><li role="treeitem"><div data-tocid="maxTIME-d54385e28052" class="topicref" data-id="maxTIME" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/maxTIME.html" id="maxTIME-d54385e28052-link">maxTIME()</a><div class="wh-tooltip"><p class="shortdesc">Returns the value of the MAX_TIME constant.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28064" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/milliSecond.html" id="topicID1-d54385e28064-link">  <strong class="ph b">milliSecond()</strong>  </a><div class="wh-tooltip"><p class="shortdesc">Returns the milliseconds of a time.</p></div></div></div></li><li role="treeitem"><div data-tocid="minTIME-d54385e28078" class="topicref" data-id="minTIME" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/minTIME.html" id="minTIME-d54385e28078-link">minTIME()</a><div class="wh-tooltip"><p class="shortdesc">Returns the value of the MIN_TIME constant.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28089" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/minute.html" id="topicID1-d54385e28089-link">  <strong class="ph b">minute()</strong>  </a><div class="wh-tooltip"><p class="shortdesc">Returns the minutes of a time.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28103" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/month.html" id="topicID1-d54385e28103-link">month()</a><div class="wh-tooltip"><p class="shortdesc">Returns the month of a time.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28114" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/period.html" id="topicID1-d54385e28114-link">  <strong class="ph b">period()</strong>  </a><div class="wh-tooltip"><p class="shortdesc">Returns the seconds of a time t that have elapsed since 1.1.1970, 00:00 (UTC).</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28128" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlE_R/quarter.html" id="topicID1-d54385e28128-link">quarter()</a><div class="wh-tooltip"><p class="shortdesc">Returns the quarter portion of a time.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28139" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/scanTimeUTC.html" id="topicID1-d54385e28139-link">scanTimeUTC()</a><div class="wh-tooltip"><p class="shortdesc">Determines the local time from a UTC time string.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28150" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/second.html" id="topicID1-d54385e28150-link">second()</a><div class="wh-tooltip"><p class="shortdesc">Returns the seconds part (0 ... 59) of a time t.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28161" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/setPeriod.html" id="topicID1-d54385e28161-link">setPeriod()</a><div class="wh-tooltip"><p class="shortdesc">Sets <em class="ph i">t</em> to a particular number of seconds and milliseconds.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28175" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/setTime.html" id="topicID1-d54385e28175-link">setTime()</a><div class="wh-tooltip"><p class="shortdesc">Sets a time to the value specified in the argument.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="timedFunc-d54385e28186" class="topicref" data-id="timedFunc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/timedFunc.html" id="timedFunc-d54385e28186-link">timedFunc()</a><div class="wh-tooltip"><p class="shortdesc"> Starts timed CTRL functions.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28198" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/timeFromGMT.html" id="topicID1-d54385e28198-link">timeFromGMT()</a><div class="wh-tooltip"><p class="shortdesc">Returns the difference between local time and GMT.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28209" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/weekDay.html" id="topicID1-d54385e28209-link">weekDay()</a><div class="wh-tooltip"><p class="shortdesc">Returns the weekday of a time.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28220" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/year.html" id="topicID1-d54385e28220-link">year()</a><div class="wh-tooltip"><p class="shortdesc">Returns the year of a time.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28231" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../ControlS_Z/yearDay.html" id="topicID1-d54385e28231-link">yearDay()</a><div class="wh-tooltip"><p class="shortdesc">Returns the day of a time as a value between 1 and 366.</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="topicID1-d54385e28242" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-34.html" id="topicID1-d54385e28242-link">Threads Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28251" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-23.html" id="topicID1-d54385e28251-link">User Administration Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Control_Grundlagen-30-d54385e28259" class="topicref" data-id="Control_Grundlagen-30" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Control_Grundlagen-30-d54385e28259-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-30.html" id="Control_Grundlagen-30-d54385e28259-link">Vector / Dynamic arrays - Functions</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e28903" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Wartende_Controlfunktionen.html" id="topicID1-d54385e28903-link">Waiting Control Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="window_functions-d54385e28911" class="topicref" data-id="window_functions" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action window_functions-d54385e28911-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-35.html" id="window_functions-d54385e28911-link">Window Functions</a><div class="wh-tooltip"><p class="shortdesc">This chapter lists all functions used to control windows and panels, such as         ChildPanelOn, LayerOn, LayerOff, PanelOff, RootPanelOn, SwitchLayer, ZoomModule, and related         dialog and module operations.</p></div></div></div></li><li role="treeitem"><div data-tocid="window_functions-d54385e29433" class="topicref" data-id="window_functions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-35_2.html" id="window_functions-d54385e29433-link">Window Functions</a><div class="wh-tooltip"><p class="shortdesc">This chapter lists all functions used to control windows and panels, such as         ChildPanelOn, LayerOn, LayerOff, PanelOff, RootPanelOn, SwitchLayer, ZoomModule, and related         dialog and module operations.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e29444" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-41.html" id="topicID1-d54385e29444-link">XML Control Extension Functions</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e29452" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e29452-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grafik/Graphics_Objects.html" id="tocId-d54385e29452-link">Control graphics</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e50091" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e50091-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/abortFileTransfer_2.html" id="tocId-d54385e50091-link">CONTROL Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e63614" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e63614-link" class="wh-expand-btn"></span><div class="title"><a href="../CTRL_DLL/CTRL_DLL-01.html" id="topicID1-d54385e63614-link">CtrlExtension</a><div class="wh-tooltip"><p class="shortdesc">The CtrlExtension allows the addition of custom C++ code.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ctrl_debugger_basics-d54385e63641" class="topicref" data-id="ctrl_debugger_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ctrl_debugger_basics-d54385e63641-link" class="wh-expand-btn"></span><div class="title"><a href="../control_debugger/topics/ctrl_debugger_basics.html" id="ctrl_debugger_basics-d54385e63641-link">CTRL Debugger</a><div class="wh-tooltip"><p class="shortdesc">You can use the CTRL debugger to debug the Control programming language. The debugger can be used via its own panel, which also enables the monitoring and setting of variable values         during the execution of a script.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Query-d54385e63748" class="topicref" data-id="Query" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Query-d54385e63748-link" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query_2.html" id="Query-d54385e63748-link">SQL in CONTROL</a><div class="wh-tooltip"><p class="shortdesc">The database functions enable you to quickly carry out value queries on datapoints         and elements.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nodejs_basics-d54385e63839" class="topicref" data-id="nodejs_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nodejs_basics-d54385e63839-link" class="wh-expand-btn"></span><div class="title"><a href="../NodeJS/topics/nodejs_basics.html" id="nodejs_basics-d54385e63839-link"><span class="ph"><span class="ph">WinCC OA</span> JavaScript Manager for Node.js</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph"><span class="ph">WinCC OA</span> JavaScript Manager for Node.js</span> is a manager that allows for the integration of the <a href="../NodeJS/topics/nodejs_glossary.html#component_typescript" title="TypeScript is a free and open-source high-level programming language developed by Microsoft that adds static typing with optional type annotations to JavaScript. It is designed for the development of large applications and transpiles to JavaScript. Source: TypeScript (Wikipedia)"><dfn class="term">TypeScript</dfn></a>/<a href="../NodeJS/topics/nodejs_glossary.html#component_javascript" title="JavaScript, often abbreviated as JS, is a programming language and core technology of the Web. It was originally developed for dynamic HTML in web browsers to evaluate user interactions, change, reload or generate content and thus extend the possibilities of HTML. Source: JavaScript (Wikipedia)"><dfn class="term">JavaScript</dfn></a> runtime environment <a href="../NodeJS/topics/nodejs_glossary.html#component_nodejs" title="Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more. Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser. Source: Node.js (Wikipedia)"><dfn class="term">Node.js®</dfn></a> into <span class="ph">WinCC OA</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="API-01-d54385e64517" class="topicref" data-id="API-01" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action API-01-d54385e64517-link" class="wh-expand-btn"></span><div class="title"><a href="../API/topics/API-01.html" id="API-01-d54385e64517-link">API Manager</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">WinCC OA</span> API (<strong class="ph b">A</strong>pplication <strong class="ph b">P</strong>rogramming         <strong class="ph b">I</strong>nterface) offers a number of functions adding special <em class="ph i">Managers</em> to this         process control system. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_visualization-d54385e64646" class="topicref" data-id="data_visualization" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_visualization-d54385e64646-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_visualization.html" id="data_visualization-d54385e64646-link">Data Visualization</a><div class="wh-tooltip"><p class="shortdesc">User interfaces, Trends and Reports for every purpose and device.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="southbound_interfaces-d54385e67006" class="topicref" data-id="southbound_interfaces" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action southbound_interfaces-d54385e67006-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/southbound_interfaces.html" id="southbound_interfaces-d54385e67006-link">Southbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">The process connection to the actual machines/sensors.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="north_bound-d54385e70326" class="topicref" data-id="north_bound" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action north_bound-d54385e70326-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/northbound_interfaces.html" id="north_bound-d54385e70326-link">Northbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Your portal to the cloud or supervising systems.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="webconnectivity-d54385e71612" class="topicref" data-id="webconnectivity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action webconnectivity-d54385e71612-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/webconnectivity.html" id="webconnectivity-d54385e71612-link">Web Connectivity / Network Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Data exchange, APIs and web technologies</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="user_management-d54385e75413" class="topicref" data-id="user_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action user_management-d54385e75413-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/user_management.html" id="user_management-d54385e75413-link">User Management</a><div class="wh-tooltip"><p class="shortdesc">All about authorization, authentication and login-customization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="availability-d54385e76708" class="topicref" data-id="availability" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action availability-d54385e76708-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/availability.html" id="availability-d54385e76708-link">Availability</a><div class="wh-tooltip"><p class="shortdesc">How to get your system uptime to the maximum.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reporting-d54385e77549" class="topicref" data-id="reporting" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reporting-d54385e77549-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reporting.html" id="reporting-d54385e77549-link">Reporting</a><div class="wh-tooltip"><p class="shortdesc">Create state of the art project reports without limits.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="addons-d54385e78241" class="topicref" data-id="addons" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action addons-d54385e78241-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/addons.html" id="addons-d54385e78241-link">Addons</a><div class="wh-tooltip"><p class="shortdesc">Useful tools and enhancements for special demands.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reference_tables-d54385e81051" class="topicref" data-id="reference_tables" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reference_tables-d54385e81051-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reference_tables.html" id="reference_tables-d54385e81051-link">Reference Tables</a><div class="wh-tooltip"><p class="shortdesc">Detailed and extensive content for special project adaptation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_videos-d54385e83295" class="topicref" data-id="main_videos" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_videos-d54385e83295-link" class="wh-expand-btn"></span><div class="title"><a href="../videos/video_tutorials.html" id="main_videos-d54385e83295-link">Videos &amp; Tutorials</a><div class="wh-tooltip"><p class="shortdesc">Explore the capabilities of <span class="ph">WinCC OA</span> with our carefully selected         collection of video tutorials and guides.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="documentation-d54385e83842" class="topicref" data-id="documentation" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action documentation-d54385e83842-link" class="wh-expand-btn"></span><div class="title"><a href="../general/topics/documentation.html" id="documentation-d54385e83842-link">Documentation</a><div class="wh-tooltip"><p class="shortdesc">Basic information about terms and functions within the documentation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support-d54385e83905" class="topicref" data-id="support" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support-d54385e83905-link" class="wh-expand-btn"></span><div class="title"><a href="../Support/topics/support.html" id="support-d54385e83905-link">Support &amp; Services</a><div class="wh-tooltip"><p class="shortdesc">An experienced team of support agents, consultants and trainers are ready to         facilitate active partnerships with our customers, so they can profit from our comprehensive         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="disclaimer-d54385e83935" class="topicref" data-id="disclaimer" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action disclaimer-d54385e83935-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/disclaimer.html" id="disclaimer-d54385e83935-link">Disclaimer</a><div class="wh-tooltip"><p class="shortdesc">A brief clarification of liability exclusions or legal notices.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic topic" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">timedFunc()</h1>
+    
+    <div class="- topic/body body"><p class="- topic/shortdesc shortdesc"> Starts timed CTRL functions.</p>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Synopsis</h2>
+            
+            <p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">int timedFunc( string workFunc, string datapoint);</code></p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Parameters</h2>
+            
+            <div class="table-container"><table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="timedFunc__entry__1"> Parameter</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="timedFunc__entry__2"> Meaning</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__1">workFunc</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__2">
+                                <p class="- topic/p p">Name of the work function. The DP name is also passed to the
+                                    workFunc() function. Also the times of the previous and current
+                                    call. When called for the first time, the time of the previous
+                                    call is zero. These times are the computed times not the actual
+                                    call times effected by the delay. When called from Control, the
+                                    parameters of <em class="+ topic/ph hi-d/i ph i">datapoint</em> are passed and the function
+                                    workFunc() is launched at the computed times.</p>
+                                <p class="- topic/p p">The function is defined as follows:</p>
+                                <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code><strong class="hl-keyword">void</strong> workFunc (string dp, time before, time now, <strong class="hl-keyword">bool</strong> call);</code></pre>
+                                <dl class="- topic/dl dl">
+                                    
+                                        <dt class="- topic/dthd dthd"><strong>Parameter</strong></dt>
+                                        <dd class="- topic/ddhd ddhd"><strong>Description</strong></dd>
+                                    
+                                    
+                                        <dt class="- topic/dt dt dlterm">workFunc</dt>
+                                        <dd class="- topic/dd dd">Name of the work function</dd>
+                                    
+                                    
+                                        <dt class="- topic/dt dt dlterm">dp</dt>
+                                        <dd class="- topic/dd dd">Name of the datapoint</dd>
+                                    
+                                    
+                                        <dt class="- topic/dt dt dlterm">before</dt>
+                                        <dd class="- topic/dd dd">Time of previous call</dd>
+                                    
+                                    
+                                        <dt class="- topic/dt dt dlterm">now</dt>
+                                        <dd class="- topic/dd dd">Time of current call</dd>
+                                    
+                                    
+                                        <dt class="- topic/dt dt dlterm">call</dt>
+                                        <dd class="- topic/dd dd">Is set to TRUE when the work function is called the last
+                                            time.</dd>
+                                    
+                                </dl>
+                                <div class="- topic/note note important note_important"><span class="note__title">Important:</span> <div class="note__body">Currently it is not supported to directly use
+                                        <a class="- topic/xref xref" href="../Control_Grundlagen/object_oriented_scripting.html" title="The CTRL++ enhancement provides object orientation for the WinCC OA scripting language.">CTRL++</a> functions as <code class="+ topic/ph pr-d/codeph ph codeph">workFunc</code>.
+                                    CTRL++ functions can still be called, by passing a <a class="- topic/xref xref" href="../Control_Grundlagen/object_oriented_scripting.html#object_oriented_scripting__function_ptr">function_ptr</a>, pointing to a static CTRL++ member function,
+                                    instead.</div></div>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__1">datapoint</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__2">Name of the datapoint</td>
+                        </tr>
+                    </tbody></table></div>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">Note that the syntax highlighting in the script editor does not work for
+                timedFunc(). This is because this function is only defined for the CTRL manager and
+                not in the user interface. This means that the timedFunc() has to be started from a
+                separate CTRL manager or has to be added to pvss_scripts.lst located in <span class="- topic/ph ph">wincc_oa_path</span>/scripts.</div></div>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Return value</h2>
+            
+            <p class="- topic/p p">In the event of an error -1, otherwise 0.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Errors</h2>
+            
+            <p class="- topic/p p"> Missing or incorrect arguments</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Description</h2>
+            
+            <p class="- topic/p p"> The timedFunc() command allows you to launch user-defined, timed CTRL functions with
+                parameters via a datapoint. The start time, interval and other parameters are set
+                via datapoints of the internal datapoint type "_TimedFunc" with the following
+                structure:</p>
+            <div class="table-container"><table class="- topic/table table" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Datapoint type "_TimedFunc"</span></caption><colgroup><col/><col/></colgroup><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0">_TimedFunc.</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">validUntil <em class="+ topic/ph hi-d/i ph i">time</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">time <em class="+ topic/ph hi-d/i ph i">dyn_int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">weekDay <em class="+ topic/ph hi-d/i ph i">dyn_int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">monthDay <em class="+ topic/ph hi-d/i ph i">dyn_int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">month <em class="+ topic/ph hi-d/i ph i">dyn_int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">result.inPeriod <em class="+ topic/ph hi-d/i ph i">bool</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">syncTime <em class="+ topic/ph hi-d/i ph i">int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">syncWeekDay <em class="+ topic/ph hi-d/i ph i">int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">syncDay <em class="+ topic/ph hi-d/i ph i">int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">syncMonth <em class="+ topic/ph hi-d/i ph i">int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">interval <em class="+ topic/ph hi-d/i ph i">unsigned</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">delay <em class="+ topic/ph hi-d/i ph i">int</em></td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0"></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0">mode <em class="+ topic/ph hi-d/i ph i">unsigned</em></td>
+                        </tr>
+                    </tbody></table></div>
+            <div class="table-container"><table class="- topic/table table" data-cols="2"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 2</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Elements of "_TimedFunc"</span></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="timedFunc__entry__35">Element</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-0" id="timedFunc__entry__36">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">validFrom</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The time from which the settings in the datapoint take effect.
+                                If "validFrom" is zero, the settings take effect
+                                immediately.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">validUntil</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">
+                                <p class="- topic/p p">The time until when the settings in the datapoint are effective.
+                                    If "validUntil" is zero, the settings are effective without
+                                    limitation.</p>
+                                <p class="- topic/p p">If the settings should not be effective without limitation,
+                                    validUntil must be set to a later time than validFrom.</p>
+                            </td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">time</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The times at which set work functions are called (seconds since
+                                00:00, range [0...86399]). If the "time" field is empty, the
+                                functions are launched at intervals.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">weekDay</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The weekdays (1-7, 1...Monday) on which the set functions are
+                                launched at the set times "time" and months "month". If the
+                                "monthDay" field is not empty, the work functions are only launched
+                                if the desired days of the month coincide with the set
+                                weekdays.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">monthDay</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The days of the month (1-31, 31....last day of month) on which
+                                the set work functions are launched at the times set in "time" and
+                                on the weekdays set in "weekDay" and in the months set in "month".
+                                If the "monthDay" field is empty, the work functions are launched
+                                daily at the set times according to the settings in "weekDay" and
+                                "month".</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">month</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The months (1-12) in which set work functions are launched at the
+                                times set in "time" and on the weekdays set in "weekDay" and
+                                "monthDay". If the "month" field is empty, the work functions are
+                                launched at the set times according to the settings in "weekDay" and
+                                "monthDay".</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">result.inPeriod</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">"result.inPeriod" contains the state referring to the intervals
+                                (when mode = 1): if the function is within the interval the element
+                                is set to TRUE. See element "mode" further below.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">syncTime</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The time in seconds since 00:00 (range [0...86399]) at which set
+                                work functions are launched.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">syncDay</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The day of the month (1-31) of a new start time. If "syncDay" is
+                                set to -1, set work functions are launched taking into account the
+                                settings in "syncTime" and "syncMonth", on the first day of the set
+                                month after the set interval.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">syncWeekDay</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The day of the week (1-7) of a new start time. If "syncWeekDay"
+                                is set to -1, set work functions are launched taking into account
+                                the settings in "syncTime" and "syncDay" with the first week after
+                                the set interval.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">syncMonth</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The month (1-12) of a new start time. If "syncMonth" is set to
+                                -1, set work functions are launched taking into account the settings
+                                in "syncTime" and "syncDay" in the first month after the set
+                                interval.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">interval</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">The period during which set work functions are launched. Caution:
+                                So that the "interval" and the associated settings take effect, set
+                                the element "time" to zero!</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">delay</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">Delays the call of the work function. If the previously launched
+                                function is still running at the next start time, the function is
+                                launched again regardless. Also negative values can be specified. If
+                                a negative value is given, the callback function is started earlier
+                                (i.e. by this value earlier) than calculated.</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__35">mode</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="timedFunc__entry__36">
+                                <p class="- topic/p p">The DPE element mode indicates the following operating
+                                    states:</p>
+                                <p class="- topic/p p">0 - default (the behavior as so far)</p>
+                                <p class="- topic/p p">1 - time periods</p>
+                                <p class="- topic/p p">Function timedFunc and Winter and Summer time change</p>
+                                <p class="- topic/p p">When the mode =1 is used for the timedFunc, note the following
+                                    special cases:</p>
+                                <p class="- topic/p p">When switching to summertime (Spring - 1 hour is missing):</p>
+                                <ul class="- topic/ul ul">
+                                    <li class="- topic/li li">
+                                        <p class="- topic/p p">A current interval that ends between 2 and 2:59:59 is
+                                            completed ahead of time.</p>
+                                    </li>
+                                    <li class="- topic/li li">
+                                        <p class="- topic/p p">An interval that starts between 2:00 and 2:59:59 will be
+                                            started at 3:00.00.</p>
+                                    </li>
+                                    <li class="- topic/li li">
+                                        <p class="- topic/p p">An interval from 2:01 and 2:59 will not be executed.</p>
+                                    </li>
+                                </ul>
+                                <p class="- topic/p p">When switching to wintertime (Autumn - 1 hour more)</p>
+                                <ul class="- topic/ul ul">
+                                    <li class="- topic/li li">
+                                        <p class="- topic/p p">A current interval that should end at 2:30, will be
+                                            completed at 2:30 summertime, will be applied again at
+                                            2:00 wintertime and will be completed at 2:30 wintertime
+                                            again.</p>
+                                    </li>
+                                    <li class="- topic/li li">
+                                        <p class="- topic/p p">An interval between 2:01 and 3:00 will be executed twice
+                                            meaning at summertime and at wintertime.</p>
+                                    </li>
+                                    <li class="- topic/li li">
+                                        <p class="- topic/p p">An interval that starts at 02:30 and should last after
+                                            3:00, will be started at 2:30 summertime and will be
+                                            completed at 2:00 wintertime. It will be restarted at
+                                            2:30 wintertime and lasts after 3:00.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody></table></div>
+            <p class="- topic/p p"> If, for instance, the 15th and 31st were indicated as days of the month, but Monday
+                and Thursday as days of the week, the work functions are only launched if the 15th
+                and the 31st are a Monday or a Thursday! If the "weekDay" field is empty, the work
+                functions are launched daily at the set times according to the settings in
+                "monthDay" and "month".</p>
+            <p class="- topic/p p">'0' is not a valid value for the fields syncWeekDay, syncDay and syncMonth and leads
+                to an error message!</p>
+            <p class="- topic/p p">As of the start time the timed function is always ready. Any parameter change takes
+                immediate effect!</p>
+            <p class="- topic/p p"> The times for launching functions are based on the following criteria:</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">
+                    <p class="- topic/p p">If the fields ("time", "weekDay", "monthDay", "month") are empty or fields
+                        are set to -1, all possible settings apply.</p>
+                </li>
+                <li class="- topic/li li">
+                    <p class="- topic/p p"> All parameters are joined by logical AND.</p>
+                </li>
+                <li class="- topic/li li">
+                    <p class="- topic/p p"> The work function is only triggered within and inclusive "validFrom" and
+                        "validUntil".</p>
+                </li>
+                <li class="- topic/li li">
+                    <p class="- topic/p p"> The work function is always launched at the earliest valid time after the
+                        call or last parameter change.</p>
+                </li>
+            </ul>
+            <p class="- topic/p p">The following cases are possible:</p>
+            <figure class="- topic/fig fig fignone" id="timedFunc__P2846_47038" data-ofbid="timedFunc__P2846_47038"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">Decision tree</span></figcaption>
+                
+                <img class="- topic/image image" height="527" src="timedFunc1.gif" width="590"/>
+            </figure>
+            <ol class="- topic/ol ol">
+                <li class="- topic/li li">
+                    <p class="- topic/p p"> If "time" is given, the entry "interval" is ignored. As a result, only the
+                        settings in "time", "weekDay", "monthDay", and "month" are effective - see
+                        Figure a below.</p>
+                    <p class="- topic/p p"> An entry in the switch hour normal time to summer time (DaylightSavingTime,
+                        DST between 02:00:00 and 02:59:59) will<strong class="+ topic/ph hi-d/b ph b">not</strong> be executed at the day of
+                        the switch in spring.</p>
+                    <p class="- topic/p p">Instead it will be executed in autumn (at the day of the switch) twice.</p>
+                </li>
+            </ol>
+            <p class="- topic/p p">When the systems are separated stationed, then the switching time can be also
+                different, e.g. USA: 01:00:00 - 01:59:59.</p>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">A. - Entries in the field "time" exist.</span></figcaption>
+                
+                <img class="- topic/image image" height="278" src="timedFunc2.gif" width="620"/>
+            </figure>
+            <ol class="- topic/ol ol">
+                <li class="- topic/li li">
+                    <p class="- topic/p p">The sync time determines when an action is triggered and, from this time on,
+                        the interval is restarted - see Figure b below. The function is first
+                        launched when: last sync time + x interval &gt;= "validFrom".</p>
+                </li>
+            </ol>
+            <figure class="- topic/fig fig fignone" id="timedFunc__Figureb" data-ofbid="timedFunc__Figureb"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 3</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">B. - No entries in the field "time"and syncTime &lt;&gt; -1.</span></figcaption>
+                
+                <img class="- topic/image image" height="305" src="timedFunc3.gif" width="620"/>
+            </figure>
+            <ol class="- topic/ol ol">
+                <li class="- topic/li li">
+                    <p class="- topic/p p"> Furthermore, the following differentiations can be made:</p>
+                    <ul class="- topic/ul ul">
+                        <li class="- topic/li li">
+                            <p class="- topic/p p">The work function starts at "validFrom" for the first time and then
+                                runs at "interval" until "validUntil".</p>
+                        </li>
+                        <li class="- topic/li li">
+                            <p class="- topic/p p">If "validFrom" = "validUntil", the work function executes once
+                                regardless.</p>
+                        </li>
+                        <li class="- topic/li li">
+                            <p class="- topic/p p">If "validFrom" is in the past, then the work function starts at
+                                "validFrom" + x "interval" &gt;= start time, for the first time and
+                                then runs at "interval" until "validUntil".</p>
+                        </li>
+                        <li class="- topic/li li">
+                            <p class="- topic/p p">If "validFrom" = 0, then the work function runs for the first time at
+                                the start time or on datapoint update and then runs at "interval"
+                                until "validUntil" - see Figure c.</p>
+                        </li>
+                        <li class="- topic/li li">
+                            <p class="- topic/p p">If "interval" is zero, the default "interval" = 3600 is used.</p>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 4</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">C. - Neither entries in the field "time"nor syncTime.</span></figcaption>
+                
+                <img class="- topic/image image" height="274" src="timedFunc4.gif" width="620"/>
+            </figure>
+            <ol class="- topic/ol ol">
+                <li class="- topic/li li">
+                    <ol class="- topic/ol ol" type="a">
+                        <li class="- topic/li li">
+                            <p class="- topic/p p">If the element "mode" is set to 1. Time periods can be specified for
+                                specific days. The function is called periodically within the time
+                                periods. Two arrays "weekDay" and "time" present a table, which
+                                allows to enter start and end times. Another DP element
+                                "result.inPeriod" contains the state referring to the intervals: if
+                                the function is within the interval the element is set to TRUE.</p>
+                            <p class="- topic/p p"> The element is set when the function is initialized, for
+                                example,</p>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Monday 17:00 - Start</li>
+                <li class="- topic/li li">Monday 18:00 - End</li>
+                <li class="- topic/li li">Interval: 15 minutes</li>
+            </ul>
+            <p class="- topic/p p">The function is called each monday at 17:00 (result: on ), at 17:15 (on), at 17:30
+                (on), 17:45 (on) and at 18:00 (off).</p>
+            <p class="- topic/p p">An arbitrary number of intervals can be specified.</p>
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li"> The values 1-7 stand for Monday - Sunday</li>
+                <li class="- topic/li li">-2 stands for week days (Monday - Friday)</li>
+                <li class="- topic/li li">-3 stands for weekend (Saturday -Sunday).</li>
+            </ul>
+            <p class="- topic/p p">If the interval borders are not specified within the period, check the behavior of
+                the function at the beginning and at the end according to the requirements.</p>
+            <p class="- topic/p p">When the function is started, the call back function is not called (no matter if
+                within or outside of a period) but the flag result.inPeriod is set correctly. The
+                callback function is called at next interval limit.</p>
+            <p class="- topic/p p">The intervals are synchronized at validFrom time. At the end of the validity period
+                (when the end function is called) also the result.inPeriod flag is set to FALSE.</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">A detailed description of possible configuration errors can be displayed using the
+                dbg flag "TIMED_FUNC".</div></div>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">If the DP element "mode" is used, the element "interval" specifies in which
+                intervals the workFunction is called. (see also example at the end of this
+                page).</div></div>
+        </section>
+        <div class="- topic/example example">
+            <ul class="- topic/ul ul">
+                <li class="- topic/li li">Period 1: Wednesday 17:00, Wednesday 17:25,</li>
+                <li class="- topic/li li">Period 2: Wednesday 17:37 - Wednesday 17:50, Interval 10 minutes:</li>
+                <li class="- topic/li li">Callbacks: 17:00(on), 17:10(on), 17:20(on), 17:25(off), 17:37(on), 17:47(on),
+                    17:50(off) )</li>
+            </ul>
+        </div>
+        <div class="- topic/example example"><h2 class="- topic/title title sectiontitle">Examples</h2>
+            
+            <p class="- topic/p p">Make a circular area blink red/green every five minutes. Make it blink by using the
+                timedFunc() function.</p>
+            <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">Do not use timedFunc() for short intervals as the overhead is too large.</div></div>
+            <p class="- topic/p p"> The first step is to create a datapoint "Blinker" of the datapoint type
+                "_timedFunc". According to Figure b the entry for "syncTime" must be -1 in order to
+                run the function at intervals. The "interval" entry of Blinker is set to 300. The
+                next step is to create a control function and store it in the file "Timed" in the
+                directory /scripts. It contains the following commands:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+   timedFunc(<span class="hl-string">"blink"</span>,<span class="hl-string">"Blinker"</span>);
+}
+
+blink(string Blinker,time t1, time t2)
+{
+   <strong class="hl-keyword">bool</strong> x;
+   dpGet(<span class="hl-string">"ExampleDP_Blinker.:_original.._value"</span>,x);
+   dpSet(<span class="hl-string">"ExampleDP_Blinker.:_original.._value"</span>,!x);
+}
+</code></pre>
+            <p class="- topic/p p">The changes in the datapoint Example_DP_Blinker are used to display the blinking. A
+                dpConnect() is used. It is configured for a property of the circular area, e.g:
+                background.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+   Connect(<span class="hl-string">"blink"</span>,<span class="hl-string">"ExampleDP_Blinker.:_original.._value"</span>);
+}
+
+blink(string dp, <strong class="hl-keyword">bool</strong> x)
+{
+  <strong class="hl-keyword">if</strong> (x)
+   setValue(<span class="hl-string">"Circle"</span>,<span class="hl-string">"backCol"</span>,<span class="hl-string">"green"</span>);
+  <strong class="hl-keyword">else</strong>
+   setValue(<span class="hl-string">"Circle"</span>,<span class="hl-string">"backCol"</span>,<span class="hl-string">"red"</span>);
+}</code></pre>
+            <p class="- topic/p p">The option of the example above when the _stopped function is used.</p>
+            <p class="- topic/p p"> Data can be synchronized outside of the TimedFunc datapoint with the current state
+                of the timedFunc(). The function void work_stopped(string dp) is used at the end of
+                the valid time of timedFunction. The _stopped function gets one parameter - the data
+                point name of the timedFunction. In the following example a circle blinks until the
+                timedFunc has elapsed. "blink_stopped" is executed at the end.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+  timedFunc(<span class="hl-string">"blink"</span>,<span class="hl-string">"test"</span>); <em class="hl-comment">//timedFunc</em>
+}
+
+blink(string test,time t1, time t2)
+{
+  <strong class="hl-keyword">bool</strong> x;
+  DebugN(<span class="hl-string">"before: "</span>,t1);
+  DebugN(<span class="hl-string">"now: "</span>,t2);
+  dpGet(<span class="hl-string">"ExampleDP_AlertHdl1.:_original.._value"</span>,x);
+  dpSet(<span class="hl-string">"ExampleDP_AlertHdl1.:_original.._value"</span>,!x);
+}
+<em class="hl-comment">/* The same DP that is used for timedFunc. nothing is executed in case of: blink_stoppedx(string
+test) */</em>
+
+blink_stopped(string test)
+{
+  <strong class="hl-keyword">bool</strong> x;
+  DebugN(<span class="hl-string">"The end of time controlled function"</span>);
+  dpGet(<span class="hl-string">"System1:ExampleDP_AlertHdl2.:_original.._value"</span>,x);
+  dpSet(<span class="hl-string">"System1:ExampleDP_AlertHdl2.:_original.._value"</span>,!x);
+}</code></pre>
+            <p class="- topic/p p">Use the dpConnect() function also for this example and set the background color using
+                a setValue() (like it was set in the example above).</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+  dpConnect(<span class="hl-string">"blink"</span>,<span class="hl-string">"ExampleDP_AlertHdl1.:_original.._value"</span>);
+}
+
+blink(string dp, <strong class="hl-keyword">bool</strong> x)
+{
+  <strong class="hl-keyword">if</strong> (x)
+    setValue(<span class="hl-string">"Circle"</span>,<span class="hl-string">"backCol"</span>,<span class="hl-string">"green"</span>);
+  <strong class="hl-keyword">else</strong>
+    setValue(<span class="hl-string">"Circle"</span>,<span class="hl-string">"backCol"</span>,<span class="hl-string">"white"</span>);
+}</code></pre>
+            <p class="- topic/p p">Set the datapoint "_startit" of the type "_TimedFunc" to calls beginning from 5
+                March 1996, as of 00:00 h for an unlimited time:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>time t;
+
+dpSet(<span class="hl-string">"_startit.validFrom:_original.._value "</span>, makeTime(<span class="hl-number">1996</span>,<span class="hl-number">3</span>,<span class="hl-number">5</span>), <span class="hl-string">"_startit.validUntil:_original.._value"</span>, setPeriod(t, <span class="hl-number">0</span>), <span class="hl-string">"_startit.time:_original.._value "</span>, makeDynInt(<span class="hl-number">43200</span>));
+</code></pre>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Example</strong></p>
+            <p class="- topic/p p">Set datapoint "_startit" to four-hourly calls as of now up to 5 March 2007, 00:00 h.
+                A new starting point is set on the 15th of each month at 12:30 h:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>dpSet( <span class="hl-string">"_startit.validFrom:_original.._value "</span>, setPeriod(t, <span class="hl-number">0</span>), <span class="hl-string">"_startit.validUntil:_original.._value "</span>, makeTime(<span class="hl-number">2007</span>,<span class="hl-number">3</span>,<span class="hl-number">5</span>), <span class="hl-string">"_startit.time:_original.._value "</span>, makeDynInt(), <span class="hl-string">"_startit.interval:_original.._value"</span>, <span class="hl-number">14400</span>,
+<span class="hl-string">"_startit.syncDay:_original.._value "</span>, <span class="hl-number">15</span>, <span class="hl-string">"_startit.syncTime:_original.._value"</span>, <span class="hl-number">45000</span>, <em class="hl-comment">//12:30 "_startit.syncMonth:_original.._value ", -1);</em></code></pre>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Example</strong></p>
+            <p class="- topic/p p">In this example the following days and times are set:</p>
+            <p class="- topic/p p"> Monday 17:00 - 18:00</p>
+            <p class="- topic/p p"> Wednesday 17:00 - 18:00</p>
+            <p class="- topic/p p"> Saturday 16:00 - 17:00</p>
+            <p class="- topic/p p"> The Workfunc is called every 10 seconds during these time periods.</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-cpp"><code>main()
+{
+  <strong class="hl-keyword">int</strong> rc;
+  dyn_int weekDayList = makeDynInt( <span class="hl-number">1</span>, <span class="hl-number">1</span>, <span class="hl-number">3</span>, <span class="hl-number">3</span>, <span class="hl-number">6</span>, <span class="hl-number">6</span> );
+  dyn_int timeList = makeDynInt( <span class="hl-number">61200</span>, <span class="hl-number">64800</span>, <span class="hl-number">61200</span>, <span class="hl-number">64800</span>, <span class="hl-number">57600</span>, <span class="hl-number">61200</span> );
+  dpCreate( <span class="hl-string">"testTimedFunc"</span>, <span class="hl-string">"_TimedFunc"</span> );
+  dpSet(<span class="hl-string">"testTimedFunc.weekDay"</span>, weekDayList,<span class="hl-string">"testTimedFunc.time"</span>, timeList, <span class="hl-string">"testTimedFunc.mode"</span>, <span class="hl-number">1</span>,<span class="hl-string">"testTimedFunc.interval"</span>, <span class="hl-number">10</span> );
+  rc = timedFunc( <span class="hl-string">"workFunc"</span>, <span class="hl-string">"testTimedFunc"</span> );
+}
+
+<strong class="hl-keyword">void</strong> workFunc( string dp, time before, time now )
+{
+  DebugN( dp, before, now );
+}</code></pre>
+            <p class="- topic/p p">When the sync time is set to a winter-time day and intervals are used, then a
+                one-hour time shift is executed at the day of the summer time (the behavior is
+                similar during a shift to normal time).</p>
+            <p class="- topic/p p"> The set times are interpreted in local time calculation. Precaution is recommended
+                during configuration at the shift days. Note that in case of using these shift times
+                (in Europe: between 2:00 a.m. and 3:00 a.m.) this time is missing in spring (then
+                either nothing is executed or subsequently to 3:00 a.m.), but is present in autumn
+                twice (thus the function is executed twice).</p>
+        </div>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Assignment</h2>
+            
+            <p class="- topic/p p"> Miscellaneous functions</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Availability</h2>
+            
+            <p class="- topic/p p">CTRL</p>
+        </section>
+    </div>
+    
+</article></main></div>
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="Timed_function_extension.html" title="The timed function was extended and now provides several new functions:">Timed function extension</a><div class="- topic/desc desc">The timed function was extended and now provides several new functions:</div></li></ul></div></nav></div>
+                        <whc:webhelp_feedback xmlns="" xmlns:whc="http://www.oxygenxml.com/webhelp/components" class="d-print-none"></whc:webhelp_feedback>
+                        <div id="oxygen-feedback-frame-container">
+    <script id="feedback-init" defer="defer" src="https://feedback.oxygenxml.com/app/init/init.js?deploymentToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJkZXBsb3ltZW50SWQiOjEwNDZ9.Z1wqIErte4dBbWAxxQnr_fHeATFbjXktFL-YJhZGIqTkGp1a6WK3pEQHY_0k2BgIRi6amadmqqEJyzGOW8YzSg"><!-- --></script>
+</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+        <div data-whc_version="25.0" class="navbar navbar-default wh_footer">
+  <div class="footer_div_left">
+    <a href="../oxygen-webhelp/template/../../iec_62443/topics/iec_62443_certification.html" target="_blank"><img class="cert-image_iec62443"/></a>
+    <a href="../oxygen-webhelp/template/../../iec_61508/iec_61508_certification.html" target="_blank"><img class="cert-image_iec61508"/></a>
+  </div>
+  <div class="footer_div_center">
+    <p>SIMATIC WinCC Open Architecture Version 3.21.1 - © ETM professional control GmbH <span id="span_year"></span> - <a href="mailto:documentation@etm.at" target="_blank"><img class="sm_icon mail"/></a> | <a href="https://www.linkedin.com/company/etm-professional-control/" target="_blank"><img class="sm_icon linkedin"/></a> | <a href="https://www.facebook.com/WinCC.OA" target="_blank"><img class="sm_icon facebook"/></a> | <a href="https://www.youtube.com/@WinCCOA" target="_blank"><img class="sm_icon youtube"/></a> - <a href="https://www.winccoa.com/rights/privacy-policy.html" target="_blank">Privacy Policy</a> - <a href="https://www.siemens.com/global/en/general/cookie-notice.html" target="_blank">Cookie Policy</a> - <a href="https://www.winccoa.com/rights/terms-of-use.html" target="_blank">Terms of use</a> -  <a href="https://www.siemens.com/global/en/company/about/compliance/reporting-channels.html" target="_blank">Whistleblowing</a> - <a href="https://www.winccoa.com/company/imprint.html" target="_blank">Imprint</a></p>
+    <script>document.querySelector('#span_year').innerHTML = new Date().getFullYear();</script>
+  </div>
+  <div class="footer_div_right"></div>
+</div>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" alt=""/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <div id="chatbot">
+ <iframe id="openassistantgpt-chatbot-button-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/button?chatbox=false" style="display:none; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+ <!-- This chatbot is build using https://openassistantgpt.io/ -->
+ <iframe allowfullscreen="" id="openassistantgpt-chatbot-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/window?chatbox=false&amp;withExitX=true" style="margin-right: 1rem; margin-bottom: 6rem; display: none; position: fixed; right: 0; bottom: 0; pointer-events: none; overflow: hidden; height: 65vh; border: 2px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); width: 30rem;"></iframe>
+  <script><!--
+
+   var currentUrl = window.location.href; //get current url
+   var btn = document.getElementById("openassistantgpt-chatbot-button-iframe"); //get the chatbot button
+   var btn_oa = document.getElementById("assistant_button"); //get the chatbot button
+   if(['/3.20/', '/latest/'].some(el => currentUrl.includes(el))){
+    btn.style.display = "inline-block"; //enable chatbot button
+    btn_oa.style.display = "inline-block"; //enable chatbot button
+    window.addEventListener("message", function(t) {
+      var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+       s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+  
+      function toggleChatVisibility() {
+       if (e && s) {
+        e.contentWindow.postMessage("openChat", "*");
+        s.contentWindow.postMessage("openChat", "*");
+        e.style.pointerEvents = "auto";
+        e.style.display = "block";
+        if (window.innerWidth < 640) {
+         e.style.position = "fixed";
+         e.style.width = "100%";
+         e.style.height = "100%";
+         e.style.top = "0";
+         e.style.left = "0";
+         e.style.zIndex = "9999";
+        } else {
+         e.style.position = "fixed";
+         e.style.width = "30rem";
+         e.style.height = "65vh";
+         e.style.bottom = "0";
+         e.style.right = "0";
+         e.style.top = "";
+         e.style.left = "";
+        }
+       } else {
+        console.error("iframe not found");
+       }
+      }
+      function closeChat() {
+       if (e && s) {
+        e.style.display = "none";
+        e.style.pointerEvents = "none";
+        e.contentWindow.postMessage("closeChat", "*");
+        s.contentWindow.postMessage("closeChat", "*");
+       }
+      }
+      if (t.data === "openChat") {
+       toggleChatVisibility();
+      } else if (t.data === "closeChat") {
+       closeChat();
+      }
+     });
+     // Add event listener for assistant_button click
+     document.getElementById("assistant_button").addEventListener("click", function() {
+      var event = new Event("message");
+      if(document.getElementById("openassistantgpt-chatbot-iframe").style.display == "block")
+      {
+       event.data = "closeChat";
+      }
+      else
+      {
+       event.data = "openChat";
+      }
+      window.dispatchEvent(event);
+     });
+    }
+   
+--></script>
+   <script><!--
+
+    document.getElementById("menu_toggler").addEventListener("click", function() {
+     document.querySelector('#wh_menu_mobile_button').click();
+   });
+  
+--></script>
+  <script><!--
+
+   function getBrowserColorScheme() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+     return "dark";
+    } 
+    return "light";  
+   }
+   function getLocalColorScheme(){
+    return localStorage.getItem("theme");
+   }
+   function setSchemeClass(colorScheme){
+    document.body.classList.add(colorScheme);
+    if(colorScheme === "light"){
+     document.body.classList.remove("dark");
+    }
+    else{
+     document.body.classList.remove("light");
+    }
+   }
+   function isSchemeClassSet(colorScheme)
+   {
+    return document.body.classList.contains(colorScheme);
+   }
+   function setLocalColorScheme(colorScheme){
+    localStorage.setItem("theme", colorScheme);
+    setSchemeClass(colorScheme);
+   }
+   function isLocalColorSchemeSet() {
+    if(getLocalColorScheme() === null){
+     return false;
+    }
+    return true;
+   }
+   function toggleLocalColorScheme(currentSchema){
+    if(currentSchema === "light"){
+     setLocalColorScheme("dark");
+    }
+    else
+    {
+     setLocalColorScheme("light");
+    }
+   }
+   if(isLocalColorSchemeSet())
+   {
+    setSchemeClass(getLocalColorScheme());
+   }
+   else{
+    setLocalColorScheme(getBrowserColorScheme());
+   }
+   
+   document.getElementById("theme_toggler").addEventListener("click", function() {
+    if(isLocalColorSchemeSet()){
+     toggleLocalColorScheme(getLocalColorScheme());
+    }
+    else
+    {
+     toggleLocalColorScheme(getBrowserColorScheme());
+    }
+   });
+  
+--></script>
+</div>
+<div>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-2142215-10"></script>
+    <script><!--
+ window.dataLayer = window.dataLayer || []; function
+        gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','UA-2142215-10'); 
+--></script>
+</div>
+    </body>
+</html>

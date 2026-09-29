@@ -1,0 +1,469 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="25.0">
+    <head><link rel="shortcut icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><link rel="icon" href="../oxygen-webhelp/template/resources/images/modern/winccoa.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="keywords" content="WinCCOA, OnlineHelp, Online Help, Documentation, OA, SIMATIC, WinCC OA, WCCOA"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="-1"/><meta name="description" content="Apart from the functions listed in the following sections, you can also use in a Control script all functions held in a file in the libs directory under the Scripts directory. Library functions which ..."/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="topic"/><meta name="DC.relation" content="../Control_Grundlagen/Control_Grundlagen.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="Control_Grundlagen-17"/><title>Loading Control libraries</title><!--  Generated with Oxygen version 27.0, build number 2024121223.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="Control_Grundlagen-17-d54385e24473"/><meta name="wh-source-relpath" content="Control_Grundlagen/Control_Grundlagen-17.dita"/><meta name="wh-out-relpath" content="Control_Grundlagen/Control_Grundlagen-17.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2024121223"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2024121223"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20260226124654"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2024121223"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20260226124654"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2024121223"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2024121223"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/style.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/mobile.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/tile-icons.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/single-line-dlentry.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/footer.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/chatbot.css?buildId=2024121223"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/syntax.css?buildId=2024121223"/><script src="//assets.adobedtm.com/5dfc7d97c6fb/9452e85082e5/launch-b4ffda58d5f0.min.js" async="async"></script></head>
+
+    <body id="Control_Grundlagen-17" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">Jump to main content</a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+        <header class="navbar navbar-default wh_header" data-whc_version="23.0">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../index.html" class=" wh_logo d-none d-sm-block "><img src="../oxygen-webhelp/template/resources/images/modern/winccoa.png" alt="WinCC OA Documentation"/></a>
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title"><span class="ph">WinCC OA Documentation</span></span></a></div>
+                    <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form></div>
+                    <div id="assistant_button" title="AI powered WinCC OA Assistant"></div>
+                    <div id="menu_toggler" title="Toggle Main Menu"></div>
+                    <div id="theme_toggler" title="Toggle Dark/Light Theme"></div>
+                    <div id="lang_toggler"><a href="#" onclick="switchLanguage()" class="lang_switch_link">LANG</a></div>
+<script><!--
+
+  /* Set image of lang switch button */
+  var url = window.location.href;
+    
+  if(['/en/', '/en_US/'].some(el => url.includes(el)))
+  {
+    document.body.classList.add("lang-en");
+    document.getElementById("assistant_button").textContent = "WinCC OA AI Assistant";
+  }
+  else
+  {
+    document.body.classList.add("lang-de");
+    document.getElementById("assistant_button").textContent = "WinCC OA KI-Assistent";
+  }
+
+  /* Click event for lang switch button */
+  function switchLanguage() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+    if(['/en/', '/en_US/'].some(el => currentUrl.includes(el)))
+    {      
+      newUrl = currentUrl.replace('/en/', '/de/');
+      newUrl = currentUrl.replace('/en_US/', '/de_AT/');
+    }
+    else if(['/de/', '/de_AT/'].some(el => currentUrl.includes(el)))
+    {
+      newUrl = currentUrl.replace('/de/', '/en/');
+      newUrl = currentUrl.replace('/de_AT/', '/en_US/');
+    } 
+    window.location.href = newUrl;
+  }
+
+--></script>
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="version_information-d54385e2159-mi" data-tocid="version_information-d54385e2159" data-state="not-ready" class=" topicref " data-id="version_information"><span class="title"><a href="../release_notes/version_information.html">Version Information</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e5517-mi" data-tocid="concepts-d54385e5517" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/concepts.html">Concepts</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="concepts-d54385e6907-mi" data-tocid="concepts-d54385e6907" data-state="not-ready" class=" topicref " data-id="concepts"><span class="title"><a href="../_resources/toc/deployment.html">Deployment</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_security-d54385e10162-mi" data-tocid="main_security-d54385e10162" data-state="not-ready" class=" topicref " data-id="main_security"><span class="title"><a href="../security/topics/security.html">Security</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="engineering-d54385e11399-mi" data-tocid="engineering-d54385e11399" data-state="not-ready" class=" topicref " data-id="engineering"><span class="title"><a href="../_resources/toc/engineering.html">Engineering</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e20103-mi" data-tocid="data_management-d54385e20103" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/data_management.html">Data Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_management-d54385e24184-mi" data-tocid="data_management-d54385e24184" data-state="not-ready" class=" topicref " data-id="data_management"><span class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="data_visualization-d54385e64646-mi" data-tocid="data_visualization-d54385e64646" data-state="not-ready" class=" topicref " data-id="data_visualization"><span class="title"><a href="../_resources/toc/data_visualization.html">Data Visualization</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="southbound_interfaces-d54385e67006-mi" data-tocid="southbound_interfaces-d54385e67006" data-state="not-ready" class=" topicref " data-id="southbound_interfaces"><span class="title"><a href="../_resources/toc/southbound_interfaces.html">Southbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="north_bound-d54385e70326-mi" data-tocid="north_bound-d54385e70326" data-state="not-ready" class=" topicref " data-id="north_bound"><span class="title"><a href="../_resources/toc/northbound_interfaces.html">Northbound Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="webconnectivity-d54385e71612-mi" data-tocid="webconnectivity-d54385e71612" data-state="not-ready" class=" topicref " data-id="webconnectivity"><span class="title"><a href="../_resources/toc/webconnectivity.html">Web Connectivity / Network Interfaces</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="user_management-d54385e75413-mi" data-tocid="user_management-d54385e75413" data-state="not-ready" class=" topicref " data-id="user_management"><span class="title"><a href="../_resources/toc/user_management.html">User Management</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="availability-d54385e76708-mi" data-tocid="availability-d54385e76708" data-state="not-ready" class=" topicref " data-id="availability"><span class="title"><a href="../_resources/toc/availability.html">Availability</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reporting-d54385e77549-mi" data-tocid="reporting-d54385e77549" data-state="not-ready" class=" topicref " data-id="reporting"><span class="title"><a href="../_resources/toc/reporting.html">Reporting</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="addons-d54385e78241-mi" data-tocid="addons-d54385e78241" data-state="not-ready" class=" topicref " data-id="addons"><span class="title"><a href="../_resources/toc/addons.html">Addons</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="reference_tables-d54385e81051-mi" data-tocid="reference_tables-d54385e81051" data-state="not-ready" class=" topicref " data-id="reference_tables"><span class="title"><a href="../_resources/toc/reference_tables.html">Reference Tables</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="main_videos-d54385e83295-mi" data-tocid="main_videos-d54385e83295" data-state="not-ready" class=" topicref " data-id="main_videos"><span class="title"><a href="../videos/video_tutorials.html">Videos &amp; Tutorials</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="documentation-d54385e83842-mi" data-tocid="documentation-d54385e83842" data-state="not-ready" class=" topicref " data-id="documentation"><span class="title"><a href="../general/topics/documentation.html">Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="support-d54385e83905-mi" data-tocid="support-d54385e83905" data-state="not-ready" class=" topicref " data-id="support"><span class="title"><a href="../Support/topics/support.html">Support &amp; Services</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="disclaimer-d54385e83935-mi" data-tocid="disclaimer-d54385e83935" data-state="not-ready" class=" topicref " data-id="disclaimer"><span class="title"><a href="../_resources/toc/disclaimer.html">Disclaimer</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="data_management"><div class="title"><a href="../_resources/toc/business_logic.html">Business Logic / Control</a><div class="wh-tooltip"><p class="shortdesc">Endless possibilities in data processing for your projects.</p></div></div></div></li><li><div class="topicref" data-id="topicID1"><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen.html">Introduction to CTRL</a><div class="wh-tooltip"><p class="shortdesc">An introduction to the product's own programming language Control(CTRL).</p></div></div></div></li><li class="active"><div class="topicref" data-id="Control_Grundlagen-17"><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-17.html">Loading Control libraries</a></div></div></li></ol></div>
+
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        <button type="button" data-target="#wh_publication_toc" id="wh_toc_button" data-toggle="collapse" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="collapse col-lg-3 col-md-3 col-sm-12 d-md-block d-print-none" aria-label="Table of Contents Container">
+                            <div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="version_information-d54385e2159" class="topicref" data-id="version_information" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action version_information-d54385e2159-link" class="wh-expand-btn"></span><div class="title"><a href="../release_notes/version_information.html" id="version_information-d54385e2159-link">Version Information</a><div class="wh-tooltip"><p class="shortdesc">Release Notes, Update information, Certifications and Frequently Asked
+                Questions.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e5517" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e5517-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/concepts.html" id="concepts-d54385e5517-link">Concepts</a><div class="wh-tooltip"><p class="shortdesc">Your first step into modern and powerful process visualization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="concepts-d54385e6907" class="topicref" data-id="concepts" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action concepts-d54385e6907-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/deployment.html" id="concepts-d54385e6907-link">Deployment</a><div class="wh-tooltip"><p class="shortdesc">Topics you need to know before using <span class="ph">WinCC OA</span>.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_security-d54385e10162" class="topicref" data-id="main_security" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_security-d54385e10162-link" class="wh-expand-btn"></span><div class="title"><a href="../security/topics/security.html" id="main_security-d54385e10162-link">Security</a><div class="wh-tooltip"><p class="shortdesc">Go beyond the norm in cybersecurity.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="engineering-d54385e11399" class="topicref" data-id="engineering" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action engineering-d54385e11399-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/engineering.html" id="engineering-d54385e11399-link">Engineering</a><div class="wh-tooltip"><p class="shortdesc">Powerful tools for easy or complex engineering tasks.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_management-d54385e20103" class="topicref" data-id="data_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_management-d54385e20103-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_management.html" id="data_management-d54385e20103-link">Data Management</a><div class="wh-tooltip"><p class="shortdesc">Classify, structure and archive your data.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="data_management-d54385e24184" class="topicref" data-id="data_management" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action data_management-d54385e24184-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/business_logic.html" id="data_management-d54385e24184-link">Business Logic / Control</a><div class="wh-tooltip"><p class="shortdesc">Endless possibilities in data processing for your projects.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="topicID1-d54385e24206" class="topicref" data-id="topicID1" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action topicID1-d54385e24206-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen.html" id="topicID1-d54385e24206-link">Introduction to CTRL</a><div class="wh-tooltip"><p class="shortdesc">An introduction to the product's own programming language Control(CTRL).</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="topicID1-d54385e24217" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-01.html" id="topicID1-d54385e24217-link">Structure of CTRL scripts</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24225" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-02.html" id="topicID1-d54385e24225-link">Execution modes</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24233" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-03.html" id="topicID1-d54385e24233-link">Addressing types</a></div></div></li><li role="treeitem"><div data-tocid="data_types-d54385e24241" class="topicref" data-id="data_types" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-04.html" id="data_types-d54385e24241-link">Data Types</a></div></div></li><li role="treeitem"><div data-tocid="data_type_details-d54385e24249" class="topicref" data-id="data_type_details" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/data_type_details.html" id="data_type_details-d54385e24249-link">Data Type Details</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24257" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-46.html" id="topicID1-d54385e24257-link">Dynamic Arrays</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24265" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-38.html" id="topicID1-d54385e24265-link">Mapping (associative arrays)</a></div></div></li><li role="treeitem"><div data-tocid="Control_Grundlagen-05-d54385e24273" class="topicref" data-id="Control_Grundlagen-05" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-05.html" id="Control_Grundlagen-05-d54385e24273-link">Type conversions</a></div></div></li><li role="treeitem"><div data-tocid="Control_Grundlagen-06-d54385e24281" class="topicref" data-id="Control_Grundlagen-06" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-06.html" id="Control_Grundlagen-06-d54385e24281-link">Variables and constants</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24289" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-07.html" id="topicID1-d54385e24289-link">Operators in CTRL</a></div></div></li><li role="treeitem"><div data-tocid="Control_Grundlagen-08-d54385e24298" class="topicref" data-id="Control_Grundlagen-08" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-08.html" id="Control_Grundlagen-08-d54385e24298-link">Control structures in CTRL</a></div></div></li><li role="treeitem"><div data-tocid="dot_notation-d54385e24306" class="topicref" data-id="dot_notation" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/dot_notation.html" id="dot_notation-d54385e24306-link">Dot Notation</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24314" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-09.html" id="topicID1-d54385e24314-link">Escape sequences</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24322" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-10.html" id="topicID1-d54385e24322-link">Comments</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24330" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../SQL/sql_wildcards_2.html" id="topicID1-d54385e24330-link">Wildcards</a></div></div></li><li role="treeitem"><div data-tocid="Control_Grundlagen-12-d54385e24338" class="topicref" data-id="Control_Grundlagen-12" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-12.html" id="Control_Grundlagen-12-d54385e24338-link">Parameters</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24346" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-13.html" id="topicID1-d54385e24346-link">Threads</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24354" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-14.html" id="topicID1-d54385e24354-link">Error handling</a></div></div></li><li role="treeitem"><div data-tocid="Control_Grundlagen-16-d54385e24362" class="topicref" data-id="Control_Grundlagen-16" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-16.html" id="Control_Grundlagen-16-d54385e24362-link">Multi-language capability</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24370" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-15.html" id="topicID1-d54385e24370-link">Control programming</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="object_oriented_scripting-d54385e24378" class="topicref" data-id="object_oriented_scripting" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action object_oriented_scripting-d54385e24378-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/object_oriented_scripting.html" id="object_oriented_scripting-d54385e24378-link">Object Oriented Scripting (CTRL++)</a><div class="wh-tooltip"><p class="shortdesc">The CTRL++ enhancement provides object orientation for the <span class="ph">WinCC OA</span> scripting language.</p></div></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24457" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Referenz_GEDI-52.html" id="topicID1-d54385e24457-link">Control scripts</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24465" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Referenz_GEDI-53.html" id="topicID1-d54385e24465-link">Control libraries</a></div></div></li><li role="treeitem" class="active"><div data-tocid="Control_Grundlagen-17-d54385e24473" class="topicref" data-id="Control_Grundlagen-17" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Control_Grundlagen-17.html" id="Control_Grundlagen-17-d54385e24473-link">Loading Control libraries</a></div></div></li><li role="treeitem"><div data-tocid="codeCoverage-d54385e24481" class="topicref" data-id="codeCoverage" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Code_Coverage.html" id="codeCoverage-d54385e24481-link">Control Code Coverage &amp; Performance measurement</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24489" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Semantic_Check_of_Scripts.html" id="topicID1-d54385e24489-link">Semantic Check of Scripts</a></div></div></li><li role="treeitem"><div data-tocid="topicID1-d54385e24497" class="topicref" data-id="topicID1" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/predefined_symbolic_constants.html" id="topicID1-d54385e24497-link">Predefined symbolic constants</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="control_classes-d54385e24505" class="topicref" data-id="control_classes" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action control_classes-d54385e24505-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/control_classes.html" id="control_classes-d54385e24505-link">Control Classes</a><div class="wh-tooltip"><p class="shortdesc">The overview of classes available in Control.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e25834" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e25834-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grundlagen/Funktionsarten.html" id="topicID1-d54385e25834-link">Types of Control Functions</a><div class="wh-tooltip"><p class="shortdesc">An overview of the types of functions distinguished within Control.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e29452" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e29452-link" class="wh-expand-btn"></span><div class="title"><a href="../Control_Grafik/Graphics_Objects.html" id="tocId-d54385e29452-link">Control graphics</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tocId-d54385e50091" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d54385e50091-link" class="wh-expand-btn"></span><div class="title"><a href="../ControlA_D/abortFileTransfer_2.html" id="tocId-d54385e50091-link">CONTROL Functions</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="topicID1-d54385e63614" class="topicref" data-id="topicID1" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action topicID1-d54385e63614-link" class="wh-expand-btn"></span><div class="title"><a href="../CTRL_DLL/CTRL_DLL-01.html" id="topicID1-d54385e63614-link">CtrlExtension</a><div class="wh-tooltip"><p class="shortdesc">The CtrlExtension allows the addition of custom C++ code.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ctrl_debugger_basics-d54385e63641" class="topicref" data-id="ctrl_debugger_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ctrl_debugger_basics-d54385e63641-link" class="wh-expand-btn"></span><div class="title"><a href="../control_debugger/topics/ctrl_debugger_basics.html" id="ctrl_debugger_basics-d54385e63641-link">CTRL Debugger</a><div class="wh-tooltip"><p class="shortdesc">You can use the CTRL debugger to debug the Control programming language. The debugger can be used via its own panel, which also enables the monitoring and setting of variable values         during the execution of a script.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Query-d54385e63748" class="topicref" data-id="Query" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Query-d54385e63748-link" class="wh-expand-btn"></span><div class="title"><a href="../SQL/Query_2.html" id="Query-d54385e63748-link">SQL in CONTROL</a><div class="wh-tooltip"><p class="shortdesc">The database functions enable you to quickly carry out value queries on datapoints         and elements.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="nodejs_basics-d54385e63839" class="topicref" data-id="nodejs_basics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action nodejs_basics-d54385e63839-link" class="wh-expand-btn"></span><div class="title"><a href="../NodeJS/topics/nodejs_basics.html" id="nodejs_basics-d54385e63839-link"><span class="ph"><span class="ph">WinCC OA</span> JavaScript Manager for Node.js</span></a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph"><span class="ph">WinCC OA</span> JavaScript Manager for Node.js</span> is a manager that allows for the integration of the <a href="../NodeJS/topics/nodejs_glossary.html#component_typescript" title="TypeScript is a free and open-source high-level programming language developed by Microsoft that adds static typing with optional type annotations to JavaScript. It is designed for the development of large applications and transpiles to JavaScript. Source: TypeScript (Wikipedia)"><dfn class="term">TypeScript</dfn></a>/<a href="../NodeJS/topics/nodejs_glossary.html#component_javascript" title="JavaScript, often abbreviated as JS, is a programming language and core technology of the Web. It was originally developed for dynamic HTML in web browsers to evaluate user interactions, change, reload or generate content and thus extend the possibilities of HTML. Source: JavaScript (Wikipedia)"><dfn class="term">JavaScript</dfn></a> runtime environment <a href="../NodeJS/topics/nodejs_glossary.html#component_nodejs" title="Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more. Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser. Source: Node.js (Wikipedia)"><dfn class="term">Node.js®</dfn></a> into <span class="ph">WinCC OA</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="API-01-d54385e64517" class="topicref" data-id="API-01" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action API-01-d54385e64517-link" class="wh-expand-btn"></span><div class="title"><a href="../API/topics/API-01.html" id="API-01-d54385e64517-link">API Manager</a><div class="wh-tooltip"><p class="shortdesc">The <span class="ph">WinCC OA</span> API (<strong class="ph b">A</strong>pplication <strong class="ph b">P</strong>rogramming         <strong class="ph b">I</strong>nterface) offers a number of functions adding special <em class="ph i">Managers</em> to this         process control system. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="data_visualization-d54385e64646" class="topicref" data-id="data_visualization" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action data_visualization-d54385e64646-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/data_visualization.html" id="data_visualization-d54385e64646-link">Data Visualization</a><div class="wh-tooltip"><p class="shortdesc">User interfaces, Trends and Reports for every purpose and device.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="southbound_interfaces-d54385e67006" class="topicref" data-id="southbound_interfaces" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action southbound_interfaces-d54385e67006-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/southbound_interfaces.html" id="southbound_interfaces-d54385e67006-link">Southbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">The process connection to the actual machines/sensors.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="north_bound-d54385e70326" class="topicref" data-id="north_bound" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action north_bound-d54385e70326-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/northbound_interfaces.html" id="north_bound-d54385e70326-link">Northbound Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Your portal to the cloud or supervising systems.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="webconnectivity-d54385e71612" class="topicref" data-id="webconnectivity" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action webconnectivity-d54385e71612-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/webconnectivity.html" id="webconnectivity-d54385e71612-link">Web Connectivity / Network Interfaces</a><div class="wh-tooltip"><p class="shortdesc">Data exchange, APIs and web technologies</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="user_management-d54385e75413" class="topicref" data-id="user_management" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action user_management-d54385e75413-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/user_management.html" id="user_management-d54385e75413-link">User Management</a><div class="wh-tooltip"><p class="shortdesc">All about authorization, authentication and login-customization.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="availability-d54385e76708" class="topicref" data-id="availability" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action availability-d54385e76708-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/availability.html" id="availability-d54385e76708-link">Availability</a><div class="wh-tooltip"><p class="shortdesc">How to get your system uptime to the maximum.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reporting-d54385e77549" class="topicref" data-id="reporting" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reporting-d54385e77549-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reporting.html" id="reporting-d54385e77549-link">Reporting</a><div class="wh-tooltip"><p class="shortdesc">Create state of the art project reports without limits.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="addons-d54385e78241" class="topicref" data-id="addons" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action addons-d54385e78241-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/addons.html" id="addons-d54385e78241-link">Addons</a><div class="wh-tooltip"><p class="shortdesc">Useful tools and enhancements for special demands.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="reference_tables-d54385e81051" class="topicref" data-id="reference_tables" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action reference_tables-d54385e81051-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/reference_tables.html" id="reference_tables-d54385e81051-link">Reference Tables</a><div class="wh-tooltip"><p class="shortdesc">Detailed and extensive content for special project adaptation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="main_videos-d54385e83295" class="topicref" data-id="main_videos" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action main_videos-d54385e83295-link" class="wh-expand-btn"></span><div class="title"><a href="../videos/video_tutorials.html" id="main_videos-d54385e83295-link">Videos &amp; Tutorials</a><div class="wh-tooltip"><p class="shortdesc">Explore the capabilities of <span class="ph">WinCC OA</span> with our carefully selected         collection of video tutorials and guides.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="documentation-d54385e83842" class="topicref" data-id="documentation" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action documentation-d54385e83842-link" class="wh-expand-btn"></span><div class="title"><a href="../general/topics/documentation.html" id="documentation-d54385e83842-link">Documentation</a><div class="wh-tooltip"><p class="shortdesc">Basic information about terms and functions within the documentation.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="support-d54385e83905" class="topicref" data-id="support" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action support-d54385e83905-link" class="wh-expand-btn"></span><div class="title"><a href="../Support/topics/support.html" id="support-d54385e83905-link">Support &amp; Services</a><div class="wh-tooltip"><p class="shortdesc">An experienced team of support agents, consultants and trainers are ready to         facilitate active partnerships with our customers, so they can profit from our comprehensive         service.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="disclaimer-d54385e83935" class="topicref" data-id="disclaimer" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action disclaimer-d54385e83935-link" class="wh-expand-btn"></span><div class="title"><a href="../_resources/toc/disclaimer.html" id="disclaimer-d54385e83935-link">Disclaimer</a><div class="wh-tooltip"><p class="shortdesc">A brief clarification of liability exclusions or legal notices.</p></div></div></div></li></ul></div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic topic" role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">Loading Control libraries</h1>
+    <div class="- topic/body body">
+        <p class="- topic/p p">Apart from the functions listed in the following sections, you can also use in a Control
+            script all functions held in a file in the libs directory under the Scripts directory.
+            Library functions which contain functions which can only be called from a Control
+            Manager or - like setValue() - only from the UIM, can only be used in these
+            managers.</p>
+        <p class="- topic/p p">The Control library can be modified by the user (even at runtime) in any text editor.
+            Using the menu option "Control Libraries", a library file can also be loaded directly
+            into the script editor of the GEDI module, which also provides a syntax checker when
+            editing the file.</p>
+        <p class="- topic/p p">Every time a panel is opened in the PARA module or via a data selection dialog in the
+            VISION module, the user interface manager checks whether a library file has changed. If
+            the library has changed and no scripts are currently running, the new library file is
+            opened. If scripts are running, however, the warning Library in use is issued. If a
+            library file contains syntax errors it is not loaded. The file name and line number of
+            the error is output however.</p>
+        <section class="- topic/section section" id="Control_Grundlagen-17__listFiles" data-ofbid="Control_Grundlagen-17__listFiles"><h2 class="- topic/title title sectiontitle">Several CTRL scripts</h2>
+            
+            <p class="- topic/p p">It is possible to run several scripts with one CTRL Manager (WCCOActrl). To do this
+                you specify the option -f followed by the file name of a CTRL script list.</p>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Example</strong></p>
+            <p class="- topic/p p">WCCOActrl -f pvss_scripts.lst</p>
+            <p class="- topic/p p">It is not necessary to define the file extension for scripts. Per default script
+                extensions are browsed in the following order:</p>
+            <p class="- topic/p p"> 1. given name</p>
+            <p class="- topic/p p"> 2. &lt;Name&gt;.ctl</p>
+            <p class="- topic/p p"> 3. &lt;Name&gt;.ctc</p>
+            <p class="- topic/p p" id="Control_Grundlagen-17__PVss_scripts1" data-ofbid="Control_Grundlagen-17__PVss_scripts1">The CTRL script list <code class="+ topic/ph pr-d/codeph ph codeph"><em class="+ topic/ph hi-d/i ph i">pvss_scripts.lst</em></code> is
+                an ASCII file in which you can enter the file names of several CTRL scripts, one on
+                each line. All scripts specified are run by the CTRL Manager, with the first script
+                in the list being executed first. The script list can also contain comment lines and
+                blank lines (comment lines begin with "#"). A search is made for the script list
+                itself in all script directories for the project, in exactly the same way as for
+                each CTRL script.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Configuration of the libraries</h2>
+            
+            <p class="- topic/p p">Via the keyword #uses you can specify which CTRL, DLL or shlib libraries are needed
+                in a script or in a panel. Therefore, the libraries must not be entered into the
+                config file anymore. This facilitates the use of the libraries and the libraries are
+                loaded first when they are needed. Which CTRL libraries a manager should load can
+                also be defined via entries in the <code class="+ topic/ph pr-d/codeph ph codeph"><em class="+ topic/ph hi-d/i ph i">config.level</em></code>file. We,
+                however, recommend to use the keyword #uses. How to use the keyword #uses or how you
+                can define which CTRL libraries should be loaded via the entries in the
+                        <code class="+ topic/ph pr-d/codeph ph codeph"><em class="+ topic/ph hi-d/i ph i">config.level</em></code>file are described in the following.</p>
+            <p class="- topic/p p">If your panels need functions from CTRL libraries and the functions are not loaded by
+                default load them as described below.</p>
+        </section>
+        <section class="- topic/section section" id="Control_Grundlagen-17__uses" data-ofbid="Control_Grundlagen-17__uses"><h2 class="- topic/title title sectiontitle">Keyword #uses</h2>
+            
+            <p class="- topic/p p">Via the keyword #uses you can define which CTRL,DLL or shlib library a panel or a
+                script needs.</p>
+            <p class="- topic/p p">#uses "myLib.ctl"</p>
+            <p class="- topic/p p">It is not necessary to define the file extension for script libraries. Per default
+                libraries and control extensions are browsed in the following order:</p>
+            <p class="- topic/p p"> 1. given name</p>
+            <p class="- topic/p p"> 2. &lt;Name&gt;.ctl</p>
+            <p class="- topic/p p"> 3. &lt;Name&gt;.ctc</p>
+            <p class="- topic/p p"> 4. &lt;Name&gt;.dll or &lt;Name&gt;.so</p>
+            <p class="- topic/p p">or a DLL</p>
+            <p class="- topic/p p">#uses "CtrlADO"</p>
+            <p class="- topic/p p">If #uses is used for a DLL/shlib, do not specify a file extension since the CTRL
+                searches the right file depending on the platform. For #uses "CtrlADO" the
+                CtrlADO.dll is loaded under Windows and the CtrlADO.so under Linux. The extension
+                must, however, be used for own script libraries like #uses "myLib.ctl".</p>
+            <p class="- topic/p p">The CTRL, DLL or shlib libraries specified in a script or in a panel are not valid
+                only in the script but manager wide and remain in the memory until the manager is
+                stopped. The libraries are loaded into the memory by the CTRL kernel. The keyword
+                can be used in each script before the functions and in panel global functions. An
+                arbitrary number of #uses definitions can be used in panels and scripts. If you want
+                to include a library that requires another library (for example, myLib.ctl requires
+                yourLib.ctl and yourLib.ctl requires xLib.ctl) you only have to include yourLib.ctl.
+                Note that the opening of panels may take a little bit longer when one or more big
+                libraries are loaded for the first time.</p>
+            <p class="- topic/p p">Note that "uses" is a keyword and may not be used as a variable name.</p>
+        </section>
+        <section class="- topic/section section" id="Control_Grundlagen-17__ConfigLevel" data-ofbid="Control_Grundlagen-17__ConfigLevel"><h2 class="- topic/title title sectiontitle">Entries in the config.level file</h2>
+            
+            <p class="- topic/p p">There is a standard file
+                    <code class="+ topic/ph pr-d/codeph ph codeph"><em class="+ topic/ph hi-d/i ph i">&lt;<span class="- topic/ph ph">wincc_oa_path</span>&gt;/config/config.level</em></code> which
+                specifies which CTRL library each manager should load. It contains the default
+                settings for managers.</p>
+            <p class="- topic/p p">These defaults are read automatically from the config.level file of the program
+                directory. This file should not be changed! Changes to the defaults must be made in
+                a config.level file of the project directory! If a config file is located in the
+                project directory this is read first. Thereafter the file located in the version is
+                read. If there is a remote project that uses the local project as server project
+                this file is read as last one. The sequence is:</p>
+            <p class="- topic/p p"> 1. Project file</p>
+            <p class="- topic/p p"> 2. Version file</p>
+            <p class="- topic/p p"> 3. Remote project that uses the local project as server project</p>
+            <p class="- topic/p p">The entries are made in sections of the <code class="+ topic/ph pr-d/codeph ph codeph"><em class="+ topic/ph hi-d/i ph i">config.level</em></code> file
+                belonging to each of the managers , for example, [ui], [ctrl] etc. The section
+                [ui_extend] has been inserted for PARA and GEDI: a manager that is run with -extend
+                or -m para or -m gedi (PARA, GEDI) then also reads this section [ui_extend]. For all
+                managers, 3 keywords have been introduced for the
+                    <code class="+ topic/ph pr-d/codeph ph codeph"><em class="+ topic/ph hi-d/i ph i">config.level</em></code> file:</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">LoadAllCtrlLibs</h2>
+            
+            <p class="- topic/p p">Spelling with a lower case l is allowed for the LoadAllCtrlLibs, LoadCtrlLibs and
+                UnloadCtrlLibs entries, e.g. loadAllCtrlLibs. The entries are not
+                case-sensitive.</p>
+            <p class="- topic/p p">Type: unsigned</p>
+            <p class="- topic/p p">Default: 0 (Range:0/1)</p>
+            <p class="- topic/p p">With the value 1, the manager behaves as it used to behave, and loads all files from
+                the directory scripts/libs. This keyword means that the entries <em class="+ topic/ph hi-d/i ph i">LoadCtrlLibs</em>
+                and <em class="+ topic/ph hi-d/i ph i">UnloadCtrlLibs</em> have no effect. The default is to load only those CTRL
+                Libraries that are explicitly listed.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">LoadCtrlLibs</h2>
+            
+            <p class="- topic/p p">Located in a manager-specific section and loads all specified libraries of the
+                manager. The library names are separated by commas. The keyword can be used as many
+                times as required. A library loaded by this entry can be removed again by a
+                subsequent <em class="+ topic/ph hi-d/i ph i">UnloadCtrlLibs</em> entry.</p>
+            <p class="- topic/p p">Scripts that are empty or begin with "." are not loaded!</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">UnloadCtrlLibs</h2>
+            
+            <p class="- topic/p p">Located in a manager-specific section and removes the specified library from the list
+                of all libraries that this manager is meant to load. The library names are separated
+                by commas. The keyword can be used as many times as required. A library removed by
+                this entry can be loaded again by a subsequent <em class="+ topic/ph hi-d/i ph i">LoadCtrlLibs</em> entry.</p>
+            <p class="- topic/p p"><img class="- topic/image image" src="../Symbole/example.gif"/>Example</p>
+            <p class="- topic/p p">[ctrl_1]</p>
+            <p class="- topic/p p"> LoadCtrlLibs = "archiv.ctl"</p>
+            <p class="- topic/p p">The CTRL with the number 1 needs "archiv.ctl" for data archiving.</p>
+            <p class="- topic/p p">[ui]</p>
+            <p class="- topic/p p"> LoadCtrlLibs = "archiv.ctl, libTOOLs"</p>
+            <p class="- topic/p p">The UI starts panels for data archiving.</p>
+        </section>
+        <section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Loading Ctrl libraries by command line</h2>
+            
+            <div class="- topic/p p">
+                <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>-loadCtrlLibs &lt;list&gt; e.g. WCCOActrl.exe -loadCtrlLibs
+                    list.lst</code></pre>
+            </div>
+            <p class="- topic/p p"> Loads the defined Ctrl libraries. <code class="+ topic/ph pr-d/codeph ph codeph">&lt;list&gt;</code> (<a class="- topic/xref xref" href="Control_Grundlagen-17.html#Control_Grundlagen-17__listFiles">an .lst file</a>) is a list of libraries like it can be
+                defined in the config file without quotation marks.</p>
+            <p class="- topic/p p">In the same manner the command line option <code class="+ topic/ph pr-d/codeph ph codeph">-LoadNoCtrlLib</code> und
+                    <code class="+ topic/ph pr-d/codeph ph codeph">-LoadAllCtrlLibs</code> can be used.</p>
+            <div class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-LoadNoCtrlLib</code> empties the list of libraries loaded. However, this
+                can be re-filled with new libraries using the option <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>-LoadCtrlLibs
+                    &lt;list&gt;</code></pre> in the same command line.</div>
+            <p class="- topic/p p"><img class="- topic/image image" src="../Symbole/example.gif"/>Example</p>
+            <div class="- topic/p p">
+                <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>WCCOActrl.exe -loadNoCtrlLib -loadCtrlLibs javaui.ctc</code></pre>
+            </div>
+            <p class="- topic/p p">Only the Ctrl library "javaui.ctc" is loaded after the list of libraries to be loaded
+                was emptied.</p>
+
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        <whc:webhelp_feedback xmlns="" xmlns:whc="http://www.oxygenxml.com/webhelp/components" class="d-print-none"></whc:webhelp_feedback>
+                        <div id="oxygen-feedback-frame-container">
+    <script id="feedback-init" defer="defer" src="https://feedback.oxygenxml.com/app/init/init.js?deploymentToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJkZXBsb3ltZW50SWQiOjEwNDZ9.Z1wqIErte4dBbWAxxQnr_fHeATFbjXktFL-YJhZGIqTkGp1a6WK3pEQHY_0k2BgIRi6amadmqqEJyzGOW8YzSg"><!-- --></script>
+</div>
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#Control_Grundlagen-17__listFiles" data-tocid="Control_Grundlagen-17__listFiles">Several CTRL scripts</a></div></li><li class="section-item"><div class="section-title"><a href="#Control_Grundlagen-17__uses" data-tocid="Control_Grundlagen-17__uses">Keyword #uses</a></div></li><li class="section-item"><div class="section-title"><a href="#Control_Grundlagen-17__ConfigLevel" data-tocid="Control_Grundlagen-17__ConfigLevel">Entries in the config.level file</a></div></li></ul></div>
+                        </nav>
+                    
+                </div>
+            </div>
+        </div> 
+        <div data-whc_version="25.0" class="navbar navbar-default wh_footer">
+  <div class="footer_div_left">
+    <a href="../oxygen-webhelp/template/../../iec_62443/topics/iec_62443_certification.html" target="_blank"><img class="cert-image_iec62443"/></a>
+    <a href="../oxygen-webhelp/template/../../iec_61508/iec_61508_certification.html" target="_blank"><img class="cert-image_iec61508"/></a>
+  </div>
+  <div class="footer_div_center">
+    <p>SIMATIC WinCC Open Architecture Version 3.21.1 - © ETM professional control GmbH <span id="span_year"></span> - <a href="mailto:documentation@etm.at" target="_blank"><img class="sm_icon mail"/></a> | <a href="https://www.linkedin.com/company/etm-professional-control/" target="_blank"><img class="sm_icon linkedin"/></a> | <a href="https://www.facebook.com/WinCC.OA" target="_blank"><img class="sm_icon facebook"/></a> | <a href="https://www.youtube.com/@WinCCOA" target="_blank"><img class="sm_icon youtube"/></a> - <a href="https://www.winccoa.com/rights/privacy-policy.html" target="_blank">Privacy Policy</a> - <a href="https://www.siemens.com/global/en/general/cookie-notice.html" target="_blank">Cookie Policy</a> - <a href="https://www.winccoa.com/rights/terms-of-use.html" target="_blank">Terms of use</a> -  <a href="https://www.siemens.com/global/en/company/about/compliance/reporting-channels.html" target="_blank">Whistleblowing</a> - <a href="https://www.winccoa.com/company/imprint.html" target="_blank">Imprint</a></p>
+    <script>document.querySelector('#span_year').innerHTML = new Date().getFullYear();</script>
+  </div>
+  <div class="footer_div_right"></div>
+</div>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" alt=""/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <div id="chatbot">
+ <iframe id="openassistantgpt-chatbot-button-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/button?chatbox=false" style="display:none; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
+ <!-- This chatbot is build using https://openassistantgpt.io/ -->
+ <iframe allowfullscreen="" id="openassistantgpt-chatbot-iframe" src="https://www.openassistantgpt.io/embed/clx3aetjs0003c95vibv88imn/window?chatbox=false&amp;withExitX=true" style="margin-right: 1rem; margin-bottom: 6rem; display: none; position: fixed; right: 0; bottom: 0; pointer-events: none; overflow: hidden; height: 65vh; border: 2px solid #e2e8f0; border-radius: 0.375rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); width: 30rem;"></iframe>
+  <script><!--
+
+   var currentUrl = window.location.href; //get current url
+   var btn = document.getElementById("openassistantgpt-chatbot-button-iframe"); //get the chatbot button
+   var btn_oa = document.getElementById("assistant_button"); //get the chatbot button
+   if(['/3.20/', '/latest/'].some(el => currentUrl.includes(el))){
+    btn.style.display = "inline-block"; //enable chatbot button
+    btn_oa.style.display = "inline-block"; //enable chatbot button
+    window.addEventListener("message", function(t) {
+      var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+       s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+  
+      function toggleChatVisibility() {
+       if (e && s) {
+        e.contentWindow.postMessage("openChat", "*");
+        s.contentWindow.postMessage("openChat", "*");
+        e.style.pointerEvents = "auto";
+        e.style.display = "block";
+        if (window.innerWidth < 640) {
+         e.style.position = "fixed";
+         e.style.width = "100%";
+         e.style.height = "100%";
+         e.style.top = "0";
+         e.style.left = "0";
+         e.style.zIndex = "9999";
+        } else {
+         e.style.position = "fixed";
+         e.style.width = "30rem";
+         e.style.height = "65vh";
+         e.style.bottom = "0";
+         e.style.right = "0";
+         e.style.top = "";
+         e.style.left = "";
+        }
+       } else {
+        console.error("iframe not found");
+       }
+      }
+      function closeChat() {
+       if (e && s) {
+        e.style.display = "none";
+        e.style.pointerEvents = "none";
+        e.contentWindow.postMessage("closeChat", "*");
+        s.contentWindow.postMessage("closeChat", "*");
+       }
+      }
+      if (t.data === "openChat") {
+       toggleChatVisibility();
+      } else if (t.data === "closeChat") {
+       closeChat();
+      }
+     });
+     // Add event listener for assistant_button click
+     document.getElementById("assistant_button").addEventListener("click", function() {
+      var event = new Event("message");
+      if(document.getElementById("openassistantgpt-chatbot-iframe").style.display == "block")
+      {
+       event.data = "closeChat";
+      }
+      else
+      {
+       event.data = "openChat";
+      }
+      window.dispatchEvent(event);
+     });
+    }
+   
+--></script>
+   <script><!--
+
+    document.getElementById("menu_toggler").addEventListener("click", function() {
+     document.querySelector('#wh_menu_mobile_button').click();
+   });
+  
+--></script>
+  <script><!--
+
+   function getBrowserColorScheme() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+     return "dark";
+    } 
+    return "light";  
+   }
+   function getLocalColorScheme(){
+    return localStorage.getItem("theme");
+   }
+   function setSchemeClass(colorScheme){
+    document.body.classList.add(colorScheme);
+    if(colorScheme === "light"){
+     document.body.classList.remove("dark");
+    }
+    else{
+     document.body.classList.remove("light");
+    }
+   }
+   function isSchemeClassSet(colorScheme)
+   {
+    return document.body.classList.contains(colorScheme);
+   }
+   function setLocalColorScheme(colorScheme){
+    localStorage.setItem("theme", colorScheme);
+    setSchemeClass(colorScheme);
+   }
+   function isLocalColorSchemeSet() {
+    if(getLocalColorScheme() === null){
+     return false;
+    }
+    return true;
+   }
+   function toggleLocalColorScheme(currentSchema){
+    if(currentSchema === "light"){
+     setLocalColorScheme("dark");
+    }
+    else
+    {
+     setLocalColorScheme("light");
+    }
+   }
+   if(isLocalColorSchemeSet())
+   {
+    setSchemeClass(getLocalColorScheme());
+   }
+   else{
+    setLocalColorScheme(getBrowserColorScheme());
+   }
+   
+   document.getElementById("theme_toggler").addEventListener("click", function() {
+    if(isLocalColorSchemeSet()){
+     toggleLocalColorScheme(getLocalColorScheme());
+    }
+    else
+    {
+     toggleLocalColorScheme(getBrowserColorScheme());
+    }
+   });
+  
+--></script>
+</div>
+<div>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-2142215-10"></script>
+    <script><!--
+ window.dataLayer = window.dataLayer || []; function
+        gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','UA-2142215-10'); 
+--></script>
+</div>
+    </body>
+</html>

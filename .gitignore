@@ -1,0 +1,4 @@
+build/
+CMakeUserPresets.json
+*.qm
+data/*.sqlite3
