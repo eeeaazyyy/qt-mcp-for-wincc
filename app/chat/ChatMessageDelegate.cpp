@@ -5,6 +5,8 @@
 #include <QPainterPath>
 #include <QTextDocument>
 
+#include <cmath>
+
 #include "app/chat/ChatMessageListModel.h"
 
 namespace winccmcp::app::chat {
@@ -52,8 +54,8 @@ void ChatMessageDelegate::paint(QPainter* painter,
     const bool isDark = option.palette.window().color().lightness() < 128;
 
     const QSizeF textSize = bubbleTextSize(option, index);
-    const int bubbleWidth = static_cast<int>(textSize.width()) + 2 * kPadding;
-    const int bubbleHeight = static_cast<int>(textSize.height()) + 2 * kPadding;
+    const int bubbleWidth = static_cast<int>(std::ceil(textSize.width())) + 2 * kPadding;
+    const int bubbleHeight = static_cast<int>(std::ceil(textSize.height())) + 2 * kPadding;
 
     const int x = alignRight ? option.rect.right() - bubbleWidth - kMargin : option.rect.left() + kMargin;
     const QRect bubbleRect(x, option.rect.top() + kMargin / 2, bubbleWidth, bubbleHeight);
